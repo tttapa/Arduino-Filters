@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10)
 ################################################################################
 
 set(CMAKE_CXX_STANDARD 14)
-project(Arduino-Helpers)
+project(Arduino-Filters)
 
 ################################################################################
 # Add Google Test
