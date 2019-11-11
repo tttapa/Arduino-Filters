@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#ace50aaaeaa1b67dcc41b0629d7353611',1,'NormalizingBiQuadFilterDF1']]],
+  ['a_0',['a',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#ace50aaaeaa1b67dcc41b0629d7353611',1,'NormalizingBiQuadFilterDF1::a()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a42365682b70eccc2a9c025a79403b323',1,'NonNormalizingBiQuadFilterDF1::a()']]],
   ['a0_1',['a0',['../db/d07/classNormalizingIIRFilter.html#ad893a1e18407683d7ecec9861d45f705',1,'NormalizingIIRFilter']]],
   ['a_5fcoefficients_2',['a_coefficients',['../db/d07/classNormalizingIIRFilter.html#a0e3fa2041a98683ee27b9faebbee1929',1,'NormalizingIIRFilter::a_coefficients()'],['../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b',1,'NonNormalizingIIRFilter::a_coefficients()']]],
   ['adc_5fbits_3',['ADC_BITS',['../db/d02/Settings_8hpp.html#a8db0fcdeeb644f813c9b29211ce0a1ae',1,'Settings.hpp']]],
@@ -39,5 +39,6 @@ var searchData=
   ['arrayhelpers_2ecpp_36',['ArrayHelpers.cpp',['../db/d93/ArrayHelpers_8cpp.html',1,'']]],
   ['arrayhelpers_2ehpp_37',['ArrayHelpers.hpp',['../d5/db6/ArrayHelpers_8hpp.html',1,'']]],
   ['arrayreftype_38',['ArrayRefType',['../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7',1,'ArraySlice']]],
-  ['arrayslice_39',['ArraySlice',['../df/de0/classArraySlice.html',1,'ArraySlice&lt; T, N, Start, End, Const &gt;'],['../df/de0/classArraySlice.html#a7246525cbb676f82262b4484af6624ff',1,'ArraySlice::ArraySlice()']]]
+  ['arrayslice_39',['ArraySlice',['../df/de0/classArraySlice.html',1,'ArraySlice&lt; T, N, Start, End, Const &gt;'],['../df/de0/classArraySlice.html#a7246525cbb676f82262b4484af6624ff',1,'ArraySlice::ArraySlice()']]],
+  ['asarray_40',['asArray',['../df/de0/classArraySlice.html#afd2694f37752957a68a53fb933d87730',1,'ArraySlice']]]
 ];
