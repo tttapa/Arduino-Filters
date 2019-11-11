@@ -90,46 +90,70 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="../../dc/dc7/NamespaceSettings_8hpp.html#abe0f0e505619b6899c38363f4e42a272">BEGIN_AH_NAMESPACE</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d5/db9/structNormalUpdatable.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d5/db9/structNormalUpdatable.html">NormalUpdatable</a> {};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @brief   A super class for object that have to be updated regularly.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * All instances of this class are kept in a linked list, so it&#39;s easy to </span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * iterate over all of them to update them.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T = NormalUpdatable&gt;</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/de0/classUpdatable.html">Updatable</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d23/classDoublyLinkable.html">DoublyLinkable</a>&lt;Updatable&lt;T&gt;&gt; {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#ad8bf09da68e0657bfdecb6e380aeb0bf">   24</a></span>&#160;    <a class="code" href="../../d5/de0/classUpdatable.html#ad8bf09da68e0657bfdecb6e380aeb0bf">Updatable</a>() { <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#a3c067d3d91d183268148650708108be6">append</a>(<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    /// Create an Updatabe and add it to the linked list of instances.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#ad8bf09da68e0657bfdecb6e380aeb0bf">   24</a></span>&#160;<span class="comment"></span>    <a class="code" href="../../d5/de0/classUpdatable.html#ad8bf09da68e0657bfdecb6e380aeb0bf">Updatable</a>() { <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#a3c067d3d91d183268148650708108be6">append</a>(<span class="keyword">this</span>); }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a5b85de915a351c0d8c9cdebe8bc12f50">   28</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d5/de0/classUpdatable.html#a5b85de915a351c0d8c9cdebe8bc12f50">~Updatable</a>() {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    /// Destructor: remove the updatable from the linked list of instances.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a5b85de915a351c0d8c9cdebe8bc12f50">   28</a></span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <a class="code" href="../../d5/de0/classUpdatable.html#a5b85de915a351c0d8c9cdebe8bc12f50">~Updatable</a>() {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d">isEnabled</a>())</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#aaa6f6639ed722c4836d8f4a53a3e4c13">remove</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a4cdf97a0ac9e4848892db4e2b6dc78d0">update</a>() = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a1d8009b52bf6ed851eece7ca70709b3b">begin</a>() = 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#acfabd4911411ebbfd96d4080103f4725">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#acfabd4911411ebbfd96d4080103f4725">enable</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    /// Update this updatable.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a4cdf97a0ac9e4848892db4e2b6dc78d0">update</a>() = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">    /// Initialize this updatable.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a1d8009b52bf6ed851eece7ca70709b3b">begin</a>() = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    /// Enable this updatable: insert it into the linked list of instances,</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    /// so it gets updated automatically</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#acfabd4911411ebbfd96d4080103f4725">   41</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#acfabd4911411ebbfd96d4080103f4725">enable</a>() {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d">isEnabled</a>()) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="../../db/d16/group__Error.html#ga7eae7037bf6cdc6bf5d46a11572194db">ERROR</a>(F(<span class="stringliteral">&quot;Error: This element is already enabled.&quot;</span>), 0x1212);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#a3c067d3d91d183268148650708108be6">append</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a9cf409bc7effa13042ebd1d1e02d1046">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a9cf409bc7effa13042ebd1d1e02d1046">disable</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    /// Disable this updatable: remove it from the linked list of instances,</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    /// so it no longer gets updated automatically</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a9cf409bc7effa13042ebd1d1e02d1046">   51</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a9cf409bc7effa13042ebd1d1e02d1046">disable</a>() {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d">isEnabled</a>()) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="../../db/d16/group__Error.html#ga7eae7037bf6cdc6bf5d46a11572194db">ERROR</a>(F(<span class="stringliteral">&quot;Error: This element is already disabled.&quot;</span>), 0x1213);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#aaa6f6639ed722c4836d8f4a53a3e4c13">remove</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @brief   Check if this updatable is enabled.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * @note    Assumes that the updatable is not added to a different linked </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     *          list by the user.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d">isEnabled</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>.<a class="code" href="../../dd/d16/classDoublyLinkedList.html#ad5f6720a2d9ac9590fae337b2c5a744a">couldContain</a>(<span class="keyword">this</span>); }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a5c008d0d20b072e46c14b9c48ec6c45b">   69</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a5c008d0d20b072e46c14b9c48ec6c45b">beginAll</a>() {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    /// Begin all enabled instances of this class</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    /// @see    begin()</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a5c008d0d20b072e46c14b9c48ec6c45b">   69</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a5c008d0d20b072e46c14b9c48ec6c45b">beginAll</a>() {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../d5/de0/classUpdatable.html">Updatable</a> &amp;el : <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            el.begin();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a8af924e5b3b708eb042919703d175ed3">   76</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a8af924e5b3b708eb042919703d175ed3">updateAll</a>() {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">    /// Update all enabled instances of this class</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    /// @see    update()</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d5/de0/classUpdatable.html#a8af924e5b3b708eb042919703d175ed3">   76</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/de0/classUpdatable.html#a8af924e5b3b708eb042919703d175ed3">updateAll</a>() {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../d5/de0/classUpdatable.html">Updatable</a> &amp;el : <a class="code" href="../../d5/de0/classUpdatable.html#a5bc3e7765e22d65d65bd1f9e45b75d7e">updatables</a>)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            el.update();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>

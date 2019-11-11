@@ -71,7 +71,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Filters</div>  </div>
 </div><!--header-->
@@ -91,9 +92,49 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dcb/classHysteresis.html">Hysteresis&lt; BITS, T_in, T_out &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class for applying hysteresis to a given input.  <a href="../../d2/dcb/classHysteresis.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter&lt; N, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite Impulse Response filter implementation.  <a href="../../d3/d32/classFIRFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter&lt; NB, NA, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinite Impulse Response filter implementation that normalizes the coefficients upon initialization.  <a href="../../db/d07/classNormalizingIIRFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter&lt; NB, NA, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinite Impulse Response filter implementation that does not normalize the coefficients upon initialization, the division by \( a_0 \) is carried out on each filter iteration.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter&lt; NB, NA, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic Infinite Impulse Response filter class.  <a href="../../d5/d94/classIIRFilter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga8a323196012f0bcaed646c0875db12de"><td class="memTemplParams" colspan="2">template&lt;uint8_t NB, uint8_t NA, class T &gt; </td></tr>
+<tr class="memitem:ga8a323196012f0bcaed646c0875db12de"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">IIRImplementation</a> = typename std::conditional&lt; std::is_floating_point&lt; T &gt;::value, <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a>&lt; NB, NA, T &gt;, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt; &gt;::type</td></tr>
+<tr class="memdesc:ga8a323196012f0bcaed646c0875db12de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise.  <a href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">More...</a><br /></td></tr>
+<tr class="separator:ga8a323196012f0bcaed646c0875db12de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes for basic filtering and hysteresis. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga8a323196012f0bcaed646c0875db12de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a323196012f0bcaed646c0875db12de">&#9670;&nbsp;</a></span>IIRImplementation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t NB, uint8_t NA, class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">IIRImplementation</a> =  typename std::conditional&lt;std::is_floating_point&lt;T&gt;::value, <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a>&lt;NB, NA, T&gt;, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt;NB, NA, T&gt; &gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00205">205</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

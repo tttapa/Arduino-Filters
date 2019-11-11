@@ -84,8 +84,16 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AH/STL/utility&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<a class="code" href="../../dc/dc7/NamespaceSettings_8hpp.html#abe0f0e505619b6899c38363f4e42a272">BEGIN_AH_NAMESPACE</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/// @addtogroup    Containers</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// @{</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * @brief   Very basic smart pointer. Doesn&#39;t support array types.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @tparam  T</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *          The type of the pointee.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d0/ddd/classUniquePtr.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/ddd/classUniquePtr.html">UniquePtr</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
@@ -135,8 +143,9 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../db/d50/group__Containers.html#gabb4ce09bb1bbca704175a873b2a3f28a">   63</a></span>&#160;<a class="code" href="../../d0/ddd/classUniquePtr.html">UniquePtr&lt;T&gt;</a> <a class="code" href="../../db/d50/group__Containers.html#gabb4ce09bb1bbca704175a873b2a3f28a">MakeUnique</a>(Args &amp;&amp;... args) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/ddd/classUniquePtr.html">UniquePtr&lt;T&gt;</a>(<span class="keyword">new</span> T(std::forward&lt;Args&gt;(args)...));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// @}</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<a class="code" href="../../dc/dc7/NamespaceSettings_8hpp.html#a03ed68e9e3d1bbe9a28fd924cb7260c1">END_AH_NAMESPACE</a></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassUniquePtr_html_a67e1eb19852f0823af541f1249fde2ab"><div class="ttname"><a href="../../d0/ddd/classUniquePtr.html#a67e1eb19852f0823af541f1249fde2ab">UniquePtr::UniquePtr</a></div><div class="ttdeci">UniquePtr(T *p)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7e/UniquePtr_8hpp_source.html#l00021">UniquePtr.hpp:21</a></div></div>

@@ -88,7 +88,9 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifdef min</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#undef min</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/// Return the smaller of two numbers/objects.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span><span class="comment">/// @ingroup    Math</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../df/d13/group__Math.html#ga14defb38b6c00778e25b94ea91b0b4ac">   14</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="../../df/d13/group__Math.html#ga14defb38b6c00778e25b94ea91b0b4ac">min</a>(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> U &amp;b) -&gt; decltype(b &lt; a ? b : a) {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> b &lt; a ? b : a;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
@@ -96,7 +98,9 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef max</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#undef max</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// Return the larger of two numbers/objects.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span><span class="comment">/// @ingroup    Math</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/d13/group__Math.html#ga9e95297ceced5af9c60b19932989502d">   24</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="../../df/d13/group__Math.html#ga9e95297ceced5af9c60b19932989502d">max</a>(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> U &amp;b) -&gt; decltype(a &lt; b ? b : a) {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> a &lt; b ? b : a;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>

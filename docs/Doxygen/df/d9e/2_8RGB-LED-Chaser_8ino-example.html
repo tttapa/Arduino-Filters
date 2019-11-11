@@ -108,7 +108,63 @@ picture-in-picture" allowfullscreen></iframe>
 </p>
 <p>Written by Pieter P, 2018-07-13 <br  />
  <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
-<div class="fragment"><div class="line"> </div>
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * This is an example of the ShiftRegisterOut class of the Control Surface </span></div>
+<div class="line"><span class="comment"> * library. It creates light effects using three 8-bit shift registers and some</span></div>
+<div class="line"><span class="comment"> * RGB LEDs.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Teensy 3.x, ESP32</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Connections</span></div>
+<div class="line"><span class="comment"> * -----------</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Connect three daisy-chained shift registers to the SPI pins.  </span></div>
+<div class="line"><span class="comment"> * Connect 8 RGB LEDs (+ current limiting resistors) to the outputs of the shift</span></div>
+<div class="line"><span class="comment"> * registers.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * ```</span></div>
+<div class="line"><span class="comment"> * SCK   &gt;───────────┬──────────────────────┬──────────────────────┐</span></div>
+<div class="line"><span class="comment"> *           ┏━━━━━━━┷━━━━━━━┓      ┏━━━━━━━┷━━━━━━━┓      ┏━━━━━━━┷━━━━━━━┓</span></div>
+<div class="line"><span class="comment"> *           ┃     SH_CP     ┃      ┃     SH_CP     ┃      ┃     SH_CP     ┃</span></div>
+<div class="line"><span class="comment"> * MOSI  &gt;───┨ DS        Q7S ┠──────┨ DS        Q7S ┠──────┨ DS        Q7S ┃</span></div>
+<div class="line"><span class="comment"> *           ┃     ST_CP     ┃      ┃     ST_CP     ┃      ┃     ST_CP     ┃</span></div>
+<div class="line"><span class="comment"> *           ┗━━━━━━━┯━━━━━━━┛      ┗━━━━━━━┯━━━━━━━┛      ┗━━━━━━━┯━━━━━━━┛</span></div>
+<div class="line"><span class="comment"> * SS    &gt;───────────┴──────────────────────┴──────────────────────┘</span></div>
+<div class="line"><span class="comment"> * ```</span></div>
+<div class="line"><span class="comment"> * Remember to connect the enable pin of the shift register to ground and the </span></div>
+<div class="line"><span class="comment"> * master reset pin to Vcc in order to enable it.  </span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * The order of the colors doesn&#39;t matter. You can change them in software using</span></div>
+<div class="line"><span class="comment"> * the `ShiftRegisterOutRGB::redBit`, `ShiftRegisterOutRGB::greenBit` and </span></div>
+<div class="line"><span class="comment"> * `ShiftRegisterOutRGB::blueBit` constants.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * If you wired the LEDs as RGB (red first, then green and then blue), the red </span></div>
+<div class="line"><span class="comment"> * bit is 0, the green bit is 1 and the blue bit is 2.  </span></div>
+<div class="line"><span class="comment"> * If you wired the LEDs as BGR (blue first, then green and then red), the red</span></div>
+<div class="line"><span class="comment"> * bit is 2, the green bit is 1 and the blue bit is 0.  </span></div>
+<div class="line"><span class="comment"> * Other combinations are possible as well.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Behavior</span></div>
+<div class="line"><span class="comment"> * --------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * This example will turn on all red LEDs one by one, then turn them off one by</span></div>
+<div class="line"><span class="comment"> * one, next, it will turn on and off all green LEDs in the same manner, and</span></div>
+<div class="line"><span class="comment"> * finally the same for the blue LEDs. This is repeated indefinitely.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Demo</span></div>
+<div class="line"><span class="comment"> * ----</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @htmlonly</span></div>
+<div class="line"><span class="comment"> * &lt;iframe width=&quot;560&quot; height=&quot;315&quot;</span></div>
+<div class="line"><span class="comment"> * src=&quot;https://www.youtube.com/embed/7ywcTTdnseU?loop=1&quot; frameborder=&quot;0&quot;</span></div>
+<div class="line"><span class="comment"> * allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope;</span></div>
+<div class="line"><span class="comment"> * picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</span></div>
+<div class="line"><span class="comment"> * @endhtmlonly</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Written by Pieter P, 2018-07-13  </span></div>
+<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/de6/Arduino__Helpers_8h.html">Arduino_Helpers.h</a>&gt;</span> <span class="comment">// Include the Arduino Helpers library.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d88/SPIShiftRegisterOut_8hpp.html">AH/Hardware/ExtendedInputOutput/SPIShiftRegisterOut.hpp</a>&gt;</span></div>
 <div class="line"> </div>

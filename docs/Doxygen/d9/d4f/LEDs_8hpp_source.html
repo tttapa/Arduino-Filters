@@ -85,17 +85,43 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dd/ddf/ExtendedInputOutput_8hpp.html">AH/Hardware/ExtendedInputOutput/ExtendedInputOutput.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<a class="code" href="../../dc/dc7/NamespaceSettings_8hpp.html#abe0f0e505619b6899c38363f4e42a272">BEGIN_AH_NAMESPACE</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * @brief   A class for collections of LEDs that can display ranges.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * @tparam  N</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *          The number of LEDs in the collection.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @ingroup HardwareUtils</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>8_t N&gt;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d1b/classLEDs.html">LEDs</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     * @brief   Create a LEDs object.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">     * @param   ledPins</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     *          An array of pins with the LEDs connected.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a2105ed4f186746992dfcb8768d3a9b8c">   26</a></span>&#160;    <a class="code" href="../../d2/d1b/classLEDs.html#a2105ed4f186746992dfcb8768d3a9b8c">LEDs</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d6a/structArray.html">PinList&lt;N&gt;</a> &amp;<a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>) : <a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>(<a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>) {}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * @brief   Initialize (set LED pins as outputs).</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#af3aa0b3cc118a008ddcf1ad3af5bed26">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#af3aa0b3cc118a008ddcf1ad3af5bed26">begin</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d4/d35/Hardware-Types_8hpp.html#ae9cbfef0ba7a84ef222eff1fc509f88b">pin_t</a> &amp;pin : <a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="../../d8/d3d/namespaceExtIO.html#aab1cbf2a78b56e576a536d371e1984ef">ExtIO::pinMode</a>(pin, <a class="code" href="../../dd/ddf/ExtendedInputOutput_8hpp.html#afe385e49d42243d0f7eee016aee5d7b9">OUTPUT</a>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @brief   Turn on a range of the LEDs.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param   startOn</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     *          The first LED of the range to turn on (the LEDs before this one</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     *          are turned off).</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * @param   startOff</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     *          The first LED after the range to turn off.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#ae9224faaf1b3cf09fa6f1e3e5e6a60d7">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#ae9224faaf1b3cf09fa6f1e3e5e6a60d7">displayRange</a>(uint8_t startOn, uint8_t startOff)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (uint8_t pin = 0; pin &lt; startOn; pin++)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="../../d2/d1b/classLEDs.html#a8ed86546372503f3e41ca6c93b795306">clear</a>(pin);</div>
@@ -104,19 +130,30 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (uint8_t pin = startOff; pin &lt; N; pin++)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="../../d2/d1b/classLEDs.html#a8ed86546372503f3e41ca6c93b795306">clear</a>(pin);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a59b036bb0ab791950c5edb93c7af28c4">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a59b036bb0ab791950c5edb93c7af28c4">set</a>(uint8_t index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    /// Turn on the given LED.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a59b036bb0ab791950c5edb93c7af28c4">   55</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a59b036bb0ab791950c5edb93c7af28c4">set</a>(uint8_t index)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// TODO: bounds check?</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d8/d3d/namespaceExtIO.html#af83b2f2728401bf8efea42049ceb7dcd">ExtIO::digitalWrite</a>(<a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>[index], <a class="code" href="../../dd/ddf/ExtendedInputOutput_8hpp.html#acecd29798f132930ae1bfbe527f41e8d">HIGH</a>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a3b50de8bb4edc47dc02c668e1a26524b">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a3b50de8bb4edc47dc02c668e1a26524b">clear</a>(uint8_t index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">    /// Turn off the given LED.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a3b50de8bb4edc47dc02c668e1a26524b">   61</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a3b50de8bb4edc47dc02c668e1a26524b">clear</a>(uint8_t index)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// TODO: bounds check?</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d8/d3d/namespaceExtIO.html#af83b2f2728401bf8efea42049ceb7dcd">ExtIO::digitalWrite</a>(<a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>[index], <a class="code" href="../../dd/ddf/ExtendedInputOutput_8hpp.html#a948017cfe0ff222ceee310d1db10173d">LOW</a>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @brief   Turn on a single LED, and turn off all others.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     * @param   led</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     *          The LED to turn on.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a5b1fd8012e2295e5519d1bf06293660a">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a5b1fd8012e2295e5519d1bf06293660a">displayDot</a>(uint8_t led)<span class="keyword"> const </span>{ <a class="code" href="../../d2/d1b/classLEDs.html#ae9224faaf1b3cf09fa6f1e3e5e6a60d7">displayRange</a>(led, led + 1); }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * @brief   Turn off all LEDs.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d2/d1b/classLEDs.html#a8ed86546372503f3e41ca6c93b795306">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d1b/classLEDs.html#a8ed86546372503f3e41ca6c93b795306">clear</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../d4/d35/Hardware-Types_8hpp.html#ae9cbfef0ba7a84ef222eff1fc509f88b">pin_t</a> pin : <a class="code" href="../../d2/d1b/classLEDs.html#ad52b5ac6bc0f69fc3d44b0c36d2a4fee">ledPins</a>)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="../../d8/d3d/namespaceExtIO.html#af83b2f2728401bf8efea42049ceb7dcd">ExtIO::digitalWrite</a>(pin, <a class="code" href="../../dd/ddf/ExtendedInputOutput_8hpp.html#a948017cfe0ff222ceee310d1db10173d">LOW</a>);</div>

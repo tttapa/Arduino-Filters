@@ -92,7 +92,34 @@ Connections</h2>
 Behavior</h2>
 <p>This sketch will blink the LED once a second.</p>
 <p>Written by PieterP, 2018-09-01 <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
-<div class="fragment"><div class="line"> </div>
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * This example demonstrates the use of shift registers as if they were just</span></div>
+<div class="line"><span class="comment"> * normal IO pins. The SPI interface is used because it&#39;s easy and fast.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Teensy 3.x, ESP32</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connections</span></div>
+<div class="line"><span class="comment"> * -----------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> *   - SS:   74HC595 ST_CP</span></div>
+<div class="line"><span class="comment"> *   - MOSI: 74HC595 DS</span></div>
+<div class="line"><span class="comment"> *   - SCK:  74HC595 SH_CP</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connect an LED (and series resistor) between the first output of the</span></div>
+<div class="line"><span class="comment"> * shift register and ground.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Remember to connect the enable pin of the shift register to ground and the </span></div>
+<div class="line"><span class="comment"> * master reset pin to Vcc in order to enable it.  </span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Behavior</span></div>
+<div class="line"><span class="comment"> * --------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * This sketch will blink the LED once a second.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Written by PieterP, 2018-09-01</span></div>
+<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/de6/Arduino__Helpers_8h.html">Arduino_Helpers.h</a>&gt;</span> <span class="comment">// Include the Arduino Helpers library.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d88/SPIShiftRegisterOut_8hpp.html">AH/Hardware/ExtendedInputOutput/SPIShiftRegisterOut.hpp</a>&gt;</span></div>
 <div class="line"> </div>

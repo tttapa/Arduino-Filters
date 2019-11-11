@@ -95,7 +95,44 @@ Behavior</h2>
 <p>Open the serial monitor (CTRL+SHIFT+M) or the serial plotter (CTRL+SHIFT+L), and press some buttons, you should see all 16 signals printed or plotted.</p>
 <p>Written by Pieter P, 2019-08-08 <br  />
  <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
-<div class="fragment"><div class="line"> </div>
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * This is an example of the AnalogMultiplex class. It prints the states of all</span></div>
+<div class="line"><span class="comment"> * 16 switches connected to a multiplexers to the serial monitor.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Teensy 3.x, ESP32</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connections</span></div>
+<div class="line"><span class="comment"> * -----------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> *  - 2: CD74HC4067 signal pin (&quot;common input/output&quot;)</span></div>
+<div class="line"><span class="comment"> *  - 3: CD74HC4067 address pin S0</span></div>
+<div class="line"><span class="comment"> *  - 4: CD74HC4067 address pin S1</span></div>
+<div class="line"><span class="comment"> *  - 5: CD74HC4067 address pin S2</span></div>
+<div class="line"><span class="comment"> *  - 6: CD74HC4067 address pin S3</span></div>
+<div class="line"><span class="comment"> *  </span></div>
+<div class="line"><span class="comment"> * Optionally you can connect the enable pin as well, this is useful</span></div>
+<div class="line"><span class="comment"> * if you want to use multiple multiplexers with the same address </span></div>
+<div class="line"><span class="comment"> * lines and the same analog input. Otherwise, just connect the enable</span></div>
+<div class="line"><span class="comment"> * pin to ground.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * If you are using a 3-bit multiplexer, like the CD74HC4051, you can</span></div>
+<div class="line"><span class="comment"> * uncomment the code specific to this multiplexer, and use only three</span></div>
+<div class="line"><span class="comment"> * address pins.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connect a switch or push button between each input pin of the multiplexer and</span></div>
+<div class="line"><span class="comment"> * ground. A pull-up resistor is not necessary, because we&#39;ll use the internal </span></div>
+<div class="line"><span class="comment"> * one.</span></div>
+<div class="line"><span class="comment"> *  </span></div>
+<div class="line"><span class="comment"> * Behavior</span></div>
+<div class="line"><span class="comment"> * --------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Open the serial monitor (CTRL+SHIFT+M) or the serial plotter (CTRL+SHIFT+L),</span></div>
+<div class="line"><span class="comment"> * and press some buttons, you should see all 16 signals printed or plotted.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Written by Pieter P, 2019-08-08   </span></div>
+<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/de6/Arduino__Helpers_8h.html">Arduino_Helpers.h</a>&gt;</span> <span class="comment">// Include the Arduino Helpers library</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d7/def/AnalogMultiplex_8hpp.html">AH/Hardware/ExtendedInputOutput/AnalogMultiplex.hpp</a>&gt;</span></div>
 <div class="line"> </div>

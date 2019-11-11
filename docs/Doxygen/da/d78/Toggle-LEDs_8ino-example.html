@@ -100,7 +100,50 @@ Behavior</h2>
 <p>Pressing the first button will turn on the first LED. Pressing it again will turn it off again. Pressing the second button will turn on the second LED. Pressing it again will turn it off again, and so on.</p>
 <p>Written by PieterP, 2018-08-28 <br  />
  <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
-<div class="fragment"><div class="line"> </div>
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * This example demonstrates the use of push buttons and LEDs and how to use</span></div>
+<div class="line"><span class="comment"> * shift registers and analog multiplexers to save pins.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Teensy 3.x, ESP32</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connections</span></div>
+<div class="line"><span class="comment"> * -----------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> *   - SS:   74HC595 ST_CP</span></div>
+<div class="line"><span class="comment"> *   - MOSI: 74HC595 DS</span></div>
+<div class="line"><span class="comment"> *   - SCK:  74HC595 SH_CP</span></div>
+<div class="line"><span class="comment"> *   - 2: 74HC4067 A (COM OUT/IN)</span></div>
+<div class="line"><span class="comment"> *   - 3: 74HC4067 S0</span></div>
+<div class="line"><span class="comment"> *   - 4: 74HC4067 S1</span></div>
+<div class="line"><span class="comment"> *   - 5: 74HC4067 S2</span></div>
+<div class="line"><span class="comment"> *   - 6: 74HC4067 S3</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connect 16 momentary push buttons between the input pins of the </span></div>
+<div class="line"><span class="comment"> * multiplexer and ground.  </span></div>
+<div class="line"><span class="comment"> * The internal pull-up resistor for the buttons will be enabled automatically,</span></div>
+<div class="line"><span class="comment"> * so no external resistors are necessary.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connect 16 LEDs (and series resistors) between the eight outputs of the</span></div>
+<div class="line"><span class="comment"> * two shift registers and ground. </span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Remember to connect the enable pins of both the multiplexer and the shift</span></div>
+<div class="line"><span class="comment"> * registers to ground in order to enable them. Also connect the master reset </span></div>
+<div class="line"><span class="comment"> * pin of the shift registers to Vcc.  </span></div>
+<div class="line"><span class="comment"> * Connect the serial data output of the first shift register (QH&#39; or Q7S) to</span></div>
+<div class="line"><span class="comment"> * the serial input of the second shift register.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Behavior</span></div>
+<div class="line"><span class="comment"> * --------</span></div>
+<div class="line"><span class="comment"> *  </span></div>
+<div class="line"><span class="comment"> * Pressing the first button will turn on the first LED. Pressing it again will</span></div>
+<div class="line"><span class="comment"> * turn it off again.</span></div>
+<div class="line"><span class="comment"> * Pressing the second button will turn on the second LED. Pressing it again </span></div>
+<div class="line"><span class="comment"> * will turn it off again, and so on.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Written by PieterP, 2018-08-28  </span></div>
+<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/de6/Arduino__Helpers_8h.html">Arduino_Helpers.h</a>&gt;</span> <span class="comment">// Include the Arduino Helpers library.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/db6/ArrayHelpers_8hpp.html">AH/Containers/ArrayHelpers.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d4/db3/Button_8hpp.html">AH/Hardware/Button.hpp</a>&gt;</span></div>

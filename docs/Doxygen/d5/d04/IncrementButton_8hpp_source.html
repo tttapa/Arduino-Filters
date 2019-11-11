@@ -85,24 +85,56 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/db3/Button_8hpp.html">Button.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<a class="code" href="../../dc/dc7/NamespaceSettings_8hpp.html#abe0f0e505619b6899c38363f4e42a272">BEGIN_AH_NAMESPACE</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * @brief   A class for buttons that increment some counter or setting.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * It behaves the same way as a computer keyboard: when you press the button, </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * it increments the counter once. If you keep on pressing it for longer than</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * a certain threshold, it keeps on incrementing at a faster rate, until you</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * release it.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @ingroup HardwareUtils</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d38/classIncrementButton.html">IncrementButton</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">    /** </span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     * @brief   Create a IncrementButton.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     * @param   button</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     *          The button to read from.  </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     *          The button is copied.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#ad0133d3b080fa4093b24ade7acd2f2c1">   28</a></span>&#160;    <a class="code" href="../../df/d38/classIncrementButton.html#ad0133d3b080fa4093b24ade7acd2f2c1">IncrementButton</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d19/classButton.html">Button</a> &amp;<a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>) : <a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>(<a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>) {}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a03eb36a87c5651067e384134843bdb65">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d38/classIncrementButton.html#a03eb36a87c5651067e384134843bdb65">begin</a>() { <a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>.<a class="code" href="../../d1/d19/classButton.html#a666adf00bc92a8b264758abfa655a6a4">begin</a>(); }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    /// @see     Button::begin</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a03eb36a87c5651067e384134843bdb65">   31</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="../../df/d38/classIncrementButton.html#a03eb36a87c5651067e384134843bdb65">begin</a>() { <a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>.<a class="code" href="../../d1/d19/classButton.html#a666adf00bc92a8b264758abfa655a6a4">begin</a>(); }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * @brief   An enumeration of the different actions to be performed by the</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     *          counter.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * @todo    Add states for initial press.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753c">   38</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753c">State</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753cafc014f7a2e261e61037b06317166b2dd">   39</a></span>&#160;        <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753cafc014f7a2e261e61037b06317166b2dd">Nothing</a> = 0, </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753ca1c40de72a61916bbe238020067501963">   40</a></span>&#160;        <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753ca1c40de72a61916bbe238020067501963">Increment</a>,   </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753cafc014f7a2e261e61037b06317166b2dd">   39</a></span>&#160;        <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753cafc014f7a2e261e61037b06317166b2dd">Nothing</a> = 0, <span class="comment">///&lt; The counter must not be incremented.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753ca1c40de72a61916bbe238020067501963">   40</a></span>&#160;<span class="comment"></span>        <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753ca1c40de72a61916bbe238020067501963">Increment</a>,   <span class="comment">///&lt; The counter must be incremented.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span>    };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * @brief   Update and return the state of the increment button.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#a29191b973840543f6e9ce409d6d5da23">   46</a></span>&#160;    <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753c">State</a> <a class="code" href="../../df/d38/classIncrementButton.html#a29191b973840543f6e9ce409d6d5da23">update</a>() { <span class="keywordflow">return</span> <a class="code" href="../../df/d38/classIncrementButton.html#a7bd4d43fb76427c928ed30b0c5544342">state</a> = <a class="code" href="../../df/d38/classIncrementButton.html#ae990acd54c9a56511bfdbcdc405ae31b">updateImplementation</a>(); }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @brief   Return the state of the increment button without updating it.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * Returns the same value as the last @ref update call.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../df/d38/classIncrementButton.html#ad3323ee03018dc853932963824ce1091">   53</a></span>&#160;    <a class="code" href="../../df/d38/classIncrementButton.html#a37fb5e087715edfdb4ab30209c83753c">State</a> <a class="code" href="../../df/d38/classIncrementButton.html#ad3323ee03018dc853932963824ce1091">getState</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../df/d38/classIncrementButton.html#a7bd4d43fb76427c928ed30b0c5544342">state</a>; }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef AH_INDIVIDUAL_BUTTON_INVERT</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> invert() { <a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>.<a class="code" href="../../d1/d19/classButton.html#a1027f25dee91c915849d531515365aab">invert</a>(); }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    /// @see    Button::invert</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> invert() { <a class="code" href="../../df/d38/classIncrementButton.html#a07b9b3c44da829321715e2caec5ee427">button</a>.<a class="code" href="../../d1/d19/classButton.html#a1027f25dee91c915849d531515365aab">invert</a>(); }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">protected</span>:</div>
