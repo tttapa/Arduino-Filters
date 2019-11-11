@@ -7,16 +7,15 @@
 /// @{
 
 /** 
- * @brief   Infinite Impulse Response filter implementation that normalizes the
- *          coefficients upon initialization.
+ * @brief   Infinite Impulse Response filter implementation that does not 
+ *          normalize the coefficients upon initialization, the division by 
+ *          @f$ a_0 @f$ is carried out on each filter iteration.
  * 
- * This class is faster, because each filter iteration involves only addition
- * and multiplication, no divisions.  
- * It works great for floating point numbers, but might be less ideal
- * for integer types, because it can create large rounding errors on the 
- * coefficients.
+ * This class is slower than @ref NormalizingIIRFilter, but it works better
+ * for integer types, because it has no rounding error on the coefficients.
  * 
- * Implements the following difference equation:
+ * Implements the following difference equation using the Direct-Form 1 
+ * implementation:
  * 
  * @f[
  * y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i]
@@ -24,10 +23,10 @@
  * @f]
  */
 template <uint8_t NB, uint8_t NA, class T>
-class NormalizingIIRFilter {
+class NonNormalizingIIRFilter {
   public:
     /**
-     * @brief   Construct a new Normalizing IIR Filter object.
+     * @brief   Construct a new Non-Normalizing IIR Filter object.
      * 
      * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer
      * function:
@@ -42,8 +41,8 @@ class NormalizingIIRFilter {
      * @param   a_coefficients 
      *          The coefficients of the transfer function denominator.
      */
-    NormalizingIIRFilter(const AH::Array<T, NB> &b_coefficients,
-                         const AH::Array<T, NA> &a_coefficients)
+    NonNormalizingIIRFilter(const AH::Array<T, NB> &b_coefficients,
+                            const AH::Array<T, NA> &a_coefficients)
         : a0(a_coefficients[0]) {
         for (uint8_t i = 0; i < 2 * NB - 1; ++i)
             this->b_coefficients[i] = b_coefficients[(2 * NB - 1 - i) % NB];
@@ -95,22 +94,25 @@ class NormalizingIIRFilter {
   private:
     constexpr static uint8_t MA = NA - 1;
     uint8_t index_b = 0, index_a = 0;
-    AH::Array<T, NB> x = {};
-    AH::Array<T, MA> y = {};
-    AH::Array<T, 2 * NB - 1> b_coefficients;
-    AH::Array<T, 2 * MA - 1> a_coefficients;
+    AH::Array<T, NB> x = {};                 ///< Previous inputs
+    AH::Array<T, MA> y = {};                 ///< Previous outputs
+    AH::Array<T, 2 * NB - 1> b_coefficients; ///< Numerator coefficients
+    AH::Array<T, 2 * MA - 1> a_coefficients; ///< Denominator coefficients
     T a0;
 };
 
 /** 
- * @brief   Infinite Impulse Response filter implementation that does not 
- *          normalize the coefficients upon initialization, the division by 
- *          @f$ a_0 @f$ is carried out on each filter iteration.
+ * @brief   Infinite Impulse Response filter implementation that normalizes the
+ *          coefficients upon initialization.
  * 
- * This class is slower than @ref NormalizingIIRFilter, but it works better
- * for integer types, because it has no rounding error on the coefficients.
+ * This class is faster than @ref NonNormalizingIIRFilter, because each filter 
+ * iteration involves only addition and multiplication, no divisions.  
+ * It works great for floating point numbers, but might be less ideal
+ * for integer types, because it can create large rounding errors on the 
+ * coefficients.
  * 
- * Implements the following difference equation:
+ * Implements the following difference equation using the Direct-Form 1 
+ * implementation:
  * 
  * @f[
  * y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i]
@@ -118,10 +120,10 @@ class NormalizingIIRFilter {
  * @f]
  */
 template <uint8_t NB, uint8_t NA, class T>
-class NonNormalizingIIRFilter {
+class NormalizingIIRFilter {
   public:
     /**
-     * @brief   Construct a new Non-Normalizing IIR Filter object.
+     * @brief   Construct a new Normalizing IIR Filter object.
      * 
      * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer
      * function:
@@ -136,8 +138,8 @@ class NonNormalizingIIRFilter {
      * @param   a_coefficients 
      *          The coefficients of the transfer function denominator.
      */
-    NonNormalizingIIRFilter(const AH::Array<T, NB> &b_coefficients,
-                            const AH::Array<T, NA> &a_coefficients) {
+    NormalizingIIRFilter(const AH::Array<T, NB> &b_coefficients,
+                         const AH::Array<T, NA> &a_coefficients) {
         T a0 = a_coefficients[0];
         for (uint8_t i = 0; i < 2 * NB - 1; ++i)
             this->b_coefficients[i] =
@@ -210,7 +212,8 @@ using IIRImplementation =
  * Uses the @ref NormalizingIIRFilter implementation for floating point 
  * types, and @ref NonNormalizingIIRFilter for all other types. 
  * 
- * Implements the following difference equation:
+ * Implements the following difference equation using the Direct-Form 1 
+ * implementation:
  * 
  * @f[
  * y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i]
