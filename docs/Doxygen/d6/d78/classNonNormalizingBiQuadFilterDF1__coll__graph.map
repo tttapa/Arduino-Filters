@@ -1,3 +1,4 @@
-<map id="NonNormalizingBiQuadFilterDF1" name="NonNormalizingBiQuadFilterDF1">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,237,171"/>
+<map id="NonNormalizingBiQuadFilterDF1&lt; T &gt;" name="NonNormalizingBiQuadFilterDF1&lt; T &gt;">
+<area shape="rect" id="node1" title="BiQuad filter Direct Form 1 implementation that does not normalize the coefficients upon initializati..." alt="" coords="5,145,237,325"/>
+<area shape="rect" id="node2" title=" " alt="" coords="102,5,141,83"/>
 </map>

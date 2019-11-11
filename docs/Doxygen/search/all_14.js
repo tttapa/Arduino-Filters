@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_478',['y',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#aacb8df5cfb3f55c7d6589ae0e3b6a640',1,'NormalizingBiQuadFilterDF1::y()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a998fcc07e83cc0a22cd783a25da2aa53',1,'NonNormalizingBiQuadFilterDF1::y()'],['../db/d07/classNormalizingIIRFilter.html#a579e1c18223baafc0c0c4fc3f99fe97f',1,'NormalizingIIRFilter::y()'],['../dc/d27/classNonNormalizingIIRFilter.html#aa74b8499c02914b3a7315d2b5863214c',1,'NonNormalizingIIRFilter::y()']]]
+  ['x_483',['x',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#a21dc52683b343282c5c096bb122d697d',1,'NormalizingBiQuadFilterDF1::x()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ae8e63be6258d708b0ed0284c33e802f2',1,'NonNormalizingBiQuadFilterDF1::x()'],['../d3/d32/classFIRFilter.html#a7cbed54f1098e2f4105e2291fe690169',1,'FIRFilter::x()'],['../dc/d27/classNonNormalizingIIRFilter.html#abed70b57900099456dc52df748d8f6f8',1,'NonNormalizingIIRFilter::x()'],['../db/d07/classNormalizingIIRFilter.html#a166a7473907bcac4b7058197bab79e2c',1,'NormalizingIIRFilter::x()']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arduino Filters: NonNormalizingBiQuadFilterDF1 Class Reference</title>
+<title>Arduino Filters: NonNormalizingBiQuadFilterDF1&lt; T &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -73,69 +73,90 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d31/classNonNormalizingBiQuadFilterDF1-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">NonNormalizingBiQuadFilterDF1 Class Reference</div>  </div>
+<div class="title">NonNormalizingBiQuadFilterDF1&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../d2/d5a/group__Filters.html">Filters</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>BiQuad filter Direct Form 1 implementation that does not normalize the coefficients upon initialization, the division by \( a_0 \) is carried out on each filter iteration.  
+ <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for NonNormalizingBiQuadFilterDF1:</div>
+Collaboration diagram for NonNormalizingBiQuadFilterDF1&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d78/classNonNormalizingBiQuadFilterDF1__coll__graph.svg" width="243" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d78/classNonNormalizingBiQuadFilterDF1__coll__graph.svg" width="243" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7d0bf2e74a5be5ac95e30913438327a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7d0bf2e74a5be5ac95e30913438327a5">NonNormalizingBiQuadFilterDF1</a> (const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a9d937037c72f36eb245b8009629803fb">b</a>, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a42365682b70eccc2a9c025a79403b323">a</a>)</td></tr>
-<tr class="separator:a7d0bf2e74a5be5ac95e30913438327a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab90167b924112b734d9aaea353663bfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ab90167b924112b734d9aaea353663bfa">NonNormalizingBiQuadFilterDF1</a> (const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a9d937037c72f36eb245b8009629803fb">b</a>, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a42365682b70eccc2a9c025a79403b323">a</a>, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> gain)</td></tr>
-<tr class="separator:ab90167b924112b734d9aaea353663bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4103af22e338ca6e4e7a883de79c185"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ae4103af22e338ca6e4e7a883de79c185">operator()</a> (<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> input)</td></tr>
-<tr class="separator:ae4103af22e338ca6e4e7a883de79c185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af292dadfa6f0d0a35873ff931dc5f361"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#af292dadfa6f0d0a35873ff931dc5f361">NonNormalizingBiQuadFilterDF1</a> (const AH::Array&lt; T, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a018ab7f50736b0233bc9dd1eb62dc836">b</a>, const AH::Array&lt; T, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7834db67376de6f37773e7a43bf68355">a</a>)</td></tr>
+<tr class="separator:af292dadfa6f0d0a35873ff931dc5f361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816fb86966c42a0dc6daf0a4eec3d122"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a816fb86966c42a0dc6daf0a4eec3d122">NonNormalizingBiQuadFilterDF1</a> (const AH::Array&lt; T, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a018ab7f50736b0233bc9dd1eb62dc836">b</a>, const AH::Array&lt; T, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7834db67376de6f37773e7a43bf68355">a</a>, T gain)</td></tr>
+<tr class="separator:a816fb86966c42a0dc6daf0a4eec3d122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2444ecd622000d76e7920cf8a1ca950a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a2444ecd622000d76e7920cf8a1ca950a">operator()</a> (T input)</td></tr>
+<tr class="memdesc:a2444ecd622000d76e7920cf8a1ca950a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a2444ecd622000d76e7920cf8a1ca950a">More...</a><br /></td></tr>
+<tr class="separator:a2444ecd622000d76e7920cf8a1ca950a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abaeca6aa46037ad0d5d22d8059d03385"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#abaeca6aa46037ad0d5d22d8059d03385">update</a> (<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> input, AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a0cf5b982d92f0c1cb2419dba6d553485">x</a>, AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a998fcc07e83cc0a22cd783a25da2aa53">y</a>, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a9d937037c72f36eb245b8009629803fb">b</a>, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a42365682b70eccc2a9c025a79403b323">a</a>)</td></tr>
-<tr class="separator:abaeca6aa46037ad0d5d22d8059d03385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f96f6fd05b4053d8560524a5edcce2"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a45f96f6fd05b4053d8560524a5edcce2">update</a> (T input, AH::Array&lt; T, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ae8e63be6258d708b0ed0284c33e802f2">x</a>, AH::Array&lt; T, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8c673d0382216a24a4f82a7efc6aaad8">y</a>, const AH::Array&lt; T, 3 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a018ab7f50736b0233bc9dd1eb62dc836">b</a>, const AH::Array&lt; T, 2 &gt; &amp;<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7834db67376de6f37773e7a43bf68355">a</a>, T <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a2ad80b43933d243f56007e7e3badd9ec">a0</a>)</td></tr>
+<tr class="separator:a45f96f6fd05b4053d8560524a5edcce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a0cf5b982d92f0c1cb2419dba6d553485"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a0cf5b982d92f0c1cb2419dba6d553485">x</a></td></tr>
-<tr class="separator:a0cf5b982d92f0c1cb2419dba6d553485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a998fcc07e83cc0a22cd783a25da2aa53"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a998fcc07e83cc0a22cd783a25da2aa53">y</a></td></tr>
-<tr class="separator:a998fcc07e83cc0a22cd783a25da2aa53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d937037c72f36eb245b8009629803fb"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a9d937037c72f36eb245b8009629803fb">b</a></td></tr>
-<tr class="separator:a9d937037c72f36eb245b8009629803fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42365682b70eccc2a9c025a79403b323"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a42365682b70eccc2a9c025a79403b323">a</a></td></tr>
-<tr class="separator:a42365682b70eccc2a9c025a79403b323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae8e63be6258d708b0ed0284c33e802f2"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ae8e63be6258d708b0ed0284c33e802f2">x</a> = {}</td></tr>
+<tr class="memdesc:ae8e63be6258d708b0ed0284c33e802f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous inputs.  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#ae8e63be6258d708b0ed0284c33e802f2">More...</a><br /></td></tr>
+<tr class="separator:ae8e63be6258d708b0ed0284c33e802f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c673d0382216a24a4f82a7efc6aaad8"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8c673d0382216a24a4f82a7efc6aaad8">y</a> = {}</td></tr>
+<tr class="memdesc:a8c673d0382216a24a4f82a7efc6aaad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous outputs.  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8c673d0382216a24a4f82a7efc6aaad8">More...</a><br /></td></tr>
+<tr class="separator:a8c673d0382216a24a4f82a7efc6aaad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018ab7f50736b0233bc9dd1eb62dc836"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a018ab7f50736b0233bc9dd1eb62dc836">b</a></td></tr>
+<tr class="memdesc:a018ab7f50736b0233bc9dd1eb62dc836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerator coefficients.  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a018ab7f50736b0233bc9dd1eb62dc836">More...</a><br /></td></tr>
+<tr class="separator:a018ab7f50736b0233bc9dd1eb62dc836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7834db67376de6f37773e7a43bf68355"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7834db67376de6f37773e7a43bf68355">a</a></td></tr>
+<tr class="memdesc:a7834db67376de6f37773e7a43bf68355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denominator coefficients.  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a7834db67376de6f37773e7a43bf68355">More...</a><br /></td></tr>
+<tr class="separator:a7834db67376de6f37773e7a43bf68355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad80b43933d243f56007e7e3badd9ec"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a2ad80b43933d243f56007e7e3badd9ec">a0</a></td></tr>
+<tr class="memdesc:a2ad80b43933d243f56007e7e3badd9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">First denominator coefficient.  <a href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a2ad80b43933d243f56007e7e3badd9ec">More...</a><br /></td></tr>
+<tr class="separator:a2ad80b43933d243f56007e7e3badd9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00036">36</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class NonNormalizingBiQuadFilterDF1&lt; T &gt;</h3>
+
+<p>BiQuad filter Direct Form 1 implementation that does not normalize the coefficients upon initialization, the division by \( a_0 \) is carried out on each filter iteration. </p>
+<p>This class is slower than <a class="el" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html">NormalizingBiQuadFilterDF1</a>, but it works better for integer types, because it has no rounding error on the coefficients.</p>
+<p>Implements the following difference equation:</p>
+<p class="formulaDsp">
+\[ y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0} \]
+</p>
+ 
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7d0bf2e74a5be5ac95e30913438327a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d0bf2e74a5be5ac95e30913438327a5">&#9670;&nbsp;</a></span>NonNormalizingBiQuadFilterDF1() <span class="overload">[1/2]</span></h2>
+<a id="af292dadfa6f0d0a35873ff931dc5f361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af292dadfa6f0d0a35873ff931dc5f361">&#9670;&nbsp;</a></span>NonNormalizingBiQuadFilterDF1() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">NonNormalizingBiQuadFilterDF1::NonNormalizingBiQuadFilterDF1 </td>
+          <td class="memname"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
@@ -151,35 +172,37 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00038">38</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ab90167b924112b734d9aaea353663bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab90167b924112b734d9aaea353663bfa">&#9670;&nbsp;</a></span>NonNormalizingBiQuadFilterDF1() <span class="overload">[2/2]</span></h2>
+<a id="a816fb86966c42a0dc6daf0a4eec3d122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816fb86966c42a0dc6daf0a4eec3d122">&#9670;&nbsp;</a></span>NonNormalizingBiQuadFilterDF1() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">NonNormalizingBiQuadFilterDF1::NonNormalizingBiQuadFilterDF1 </td>
+          <td class="memname"><a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::<a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>gain</em>&#160;</td>
         </tr>
         <tr>
@@ -195,49 +218,57 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abaeca6aa46037ad0d5d22d8059d03385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaeca6aa46037ad0d5d22d8059d03385">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a45f96f6fd05b4053d8560524a5edcce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f96f6fd05b4053d8560524a5edcce2">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> NonNormalizingBiQuadFilterDF1::update </td>
+          <td class="memname">static T <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramtype">AH::Array&lt; T, 2 &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramtype">AH::Array&lt; T, 2 &gt; &amp;&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>a0</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -252,23 +283,25 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae4103af22e338ca6e4e7a883de79c185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4103af22e338ca6e4e7a883de79c185">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a2444ecd622000d76e7920cf8a1ca950a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2444ecd622000d76e7920cf8a1ca950a">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> NonNormalizingBiQuadFilterDF1::operator() </td>
+          <td class="memname">T <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
@@ -280,72 +313,157 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p>Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The new input \( x[n] \). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new output \( y[n] \). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00113">113</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0cf5b982d92f0c1cb2419dba6d553485"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cf5b982d92f0c1cb2419dba6d553485">&#9670;&nbsp;</a></span>x</h2>
+<a id="ae8e63be6258d708b0ed0284c33e802f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e63be6258d708b0ed0284c33e802f2">&#9670;&nbsp;</a></span>x</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2&gt; NonNormalizingBiQuadFilterDF1::x</td>
+          <td class="memname">AH::Array&lt;T, 2&gt; <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::x = {}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p>Previous inputs. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a998fcc07e83cc0a22cd783a25da2aa53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a998fcc07e83cc0a22cd783a25da2aa53">&#9670;&nbsp;</a></span>y</h2>
+<a id="a8c673d0382216a24a4f82a7efc6aaad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c673d0382216a24a4f82a7efc6aaad8">&#9670;&nbsp;</a></span>y</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2&gt; NonNormalizingBiQuadFilterDF1::y</td>
+          <td class="memname">AH::Array&lt;T, 2&gt; <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::y = {}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p>Previous outputs. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00117">117</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9d937037c72f36eb245b8009629803fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d937037c72f36eb245b8009629803fb">&#9670;&nbsp;</a></span>b</h2>
+<a id="a018ab7f50736b0233bc9dd1eb62dc836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018ab7f50736b0233bc9dd1eb62dc836">&#9670;&nbsp;</a></span>b</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 3&gt; NonNormalizingBiQuadFilterDF1::b</td>
+          <td class="memname">AH::Array&lt;T, 3&gt; <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::b</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p>Numerator coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a42365682b70eccc2a9c025a79403b323"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42365682b70eccc2a9c025a79403b323">&#9670;&nbsp;</a></span>a</h2>
+<a id="a7834db67376de6f37773e7a43bf68355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7834db67376de6f37773e7a43bf68355">&#9670;&nbsp;</a></span>a</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2&gt; NonNormalizingBiQuadFilterDF1::a</td>
+          <td class="memname">AH::Array&lt;T, 2&gt; <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::a</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p>Denominator coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2ad80b43933d243f56007e7e3badd9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad80b43933d243f56007e7e3badd9ec">&#9670;&nbsp;</a></span>a0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt;::a0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>First denominator coefficient. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00120">120</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>

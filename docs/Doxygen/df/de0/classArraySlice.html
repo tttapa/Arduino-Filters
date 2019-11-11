@@ -98,7 +98,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aec7b646182363a2e16befbb06dc482d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#aec7b646182363a2e16befbb06dc482d4">operator Array&lt; T, End - Start &gt;</a> () const</td></tr>
 <tr class="memdesc:aec7b646182363a2e16befbb06dc482d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion from slice to new array (creates a copy).  <a href="../../df/de0/classArraySlice.html#aec7b646182363a2e16befbb06dc482d4">More...</a><br /></td></tr>
 <tr class="separator:aec7b646182363a2e16befbb06dc482d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd2694f37752957a68a53fb933d87730"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, End - Start &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#afd2694f37752957a68a53fb933d87730">asArray</a> () const</td></tr>
+<tr class="memitem:afd2694f37752957a68a53fb933d87730"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; T, End - Start &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#afd2694f37752957a68a53fb933d87730">asArray</a> () const</td></tr>
 <tr class="separator:afd2694f37752957a68a53fb933d87730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a371449e4f94f84857e199ab0389b8a4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#a371449e4f94f84857e199ab0389b8a4a">operator[]</a> (size_t index) const</td></tr>
 <tr class="memdesc:a371449e4f94f84857e199ab0389b8a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the element at the given index.  <a href="../../df/de0/classArraySlice.html#a371449e4f94f84857e199ab0389b8a4a">More...</a><br /></td></tr>
@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a6a7c3fa67e8eb750f5e1f280ac6ef6a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a> = typename std::conditional&lt; Const, const <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N &gt; &amp;, <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N &gt; &amp; &gt;::type</td></tr>
+<tr class="memitem:a6a7c3fa67e8eb750f5e1f280ac6ef6a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a> = typename std::conditional&lt; Const, const <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; T, N &gt; &amp;, <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; T, N &gt; &amp; &gt;::type</td></tr>
 <tr class="separator:a6a7c3fa67e8eb750f5e1f280ac6ef6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f9f34cf6c014b8d0d732455c81541b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> = typename std::conditional&lt; Const, const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp; &gt;::type</td></tr>
+<tr class="memitem:a3f9f34cf6c014b8d0d732455c81541b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> = typename std::conditional&lt; Const, const T &amp;, T &amp; &gt;::type</td></tr>
 <tr class="separator:a3f9f34cf6c014b8d0d732455c81541b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -147,7 +147,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a> =  typename std::conditional&lt;Const, const <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N&gt; &amp;, <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N&gt; &amp;&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a> =  typename std::conditional&lt;Const, const <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;T, N&gt; &amp;, <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;T, N&gt; &amp;&gt;::type</td>
         </tr>
       </table>
   </td>
@@ -173,7 +173,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> =  typename std::conditional&lt;Const, const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> =  typename std::conditional&lt;Const, const T &amp;, T &amp;&gt;::type</td>
         </tr>
       </table>
   </td>
@@ -200,7 +200,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a> </td>
+          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::<a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a>&#160;</td>
           <td class="paramname"><em>array</em></td><td>)</td>
@@ -233,7 +233,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::operator <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, End - Start &gt; </td>
+          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::operator <a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt; T, End - Start &gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -264,7 +264,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, End - Start&gt; <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::asArray </td>
+          <td class="memname"><a class="el" href="../../d7/d6a/structArray.html">Array</a>&lt;T, End - Start&gt; <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::asArray </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -293,7 +293,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html#a3f9f34cf6c014b8d0d732455c81541b8">ElementRefType</a> <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -333,7 +333,7 @@ template&lt;class T, size_t N, size_t Start = 0, size_t End = N, bool Const = tr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a>&amp; <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N, Start, End, Const &gt;::array</td>
+          <td class="memname"><a class="el" href="../../df/de0/classArraySlice.html#a6a7c3fa67e8eb750f5e1f280ac6ef6a7">ArrayRefType</a>&amp; <a class="el" href="../../df/de0/classArraySlice.html">ArraySlice</a>&lt; T, N, Start, End, Const &gt;::array</td>
         </tr>
       </table>
   </td>

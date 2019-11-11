@@ -87,11 +87,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga46fa72568df66520decc1fd69b4d37be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the bit depth of the given value from <code>Bits_in</code> bits wide to <code>Bits_out</code> bits wide, evenly distributing the error across the entire range, such that the error for each element is between -0.5 and +0.5.  <a href="../../df/d13/group__Math.html#ga46fa72568df66520decc1fd69b4d37be">More...</a><br /></td></tr>
 <tr class="separator:ga46fa72568df66520decc1fd69b4d37be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga14defb38b6c00778e25b94ea91b0b4ac"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:ga14defb38b6c00778e25b94ea91b0b4ac"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d13/group__Math.html#ga14defb38b6c00778e25b94ea91b0b4ac">min</a> (const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;a, const U &amp;b) -&gt; decltype(b&lt; a ? b :a)</td></tr>
+<tr class="memitem:ga14defb38b6c00778e25b94ea91b0b4ac"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d13/group__Math.html#ga14defb38b6c00778e25b94ea91b0b4ac">min</a> (const T &amp;a, const U &amp;b) -&gt; decltype(b&lt; a ? b :a)</td></tr>
 <tr class="memdesc:ga14defb38b6c00778e25b94ea91b0b4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the smaller of two numbers/objects.  <a href="../../df/d13/group__Math.html#ga14defb38b6c00778e25b94ea91b0b4ac">More...</a><br /></td></tr>
 <tr class="separator:ga14defb38b6c00778e25b94ea91b0b4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9e95297ceced5af9c60b19932989502d"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:ga9e95297ceced5af9c60b19932989502d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d13/group__Math.html#ga9e95297ceced5af9c60b19932989502d">max</a> (const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;a, const U &amp;b) -&gt; decltype(a&lt; b ? b :a)</td></tr>
+<tr class="memitem:ga9e95297ceced5af9c60b19932989502d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d13/group__Math.html#ga9e95297ceced5af9c60b19932989502d">max</a> (const T &amp;a, const U &amp;b) -&gt; decltype(a&lt; b ? b :a)</td></tr>
 <tr class="memdesc:ga9e95297ceced5af9c60b19932989502d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the larger of two numbers/objects.  <a href="../../df/d13/group__Math.html#ga9e95297ceced5af9c60b19932989502d">More...</a><br /></td></tr>
 <tr class="separator:ga9e95297ceced5af9c60b19932989502d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -173,7 +173,7 @@ template&lt;class T , class U &gt; </div>
         <tr>
           <td class="memname">constexpr auto min </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -215,7 +215,7 @@ template&lt;class T , class U &gt; </div>
         <tr>
           <td class="memname">constexpr auto max </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>

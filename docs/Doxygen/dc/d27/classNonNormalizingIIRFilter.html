@@ -87,15 +87,15 @@ $(function() {
 <div class="dynheader">
 Collaboration diagram for NonNormalizingIIRFilter&lt; NB, NA, T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d8c/classNonNormalizingIIRFilter__coll__graph.svg" width="194" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d8c/classNonNormalizingIIRFilter__coll__graph.svg" width="194" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac46de06ab08790d4882a9334676a0ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ac46de06ab08790d4882a9334676a0ea6">NonNormalizingIIRFilter</a> (const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB &gt; &amp;<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a22d1f926312e8c6f7957b36245126320">b_coefficients</a>, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NA &gt; &amp;<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b">a_coefficients</a>)</td></tr>
+<tr class="memitem:ac46de06ab08790d4882a9334676a0ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ac46de06ab08790d4882a9334676a0ea6">NonNormalizingIIRFilter</a> (const AH::Array&lt; T, NB &gt; &amp;<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a22d1f926312e8c6f7957b36245126320">b_coefficients</a>, const AH::Array&lt; T, NA &gt; &amp;<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b">a_coefficients</a>)</td></tr>
 <tr class="memdesc:ac46de06ab08790d4882a9334676a0ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Non-Normalizing IIR Filter object.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#ac46de06ab08790d4882a9334676a0ea6">More...</a><br /></td></tr>
 <tr class="separator:ac46de06ab08790d4882a9334676a0ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f578f39cd64eaecf41bf8030f22993"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a16f578f39cd64eaecf41bf8030f22993">operator()</a> (<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> input)</td></tr>
+<tr class="memitem:a16f578f39cd64eaecf41bf8030f22993"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a16f578f39cd64eaecf41bf8030f22993">operator()</a> (T input)</td></tr>
 <tr class="memdesc:a16f578f39cd64eaecf41bf8030f22993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#a16f578f39cd64eaecf41bf8030f22993">More...</a><br /></td></tr>
 <tr class="separator:a16f578f39cd64eaecf41bf8030f22993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -105,14 +105,20 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3ff7feb9fe5c548399ca803a68297a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ac3716ffb5b21cf6fce0e51508931d7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a4ac3716ffb5b21cf6fce0e51508931d7">index_a</a> = 0</td></tr>
 <tr class="separator:a4ac3716ffb5b21cf6fce0e51508931d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed70b57900099456dc52df748d8f6f8"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#abed70b57900099456dc52df748d8f6f8">x</a> = {}</td></tr>
+<tr class="memitem:abed70b57900099456dc52df748d8f6f8"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, NB &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#abed70b57900099456dc52df748d8f6f8">x</a> = {}</td></tr>
+<tr class="memdesc:abed70b57900099456dc52df748d8f6f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous inputs.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#abed70b57900099456dc52df748d8f6f8">More...</a><br /></td></tr>
 <tr class="separator:abed70b57900099456dc52df748d8f6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa74b8499c02914b3a7315d2b5863214c"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#aa74b8499c02914b3a7315d2b5863214c">y</a> = {}</td></tr>
+<tr class="memitem:aa74b8499c02914b3a7315d2b5863214c"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#aa74b8499c02914b3a7315d2b5863214c">y</a> = {}</td></tr>
+<tr class="memdesc:aa74b8499c02914b3a7315d2b5863214c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous outputs.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#aa74b8499c02914b3a7315d2b5863214c">More...</a><br /></td></tr>
 <tr class="separator:aa74b8499c02914b3a7315d2b5863214c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22d1f926312e8c6f7957b36245126320"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 *NB - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a22d1f926312e8c6f7957b36245126320">b_coefficients</a></td></tr>
+<tr class="memitem:a22d1f926312e8c6f7957b36245126320"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 *NB - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a22d1f926312e8c6f7957b36245126320">b_coefficients</a></td></tr>
+<tr class="memdesc:a22d1f926312e8c6f7957b36245126320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerator coefficients.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#a22d1f926312e8c6f7957b36245126320">More...</a><br /></td></tr>
 <tr class="separator:a22d1f926312e8c6f7957b36245126320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17c86740476ee54d4689f9e037ca3d4b"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 *<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b">a_coefficients</a></td></tr>
+<tr class="memitem:a17c86740476ee54d4689f9e037ca3d4b"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 *<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b">a_coefficients</a></td></tr>
+<tr class="memdesc:a17c86740476ee54d4689f9e037ca3d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denominator coefficients.  <a href="../../dc/d27/classNonNormalizingIIRFilter.html#a17c86740476ee54d4689f9e037ca3d4b">More...</a><br /></td></tr>
 <tr class="separator:a17c86740476ee54d4689f9e037ca3d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f53b298c5c83ab50eb557ae4b8894ae"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#a3f53b298c5c83ab50eb557ae4b8894ae">a0</a></td></tr>
+<tr class="separator:a3f53b298c5c83ab50eb557ae4b8894ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -125,12 +131,12 @@ class NonNormalizingIIRFilter&lt; NB, NA, T &gt;</h3>
 
 <p>Infinite Impulse Response filter implementation that does not normalize the coefficients upon initialization, the division by \( a_0 \) is carried out on each filter iteration. </p>
 <p>This class is slower than <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a>, but it works better for integer types, because it has no rounding error on the coefficients.</p>
-<p>Implements the following difference equation:</p>
+<p>Implements the following difference equation using the Direct-Form 1 implementation:</p>
 <p class="formulaDsp">
 \[ y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i] - \sum_{i=1}^{N_a-1} a_i \cdot y[n-i] \right) \]
 </p>
  
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00121">121</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac46de06ab08790d4882a9334676a0ea6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac46de06ab08790d4882a9334676a0ea6">&#9670;&nbsp;</a></span>NonNormalizingIIRFilter()</h2>
@@ -144,15 +150,15 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> </td>
+          <td class="memname"><a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::<a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, NB &gt; &amp;&#160;</td>
           <td class="paramname"><em>b_coefficients</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NA &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, NA &gt; &amp;&#160;</td>
           <td class="paramname"><em>a_coefficients</em>&#160;</td>
         </tr>
         <tr>
@@ -181,7 +187,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00139">139</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,9 +204,9 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::operator() </td>
+          <td class="memname">T <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
@@ -221,7 +227,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new output \( y[n] \). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00158">158</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -238,7 +244,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::MA = NA - 1</td>
+          <td class="memname">constexpr static uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::MA = NA - 1</td>
         </tr>
       </table>
   </td>
@@ -248,7 +254,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00191">191</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +270,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::index_b = 0</td>
+          <td class="memname">uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::index_b = 0</td>
         </tr>
       </table>
   </td>
@@ -274,7 +280,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00192">192</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +296,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::index_a = 0</td>
+          <td class="memname">uint8_t <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::index_a = 0</td>
         </tr>
       </table>
   </td>
@@ -300,7 +306,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00192">192</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +322,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::x = {}</td>
+          <td class="memname">AH::Array&lt;T, NB&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::x = {}</td>
         </tr>
       </table>
   </td>
@@ -326,7 +332,9 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00193">193</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p>Previous inputs. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +350,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a>&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::y = {}</td>
+          <td class="memname">AH::Array&lt;T, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a>&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::y = {}</td>
         </tr>
       </table>
   </td>
@@ -352,7 +360,9 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00194">194</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p>Previous outputs. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +378,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 * NB - 1&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::b_coefficients</td>
+          <td class="memname">AH::Array&lt;T, 2 * NB - 1&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::b_coefficients</td>
         </tr>
       </table>
   </td>
@@ -378,7 +388,9 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00195">195</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p>Numerator coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00099">99</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +406,7 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 * <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> - 1&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::a_coefficients</td>
+          <td class="memname">AH::Array&lt;T, 2 * <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113">MA</a> - 1&gt; <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::a_coefficients</td>
         </tr>
       </table>
   </td>
@@ -404,7 +416,35 @@ template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00196">196</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p>Denominator coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00100">100</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3f53b298c5c83ab50eb557ae4b8894ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f53b298c5c83ab50eb557ae4b8894ae">&#9670;&nbsp;</a></span>a0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t NB, uint8_t NA, class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt;::a0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
 
 </div>
 </div>

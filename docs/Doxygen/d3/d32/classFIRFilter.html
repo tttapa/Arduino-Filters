@@ -91,10 +91,10 @@ Collaboration diagram for FIRFilter&lt; N, T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5d5d9ea297bd18a61d86ab93afa7cd88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a5d5d9ea297bd18a61d86ab93afa7cd88">FIRFilter</a> (const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N &gt; &amp;<a class="el" href="../../d3/d32/classFIRFilter.html#a6eb5a9ec1c3775fa1187c50593c3a898">coefficients</a>)</td></tr>
+<tr class="memitem:a5d5d9ea297bd18a61d86ab93afa7cd88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a5d5d9ea297bd18a61d86ab93afa7cd88">FIRFilter</a> (const AH::Array&lt; T, N &gt; &amp;<a class="el" href="../../d3/d32/classFIRFilter.html#a6eb5a9ec1c3775fa1187c50593c3a898">coefficients</a>)</td></tr>
 <tr class="memdesc:a5d5d9ea297bd18a61d86ab93afa7cd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new FIR Filter object.  <a href="../../d3/d32/classFIRFilter.html#a5d5d9ea297bd18a61d86ab93afa7cd88">More...</a><br /></td></tr>
 <tr class="separator:a5d5d9ea297bd18a61d86ab93afa7cd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaddc479b323e120e87d6113f903e02b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#aaaddc479b323e120e87d6113f903e02b">operator()</a> (<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> input)</td></tr>
+<tr class="memitem:aaaddc479b323e120e87d6113f903e02b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#aaaddc479b323e120e87d6113f903e02b">operator()</a> (T input)</td></tr>
 <tr class="memdesc:aaaddc479b323e120e87d6113f903e02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../d3/d32/classFIRFilter.html#aaaddc479b323e120e87d6113f903e02b">More...</a><br /></td></tr>
 <tr class="separator:aaaddc479b323e120e87d6113f903e02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -102,9 +102,9 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa8945fe8a11da2d5dad1e6150f1b49ea"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#aa8945fe8a11da2d5dad1e6150f1b49ea">index_b</a> = 0</td></tr>
 <tr class="separator:aa8945fe8a11da2d5dad1e6150f1b49ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cbed54f1098e2f4105e2291fe690169"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a7cbed54f1098e2f4105e2291fe690169">x</a> = {}</td></tr>
+<tr class="memitem:a7cbed54f1098e2f4105e2291fe690169"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a7cbed54f1098e2f4105e2291fe690169">x</a> = {}</td></tr>
 <tr class="separator:a7cbed54f1098e2f4105e2291fe690169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb5a9ec1c3775fa1187c50593c3a898"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 *N - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a6eb5a9ec1c3775fa1187c50593c3a898">coefficients</a></td></tr>
+<tr class="memitem:a6eb5a9ec1c3775fa1187c50593c3a898"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; T, 2 *N - 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/classFIRFilter.html#a6eb5a9ec1c3775fa1187c50593c3a898">coefficients</a></td></tr>
 <tr class="separator:a6eb5a9ec1c3775fa1187c50593c3a898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -131,9 +131,9 @@ template&lt;uint8_t N, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::<a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a> </td>
+          <td class="memname"><a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, T &gt;::<a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; T, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>coefficients</em></td><td>)</td>
           <td></td>
         </tr>
@@ -174,9 +174,9 @@ template&lt;uint8_t N, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::operator() </td>
+          <td class="memname">T <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
@@ -214,7 +214,7 @@ template&lt;uint8_t N, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::index_b = 0</td>
+          <td class="memname">uint8_t <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, T &gt;::index_b = 0</td>
         </tr>
       </table>
   </td>
@@ -240,7 +240,7 @@ template&lt;uint8_t N, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, N&gt; <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::x = {}</td>
+          <td class="memname">AH::Array&lt;T, N&gt; <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, T &gt;::x = {}</td>
         </tr>
       </table>
   </td>
@@ -266,7 +266,7 @@ template&lt;uint8_t N, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, 2 * N - 1&gt; <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::coefficients</td>
+          <td class="memname">AH::Array&lt;T, 2 * N - 1&gt; <a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; N, T &gt;::coefficients</td>
         </tr>
       </table>
   </td>
