@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['manipulator_894',['manipulator',['../dd/d80/PrintStream_8hpp.html#ab82cf12919f956954b9bba423b696205',1,'PrintStream.hpp']]],
-  ['mappingfunction_895',['MappingFunction',['../d4/d35/Hardware-Types_8hpp.html#a8a88619567eb674b733cb39ac9b06ad6',1,'Hardware-Types.hpp']]]
+  ['iirimplementation_929',['IIRImplementation',['../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de',1,'IIRFilter.hpp']]],
+  ['iterator_930',['iterator',['../dd/d16/classDoublyLinkedList.html#a00ad35f05ce61d50a4cb1e914aba50dd',1,'DoublyLinkedList']]],
+  ['iterator_5fcategory_931',['iterator_category',['../dd/d02/classDoublyLinkedList_1_1node__iterator.html#aa787edffd90be4e79d4a0fc26686ea6f',1,'DoublyLinkedList::node_iterator::iterator_category()'],['../d1/d4c/classDoublyLinkedList_1_1reverse__node__iterator.html#a75b6ebfbc28d2daea552509cd2d5ae31',1,'DoublyLinkedList::reverse_node_iterator::iterator_category()']]]
 ];

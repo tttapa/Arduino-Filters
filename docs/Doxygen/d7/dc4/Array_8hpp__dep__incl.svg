@@ -12,8 +12,8 @@
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="517.5,-336.5 517.5,-355.5 576.5,-355.5 576.5,-336.5 517.5,-336.5"/>
-<text text-anchor="middle" x="547" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Array.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="570.5,-336.5 570.5,-355.5 629.5,-355.5 629.5,-336.5 570.5,-336.5"/>
+<text text-anchor="middle" x="600" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Array.hpp</text>
 </a>
 </g>
 </g>
@@ -27,8 +27,8 @@
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M525.311,-330.714C490.121,-307.535 421.644,-262.43 393.043,-243.591"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="523.619,-333.791 533.896,-336.368 527.47,-327.945 523.619,-333.791"/>
+<path fill="none" stroke="midnightblue" d="M564.099,-333.051C540.793,-324.815 510.026,-313.035 484,-300 449.161,-282.551 410.987,-256.833 392.048,-243.585"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="563,-336.374 573.594,-336.356 565.301,-329.763 563,-336.374"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -40,8 +40,8 @@
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge14" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M518.052,-332.3C497.62,-323.318 469.611,-310.971 445,-300 300.789,-235.715 127.321,-157.157 70.7929,-131.526"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="516.863,-335.6 527.426,-336.418 519.679,-329.191 516.863,-335.6"/>
+<path fill="none" stroke="midnightblue" d="M560.704,-335.229C529.074,-326.974 483.674,-314.243 445,-300 295.433,-244.918 122.69,-158.963 68.8794,-131.642"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="559.907,-338.637 570.464,-337.748 561.656,-331.86 559.907,-338.637"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
@@ -53,34 +53,47 @@
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge15" class="edge"><title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M547,-325.805C547,-316.91 547,-306.78 547,-299.751"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="543.5,-326.083 547,-336.083 550.5,-326.083 543.5,-326.083"/>
+<path fill="none" stroke="midnightblue" d="M584.019,-328.718C574.678,-319.2 563.254,-307.561 555.589,-299.751"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="581.746,-331.398 591.248,-336.083 586.741,-326.494 581.746,-331.398"/>
 </g>
 <!-- Node30 -->
 <g id="node30" class="node"><title>Node30</title>
-<g id="a_node30"><a xlink:href="../../d2/d3b/FIRFilter_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="619,-280.5 619,-299.5 693,-299.5 693,-280.5 619,-280.5"/>
-<text text-anchor="middle" x="656" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">FIRFilter.hpp</text>
+<g id="a_node30"><a xlink:href="../../d1/dde/BiQuad_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="619,-280.5 619,-299.5 687,-299.5 687,-280.5 619,-280.5"/>
+<text text-anchor="middle" x="653" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">BiQuad.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node30 -->
 <g id="edge43" class="edge"><title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M573.519,-331.862C593.73,-321.849 620.987,-308.346 638.531,-299.655"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="571.92,-328.748 564.513,-336.324 575.027,-335.021 571.92,-328.748"/>
+<path fill="none" stroke="midnightblue" d="M615.981,-328.718C625.322,-319.2 636.746,-307.561 644.411,-299.751"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="613.259,-326.494 608.752,-336.083 618.254,-331.398 613.259,-326.494"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node"><title>Node31</title>
-<g id="a_node31"><a xlink:href="../../dc/d64/IIRFilter_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="711.5,-280.5 711.5,-299.5 782.5,-299.5 782.5,-280.5 711.5,-280.5"/>
-<text text-anchor="middle" x="747" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">IIRFilter.hpp</text>
+<g id="a_node31"><a xlink:href="../../d2/d3b/FIRFilter_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="705,-280.5 705,-299.5 779,-299.5 779,-280.5 705,-280.5"/>
+<text text-anchor="middle" x="742" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">FIRFilter.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node31 -->
 <g id="edge44" class="edge"><title>Node1&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M586.644,-334.296C624.413,-324.099 680.534,-308.946 715.385,-299.536"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="585.253,-331.046 576.511,-337.032 587.077,-337.804 585.253,-331.046"/>
+<path fill="none" stroke="midnightblue" d="M632.155,-332.772C658.828,-322.629 696.069,-308.467 719.605,-299.516"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="630.603,-329.618 622.5,-336.444 633.091,-336.16 630.603,-329.618"/>
+</g>
+<!-- Node32 -->
+<g id="node32" class="node"><title>Node32</title>
+<g id="a_node32"><a xlink:href="../../dc/d64/IIRFilter_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="797.5,-280.5 797.5,-299.5 868.5,-299.5 868.5,-280.5 797.5,-280.5"/>
+<text text-anchor="middle" x="833" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">IIRFilter.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node32 -->
+<g id="edge45" class="edge"><title>Node1&#45;&gt;Node32</title>
+<path fill="none" stroke="midnightblue" d="M639.317,-335.888C683.495,-325.649 754.593,-309.172 797.253,-299.285"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="638.461,-332.493 629.51,-338.161 640.042,-339.313 638.461,-332.493"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>

@@ -95,10 +95,10 @@ Collaboration diagram for IIRFilter&lt; NB, NA, T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a80d470da0d59ac174cd5bd34421eb028"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html#a80d470da0d59ac174cd5bd34421eb028">IIRFilter</a> (const AH::Array&lt; T, NB &gt; &amp;b_coefficients, const AH::Array&lt; T, NA &gt; &amp;a_coefficients)</td></tr>
+<tr class="memitem:a80d470da0d59ac174cd5bd34421eb028"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html#a80d470da0d59ac174cd5bd34421eb028">IIRFilter</a> (const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB &gt; &amp;b_coefficients, const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NA &gt; &amp;a_coefficients)</td></tr>
 <tr class="memdesc:a80d470da0d59ac174cd5bd34421eb028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new IIR Filter object.  <a href="../../d5/d94/classIIRFilter.html#a80d470da0d59ac174cd5bd34421eb028">More...</a><br /></td></tr>
 <tr class="separator:a80d470da0d59ac174cd5bd34421eb028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8f47b40f8339e4cb408a3fe6f1da290"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html#ab8f47b40f8339e4cb408a3fe6f1da290">operator()</a> (T input)</td></tr>
+<tr class="memitem:ab8f47b40f8339e4cb408a3fe6f1da290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html#ab8f47b40f8339e4cb408a3fe6f1da290">operator()</a> (<a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> input)</td></tr>
 <tr class="memdesc:ab8f47b40f8339e4cb408a3fe6f1da290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../d5/d94/classIIRFilter.html#ab8f47b40f8339e4cb408a3fe6f1da290">More...</a><br /></td></tr>
 <tr class="separator:ab8f47b40f8339e4cb408a3fe6f1da290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -127,15 +127,15 @@ template&lt;uint8_t NB, uint8_t NA = NB, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, T &gt;::<a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a> </td>
+          <td class="memname"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::<a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; T, NB &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NB &gt; &amp;&#160;</td>
           <td class="paramname"><em>b_coefficients</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const AH::Array&lt; T, NA &gt; &amp;&#160;</td>
+          <td class="paramtype">const AH::Array&lt; <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>, NA &gt; &amp;&#160;</td>
           <td class="paramname"><em>a_coefficients</em>&#160;</td>
         </tr>
         <tr>
@@ -181,9 +181,9 @@ template&lt;uint8_t NB, uint8_t NA = NB, class T  = float&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, T &gt;::operator() </td>
+          <td class="memname"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> <a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, <a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a> &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">T&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/dde/BiQuad_8hpp.html#ac068134415d867fc146cd4daf31e3f82">T</a>&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
