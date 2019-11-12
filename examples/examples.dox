@@ -338,3 +338,17 @@
  * @boards  AVR, AVR USB
  */
 
+/**
+ * @example   "Butterworth.ino"
+ * 
+ * Butterworth
+ * ===========
+ *
+ * Example of Butterworth filter.
+ * 
+ * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * 
+ * Written by PieterP, 2019-11-12
+ * https://github.com/tttapa/Arduino-Helpers
+ */
+
