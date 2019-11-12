@@ -72,7 +72,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Filters</div>  </div>
 </div><!--header-->
@@ -122,6 +123,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter&lt; NB, NA, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic Infinite Impulse Response filter class.  <a href="../../d5/d94/classIIRFilter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter&lt; T, N, Implementation &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -137,6 +140,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga8a323196012f0bcaed646c0875db12de"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">IIRImplementation</a> = typename std::conditional&lt; std::is_floating_point&lt; T &gt;::value, <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a>&lt; NB, NA, T &gt;, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt; &gt;::type</td></tr>
 <tr class="memdesc:ga8a323196012f0bcaed646c0875db12de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise.  <a href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">More...</a><br /></td></tr>
 <tr class="separator:ga8a323196012f0bcaed646c0875db12de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memTemplParams" colspan="2">template&lt;uint8_t N, class T  = double, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T,(N+1)/2, Implementation &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaa479d95dbae9cacf97a529f0ba37b7c2">butter</a> (double omega)</td></tr>
+<tr class="memdesc:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a butterworth filter.  <a href="../../d2/d5a/group__Filters.html#gaa479d95dbae9cacf97a529f0ba37b7c2">More...</a><br /></td></tr>
+<tr class="separator:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes for basic filtering and hysteresis. </p>
@@ -157,7 +167,7 @@ template&lt;class T &gt; </div>
 
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00129">129</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00133">133</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
@@ -177,7 +187,7 @@ template&lt;class T &gt; </div>
 
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00316">316</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00326">326</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,6 +208,44 @@ template&lt;uint8_t NB, uint8_t NA, class T &gt; </div>
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00207">207</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaa479d95dbae9cacf97a529f0ba37b7c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa479d95dbae9cacf97a529f0ba37b7c2">&#9670;&nbsp;</a></span>butter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t N, class T  = double, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt;T, (N + 1) / 2, Implementation&gt; butter </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>omega</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a butterworth filter. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Order of the filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">omega</td><td>Normalized angular cut-off frequency. \( \omega \in \left(0, \pi\right] \)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000008">Todo:</a></b></dt><dd>Optimize omega and K </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
 
 </div>
 </div>
