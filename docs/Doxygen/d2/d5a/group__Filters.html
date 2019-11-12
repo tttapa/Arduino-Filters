@@ -143,10 +143,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memTemplParams" colspan="2">template&lt;uint8_t N, class T  = double, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </td></tr>
-<tr class="memitem:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T,(N+1)/2, Implementation &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaa479d95dbae9cacf97a529f0ba37b7c2">butter</a> (double omega)</td></tr>
-<tr class="memdesc:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a butterworth filter.  <a href="../../d2/d5a/group__Filters.html#gaa479d95dbae9cacf97a529f0ba37b7c2">More...</a><br /></td></tr>
-<tr class="separator:gaa479d95dbae9cacf97a529f0ba37b7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99b0be2cad03d253b6c21597ced84971"><td class="memTemplParams" colspan="2">template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:ga99b0be2cad03d253b6c21597ced84971"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T,(N+1)/2, Implementation &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga99b0be2cad03d253b6c21597ced84971">butter</a> (double f_c)</td></tr>
+<tr class="memdesc:ga99b0be2cad03d253b6c21597ced84971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a butterworth filter.  <a href="../../d2/d5a/group__Filters.html#ga99b0be2cad03d253b6c21597ced84971">More...</a><br /></td></tr>
+<tr class="separator:ga99b0be2cad03d253b6c21597ced84971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes for basic filtering and hysteresis. </p>
@@ -212,19 +212,19 @@ template&lt;uint8_t NB, uint8_t NA, class T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gaa479d95dbae9cacf97a529f0ba37b7c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa479d95dbae9cacf97a529f0ba37b7c2">&#9670;&nbsp;</a></span>butter()</h2>
+<a id="ga99b0be2cad03d253b6c21597ced84971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99b0be2cad03d253b6c21597ced84971">&#9670;&nbsp;</a></span>butter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;uint8_t N, class T  = double, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
+template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt;T, (N + 1) / 2, Implementation&gt; butter </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>omega</em></td><td>)</td>
+          <td class="paramname"><em>f_c</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -239,11 +239,11 @@ template&lt;uint8_t N, class T  = double, class Implementation  = BiQuadFilterDF
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">omega</td><td>Normalized angular cut-off frequency. \( \omega \in \left(0, \pi\right] \)</td></tr>
+    <tr><td class="paramname">f_c</td><td>Normalized cut-off frequency. \( f_c \in \left[0, 1\right] \)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000008">Todo:</a></b></dt><dd>Optimize omega and K </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
 

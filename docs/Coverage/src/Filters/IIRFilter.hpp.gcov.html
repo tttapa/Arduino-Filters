@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 91181cf8bd9a7f1e3ccaab80fb44f7b539316e0c - src/Filters/IIRFilter.hpp</title>
+  <title>LCOV - dec139d7c6d0284ff6a9a39a603b0ce0bfb28db1 - src/Filters/IIRFilter.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">91181cf8bd9a7f1e3ccaab80fb44f7b539316e0c</td>
+            <td class="headerValue">dec139d7c6d0284ff6a9a39a603b0ce0bfb28db1</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">61</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-12 01:09:02</td>
+            <td class="headerValue">2019-11-12 13:30:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">20</td>
-            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">24</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -208,16 +208,16 @@
 <a name="138"><span class="lineNum">     138 </span>            :      * @param   a_coefficients </a>
 <a name="139"><span class="lineNum">     139 </span>            :      *          The coefficients of the transfer function denominator.</a>
 <a name="140"><span class="lineNum">     140 </span>            :      */</a>
-<a name="141"><span class="lineNum">     141 </span><span class="lineCov">          3 :     NormalizingIIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
+<a name="141"><span class="lineNum">     141 </span><span class="lineCov">          4 :     NormalizingIIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
 <a name="142"><span class="lineNum">     142 </span>            :                          const AH::Array&lt;T, NA&gt; &amp;a_coefficients) {</a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineCov">          3 :         T a0 = a_coefficients[0];</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         22 :         for (uint8_t i = 0; i &lt; 2 * NB - 1; ++i)</span></a>
-<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         19 :             this-&gt;b_coefficients[i] =</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         19 :                 b_coefficients[(2 * NB - 1 - i) % NB] / a0;</span></a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         12 :         for (uint8_t i = 0; i &lt; 2 * MA - 1; ++i)</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          9 :             this-&gt;a_coefficients[i] =</span></a>
-<a name="149"><span class="lineNum">     149 </span><span class="lineCov">          9 :                 a_coefficients[(2 * MA - 2 - i) % MA + 1] / a0;</span></a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          3 :     }</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">          4 :         T a0 = a_coefficients[0];</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         32 :         for (uint8_t i = 0; i &lt; 2 * NB - 1; ++i)</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         28 :             this-&gt;b_coefficients[i] =</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         28 :                 b_coefficients[(2 * NB - 1 - i) % NB] / a0;</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         20 :         for (uint8_t i = 0; i &lt; 2 * MA - 1; ++i)</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         16 :             this-&gt;a_coefficients[i] =</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">         16 :                 a_coefficients[(2 * MA - 2 - i) % MA + 1] / a0;</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          4 :     }</span></a>
 <a name="151"><span class="lineNum">     151 </span>            : </a>
 <a name="152"><span class="lineNum">     152 </span>            :     /**</a>
 <a name="153"><span class="lineNum">     153 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
@@ -227,43 +227,43 @@
 <a name="157"><span class="lineNum">     157 </span>            :      *          The new input @f$ x[n] @f$.</a>
 <a name="158"><span class="lineNum">     158 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
 <a name="159"><span class="lineNum">     159 </span>            :      */</a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         60 :     T operator()(T input) {</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         80 :     T operator()(T input) {</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :         // Save the new input to the ring buffer.</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         60 :         x[index_b] = input;</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         80 :         x[index_b] = input;</span></a>
 <a name="163"><span class="lineNum">     163 </span>            : </a>
 <a name="164"><span class="lineNum">     164 </span>            :         // Calculate the offset to the shifted coefficients.</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         60 :         T *b_coeff_shift = b_coefficients.end() - NB - index_b;</span></a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         60 :         T *a_coeff_shift = a_coefficients.end() - MA - index_a;</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         80 :         T *b_coeff_shift = b_coefficients.end() - NB - index_b;</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         80 :         T *a_coeff_shift = a_coefficients.end() - MA - index_a;</span></a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
 <a name="168"><span class="lineNum">     168 </span>            :         // Multiply and accumulate the inputs and their respective coefficients.</a>
-<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         60 :         T acc = {};</span></a>
-<a name="170"><span class="lineNum">     170 </span><span class="lineCov">        280 :         for (uint8_t i = 0; i &lt; NB; i++)</span></a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">        220 :             acc += x[i] * b_coeff_shift[i];</span></a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         80 :         T acc = {};</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">        400 :         for (uint8_t i = 0; i &lt; NB; i++)</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">        320 :             acc += x[i] * b_coeff_shift[i];</span></a>
 <a name="172"><span class="lineNum">     172 </span>            : </a>
 <a name="173"><span class="lineNum">     173 </span>            :         // Multiply and accumulate the inputs and their respective coefficients.</a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">        180 :         for (uint8_t i = 0; i &lt; MA; i++)</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        120 :             acc -= y[i] * a_coeff_shift[i];</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">        280 :         for (uint8_t i = 0; i &lt; MA; i++)</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        200 :             acc -= y[i] * a_coeff_shift[i];</span></a>
 <a name="176"><span class="lineNum">     176 </span>            : </a>
 <a name="177"><span class="lineNum">     177 </span>            :         // Save the current output</a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         60 :         y[index_a] = acc;</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         80 :         y[index_a] = acc;</span></a>
 <a name="179"><span class="lineNum">     179 </span>            : </a>
 <a name="180"><span class="lineNum">     180 </span>            :         // Increment and wrap around the index of the ring buffer.</a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         60 :         index_b++;</span></a>
-<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         60 :         if (index_b == NB)</span></a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">         16 :             index_b = 0;</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         80 :         index_b++;</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         80 :         if (index_b == NB)</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">         20 :             index_b = 0;</span></a>
 <a name="184"><span class="lineNum">     184 </span>            : </a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         60 :         index_a++;</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">         60 :         if (index_a == MA)</span></a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">         30 :             index_a = 0;</span></a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         80 :         index_a++;</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">         80 :         if (index_a == MA)</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">         35 :             index_a = 0;</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         60 :         return acc;</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         80 :         return acc;</span></a>
 <a name="190"><span class="lineNum">     190 </span>            :     }</a>
 <a name="191"><span class="lineNum">     191 </span>            : </a>
 <a name="192"><span class="lineNum">     192 </span>            :   private:</a>
 <a name="193"><span class="lineNum">     193 </span>            :     constexpr static uint8_t MA = NA - 1;</a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">          3 :     uint8_t index_b = 0, index_a = 0;</span></a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineCov">          3 :     AH::Array&lt;T, NB&gt; x = {};</span></a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineCov">          3 :     AH::Array&lt;T, MA&gt; y = {};</span></a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">          4 :     uint8_t index_b = 0, index_a = 0;</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">          4 :     AH::Array&lt;T, NB&gt; x = {};</span></a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">          4 :     AH::Array&lt;T, MA&gt; y = {};</span></a>
 <a name="197"><span class="lineNum">     197 </span>            :     AH::Array&lt;T, 2 * NB - 1&gt; b_coefficients;</a>
 <a name="198"><span class="lineNum">     198 </span>            :     AH::Array&lt;T, 2 * MA - 1&gt; a_coefficients;</a>
 <a name="199"><span class="lineNum">     199 </span>            : };</a>
@@ -309,9 +309,9 @@
 <a name="239"><span class="lineNum">     239 </span>            :      * @param   a_coefficients </a>
 <a name="240"><span class="lineNum">     240 </span>            :      *          The coefficients of the transfer function denominator.</a>
 <a name="241"><span class="lineNum">     241 </span>            :      */</a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineCov">          7 :     IIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
+<a name="242"><span class="lineNum">     242 </span><span class="lineCov">          8 :     IIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
 <a name="243"><span class="lineNum">     243 </span>            :               const AH::Array&lt;T, NA&gt; &amp;a_coefficients)</a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineCov">          7 :         : IIRImplementation&lt;NB, NA, T&gt;{b_coefficients, a_coefficients} {}</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">          8 :         : IIRImplementation&lt;NB, NA, T&gt;{b_coefficients, a_coefficients} {}</span></a>
 <a name="245"><span class="lineNum">     245 </span>            : </a>
 <a name="246"><span class="lineNum">     246 </span>            :     /**</a>
 <a name="247"><span class="lineNum">     247 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
@@ -321,8 +321,8 @@
 <a name="251"><span class="lineNum">     251 </span>            :      *          The new input @f$ x[n] @f$.</a>
 <a name="252"><span class="lineNum">     252 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
 <a name="253"><span class="lineNum">     253 </span>            :      */</a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">        140 :     T operator()(T input) {</span></a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">        140 :         return IIRImplementation&lt;NB, NA, T&gt;::operator()(input);</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">        160 :     T operator()(T input) {</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">        160 :         return IIRImplementation&lt;NB, NA, T&gt;::operator()(input);</span></a>
 <a name="256"><span class="lineNum">     256 </span>            :     }</a>
 <a name="257"><span class="lineNum">     257 </span>            : };</a>
 <a name="258"><span class="lineNum">     258 </span>            : </a>

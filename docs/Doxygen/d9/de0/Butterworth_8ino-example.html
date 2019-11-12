@@ -78,11 +78,14 @@ $(function() {
 Butterworth</h1>
 <p>Example of Butterworth filter.</p>
 <dl class="section user"><dt>Boards:</dt><dd>AVR, AVR USB, Teensy 3.x, ESP32</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html</a></dd></dl>
 <p>Written by PieterP, 2019-11-12 <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
 <div class="fragment"><div class="line"><span class="comment">/**</span></div>
 <div class="line"><span class="comment"> * Example of Butterworth filter.</span></div>
 <div class="line"><span class="comment"> * </span></div>
 <div class="line"><span class="comment"> * @boards  AVR, AVR USB, Teensy 3.x, ESP32</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @see &lt;https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html&gt;</span></div>
 <div class="line"><span class="comment"> * </span></div>
 <div class="line"><span class="comment"> * Written by PieterP, 2019-11-12</span></div>
 <div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
@@ -97,13 +100,21 @@ Butterworth</h1>
 <div class="line">  Serial.begin(115200);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> filter = butter&lt;6, float&gt;(0.4 * M_PI);</div>
-<div class="line"><a name="_a0"></a><a class="code" href="../../dc/dea/classTimer.html">Timer&lt;micros&gt;</a> timer = 10000; <span class="comment">// 100 Hz</span></div>
+<div class="line"><span class="comment">// Sampling frequency</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_s = 100; <span class="comment">// Hz</span></div>
+<div class="line"><span class="comment">// Cut-off frequency (-3 dB)</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_c = 40; <span class="comment">// Hz</span></div>
+<div class="line"><span class="comment">// Normalized cut-off frequency</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_n = f_c / f_s;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Sample timer</span></div>
+<div class="line"><a name="_a0"></a><a class="code" href="../../dc/dea/classTimer.html">Timer&lt;micros&gt;</a> timer = std::round(1e6 / f_s);</div>
+<div class="line"><span class="comment">// Sixth-order Butterworth filter</span></div>
+<div class="line"><span class="keyword">auto</span> filter = butter&lt;6&gt;(f_n);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
-<div class="line">  <span class="keywordflow">if</span> (timer) {</div>
+<div class="line">  <span class="keywordflow">if</span> (timer)</div>
 <div class="line">    Serial.println(filter(<a name="a1"></a><a class="code" href="../../d8/d3d/namespaceExtIO.html#a7203d161f7e9676d191ed320d9dad00f">analogRead</a>(A0)));</div>
-<div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="ttc" id="aButterworth_8hpp_html"><div class="ttname"><a href="../../d4/d40/Butterworth_8hpp.html">Butterworth.hpp</a></div></div>

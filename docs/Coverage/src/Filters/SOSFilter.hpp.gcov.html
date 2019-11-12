@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 91181cf8bd9a7f1e3ccaab80fb44f7b539316e0c - src/Filters/SOSFilter.hpp</title>
+  <title>LCOV - dec139d7c6d0284ff6a9a39a603b0ce0bfb28db1 - src/Filters/SOSFilter.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">91181cf8bd9a7f1e3ccaab80fb44f7b539316e0c</td>
+            <td class="headerValue">dec139d7c6d0284ff6a9a39a603b0ce0bfb28db1</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">6</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-12 01:09:02</td>
+            <td class="headerValue">2019-11-12 13:30:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -78,8 +78,8 @@
 <a name="8"><span class="lineNum">       8 </span>            : template &lt;class T, uint8_t N, class Implementation = BiQuadFilterDF1&lt;T&gt;&gt;</a>
 <a name="9"><span class="lineNum">       9 </span>            : class SOSFilter {</a>
 <a name="10"><span class="lineNum">      10 </span>            :   public:</a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          3 :     SOSFilter(const AH::Array&lt;Implementation, N&gt; &amp;sections)</span></a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          3 :         : sections{sections} {}</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          4 :     SOSFilter(const AH::Array&lt;Implementation, N&gt; &amp;sections)</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          4 :         : sections{sections} {}</span></a>
 <a name="13"><span class="lineNum">      13 </span>            : </a>
 <a name="14"><span class="lineNum">      14 </span>            :     /**</a>
 <a name="15"><span class="lineNum">      15 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
@@ -89,10 +89,10 @@
 <a name="19"><span class="lineNum">      19 </span>            :      *          The new input @f$ x[n] @f$.</a>
 <a name="20"><span class="lineNum">      20 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
 <a name="21"><span class="lineNum">      21 </span>            :      */</a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">         60 :     T operator()(T input) {</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">        240 :         for (auto &amp;section : sections)</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">        180 :             input = section(input);</span></a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">         60 :         return input;</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">         80 :     T operator()(T input) {</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">        300 :         for (auto &amp;section : sections)</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">        220 :             input = section(input);</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">         80 :         return input;</span></a>
 <a name="26"><span class="lineNum">      26 </span>            :     }</a>
 <a name="27"><span class="lineNum">      27 </span>            : </a>
 <a name="28"><span class="lineNum">      28 </span>            :   private:</a>
