@@ -27,6 +27,8 @@
 template <class T>
 class NormalizingBiQuadFilterDF1 {
   public:
+    NormalizingBiQuadFilterDF1() = default;
+
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
         : b{b / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
@@ -59,8 +61,8 @@ class NormalizingBiQuadFilterDF1 {
   private:
     AH::Array<T, 2> x = {}; ///< Previous inputs
     AH::Array<T, 2> y = {}; ///< Previous outputs
-    AH::Array<T, 3> b;      ///< Numerator coefficients
-    AH::Array<T, 2> a;      ///< Denominator coefficients
+    AH::Array<T, 3> b = {}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {}; ///< Denominator coefficients
 };
 
 /** 
@@ -82,6 +84,8 @@ class NormalizingBiQuadFilterDF1 {
 template <class T>
 class NonNormalizingBiQuadFilterDF1 {
   public:
+    NonNormalizingBiQuadFilterDF1() = default;
+
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
         : b{b}, a(a.template slice<1, 3>()), a0{a[0]} {}
@@ -115,9 +119,9 @@ class NonNormalizingBiQuadFilterDF1 {
   private:
     AH::Array<T, 2> x = {}; ///< Previous inputs
     AH::Array<T, 2> y = {}; ///< Previous outputs
-    AH::Array<T, 3> b;      ///< Numerator coefficients
-    AH::Array<T, 2> a;      ///< Denominator coefficients
-    T a0;                   ///< First denominator coefficient
+    AH::Array<T, 3> b = {}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {}; ///< Denominator coefficients
+    T a0 = T{1};            ///< First denominator coefficient
 };
 
 /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating
@@ -145,6 +149,8 @@ using BiQuadDF1Implementation =
 template <class T = float>
 class BiQuadFilterDF1 : public BiQuadDF1Implementation<T> {
   public:
+    BiQuadFilterDF1() = default;
+
     /**
      * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.
      * 
@@ -222,6 +228,8 @@ class BiQuadFilterDF1 : public BiQuadDF1Implementation<T> {
 template <class T>
 class NormalizingBiQuadFilterDF2 {
   public:
+    NormalizingBiQuadFilterDF2() = default;
+
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
         : b{b / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
@@ -250,8 +258,8 @@ class NormalizingBiQuadFilterDF2 {
 
   private:
     AH::Array<T, 2> w = {}; ///< Internal state
-    AH::Array<T, 3> b;      ///< Numerator coefficients
-    AH::Array<T, 2> a;      ///< Denominator coefficients
+    AH::Array<T, 3> b = {}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {}; ///< Denominator coefficients
 };
 
 /** 
@@ -273,6 +281,8 @@ class NormalizingBiQuadFilterDF2 {
 template <class T>
 class NonNormalizingBiQuadFilterDF2 {
   public:
+    NonNormalizingBiQuadFilterDF2() = default;
+
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
         : b{b}, a(a.template slice<1, 3>()), a0{a[0]} {}
@@ -302,9 +312,9 @@ class NonNormalizingBiQuadFilterDF2 {
 
   private:
     AH::Array<T, 2> w = {}; ///< Internal state
-    AH::Array<T, 3> b;      ///< Numerator coefficients
-    AH::Array<T, 2> a;      ///< Denominator coefficients
-    T a0;                   ///< First denominator coefficient
+    AH::Array<T, 3> b = {}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {}; ///< Denominator coefficients
+    T a0 = T{1};            ///< First denominator coefficient
 };
 
 /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating
@@ -332,6 +342,8 @@ using BiQuadDF2Implementation =
 template <class T = float>
 class BiQuadFilterDF2 : public BiQuadDF2Implementation<T> {
   public:
+    BiQuadFilterDF2() = default;
+
     /**
      * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.
      * 
