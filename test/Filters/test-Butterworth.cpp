@@ -1,10 +1,11 @@
 #include <gtest-wrapper.h>
 
 #include <Filters/Butterworth.hpp>
+#include <Filters/IIRFilter.hpp>
 
 TEST(Butterworth, evenOrder) {
     using namespace std;
-    auto butterworth = butter<6>(0.4 * M_PI);
+    auto butterworth = butter<6, double>(0.4);
     array<double, 20> signal = {100.0, 10.0,  102.0,  23.0,  51.0,  1.0,  -10.0,
                                 -53.0, 100.0, -100.0, 100.0, -10.0, 10.0, 11.0,
                                 20.0,  30.0,  123.0,  12.0,  90.0,  10.0};
@@ -18,12 +19,12 @@ TEST(Butterworth, evenOrder) {
         48.392807471527775,  71.09457974808586};
     transform(signal.begin(), signal.end(), signal.begin(), butterworth);
     for (size_t i = 0; i < signal.size(); ++i)
-        EXPECT_FLOAT_EQ(signal[i], expected[i]) << i;
+        EXPECT_FLOAT_EQ(signal[i], expected[i]) << "at index " << i;
 }
 
 TEST(Butterworth, oddOrder) {
     using namespace std;
-    auto butterworth = butter<7>(0.4 * M_PI);
+    auto butterworth = butter<7, double>(0.4);
     array<double, 20> signal = {100.0, 10.0,  102.0,  23.0,  51.0,  1.0,  -10.0,
                                 -53.0, 100.0, -100.0, 100.0, -10.0, 10.0, 11.0,
                                 20.0,  30.0,  123.0,  12.0,  90.0,  10.0};
@@ -37,5 +38,39 @@ TEST(Butterworth, oddOrder) {
         35.58427055190113,   61.332940440798545};
     transform(signal.begin(), signal.end(), signal.begin(), butterworth);
     for (size_t i = 0; i < signal.size(); ++i)
-        EXPECT_FLOAT_EQ(signal[i], expected[i]) << i;
+        EXPECT_FLOAT_EQ(signal[i], expected[i]) << "at index " << i;
+}
+/* 
+ * https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretizing-the-analog-filter
+ */
+TEST(Butterworth, PietersPages) {
+    using namespace std;
+    auto butterworth = butter<4, double>(45. / 360.);
+    double alpha = -2 * cos(M_PI * 5 / 8);
+    double beta = -2 * cos(M_PI * 7 / 8);
+    double gamma = 1. / tan(M_PI * 45. / 360. / 2);
+    IIRFilter<5, 5, double> reference = {
+        {{1, 4, 6, 4, 1}},
+        {{
+            pow(gamma, 4) + pow(gamma, 3) * (alpha + beta) +
+                pow(gamma, 2) * (alpha * beta + 2) + gamma * (alpha + beta) + 1,
+
+            -4 * pow(gamma, 4) - 2 * pow(gamma, 3) * (alpha + beta) +
+                2 * gamma * (alpha + beta) + 4,
+            6 * pow(gamma, 4) - 2 * pow(gamma, 2) * (alpha * beta + 2) + 6,
+
+            -4 * pow(gamma, 4) + 2 * pow(gamma, 3) * (alpha + beta) -
+                2 * gamma * (alpha + beta) + 4,
+
+            pow(gamma, 4) - pow(gamma, 3) * (alpha + beta) +
+                pow(gamma, 2) * (alpha * beta + 2) - gamma * (alpha + beta) + 1,
+        }}};
+    array<double, 20> signal = {100.0, 10.0,  102.0,  23.0,  51.0,  1.0,  -10.0,
+                                -53.0, 100.0, -100.0, 100.0, -10.0, 10.0, 11.0,
+                                20.0,  30.0,  123.0,  12.0,  90.0,  10.0};
+    array<double, 20> expected = signal;
+    transform(signal.begin(), signal.end(), signal.begin(), butterworth);
+    transform(expected.begin(), expected.end(), expected.begin(), reference);
+    for (size_t i = 0; i < signal.size(); ++i)
+        EXPECT_FLOAT_EQ(signal[i], expected[i]) << "at index " << i;
 }

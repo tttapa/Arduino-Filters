@@ -10,54 +10,36 @@
  * @brief   Create a butterworth filter.
  * @tparam  N
  *          Order of the filter.
- * @param   omega
- *          Normalized angular cut-off frequency.
- *          @f$ \omega \in \left(0, \pi\right] @f$
- *
- * @todo    Optimize omega and K
+ * @param   f_c
+ *          Normalized cut-off frequency.
+ *          @f$ f_c \in \left[0, 1\right] @f$
+ * 
+ * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos>
  */
-template <uint8_t N, class T = double,
+template <uint8_t N, class T = float,
           class Implementation = BiQuadFilterDF1<T>>
-SOSFilter<T, (N + 1) / 2, Implementation> butter(double omega) {
-    T K = omega / std::tan(omega / 2);
-    auto make_sos = [=](uint8_t i) {
-        T b0 = 0;
-        T b1 = 0;
-        T b2 = 1;
-        T a0 = 1 / (omega * omega);
-        T a1 = -2 * std::cos(2 * M_PI * (2 * i + N + 1) / (4 * N)) / omega;
-        T a2 = 1;
-        T denom = a0 * K * K + a1 * K + a2;
+SOSFilter<T, (N + 1) / 2, Implementation> butter(double f_c) {
+    const T gamma = 1 / std::tan(M_PI * f_c / 2); // pre-warp factor
+
+    auto make_sos = [=](uint8_t k) {
+        const T gamma2 = gamma * gamma;
+        const T alpha = 2 * std::cos(2 * M_PI * (2 * k + N + 1) / (4 * N));
         return Implementation{
+            {{1, 2, 1}}, // b0, b1, b2
             {{
-                (b0 * K * K + b1 * K + b2) / denom,
-                (2 * b2 - 2 * b0 * K * K) / denom,
-                (b0 * K * K - b1 * K + b2) / denom,
-            }},
-            {{
-                (a0 * K * K + a1 * K + a2) / denom,
-                (2 * a2 - 2 * a0 * K * K) / denom,
-                (a0 * K * K - a1 * K + a2) / denom,
+                gamma2 - alpha * gamma + 1, // a0
+                2 * (1 - gamma2),           // a1
+                gamma2 + alpha * gamma + 1, // a2
             }},
         };
     };
 
     auto make_fos = [=]() {
-        T b0 = 0;
-        T b1 = 1;
-        T a0 = 1 / omega;
-        T a1 = 1;
-        T denom = a0 * K + a1;
         return Implementation{
+            {{1, 1}}, // b0, b1
             {{
-                (b0 * K + b1) / denom,
-                (-b0 * K + b1) / denom,
-                0,
-            }},
-            {{
-                (a0 * K + a1) / denom,
-                (-a0 * K + a1) / denom,
-                0,
+                gamma + 1, // a0
+                1 - gamma, // a1
             }},
         };
     };
