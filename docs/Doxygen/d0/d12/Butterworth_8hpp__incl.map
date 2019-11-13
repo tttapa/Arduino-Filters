@@ -1,12 +1,13 @@
 <map id="Butterworth.hpp" name="Butterworth.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="680,5,794,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="608,80,717,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="701,5,816,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="649,229,758,256"/>
 <area shape="rect" id="node3" href="$df/ddc/SOSFilter_8hpp.html" title=" " alt="" coords="741,80,885,107"/>
 <area shape="rect" id="node4" href="$d1/dde/BiQuad_8hpp.html" title=" " alt="" coords="748,155,878,181"/>
-<area shape="rect" id="node5" href="$de/d76/Array_8hpp.html" title=" " alt="" coords="729,229,897,256"/>
-<area shape="rect" id="node6" href="$d1/d93/Error_8hpp.html" title=" " alt="" coords="465,304,596,331"/>
+<area shape="rect" id="node5" href="$de/d76/Array_8hpp.html" title=" " alt="" coords="782,229,950,256"/>
+<area shape="rect" id="node6" href="$d1/d93/Error_8hpp.html" title=" " alt="" coords="406,304,537,331"/>
 <area shape="rect" id="node16" title=" " alt="" coords="902,603,972,629"/>
 <area shape="rect" id="node20" title=" " alt="" coords="851,304,986,331"/>
+<area shape="rect" id="node21" title=" " alt="" coords="1010,304,1123,331"/>
 <area shape="rect" id="node7" href="$df/dee/Debug_8hpp.html" title=" " alt="" coords="216,379,367,405"/>
 <area shape="rect" id="node8" href="$dd/d80/PrintStream_8hpp.html" title=" " alt="" coords="22,528,234,555"/>
 <area shape="rect" id="node9" title=" " alt="" coords="89,677,166,704"/>
