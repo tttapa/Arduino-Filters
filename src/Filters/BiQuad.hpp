@@ -1,6 +1,7 @@
 #pragma once
 
 #include <AH/Containers/Array.hpp>
+#include <AH/STL/cmath>
 
 /// @addtogroup Filters
 /// @{
@@ -31,20 +32,41 @@ class NormalizingBiQuadFilterDF1 {
 
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
-        : b{b / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
+        : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
-        : b{b * gain / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
+        : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
-    static inline T update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
-                           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a) {
-        T b_terms = input * b[0] + x[0] * b[1] + x[1] * b[2];
-        T a_terms = y[0] * a[0] + y[1] * a[1];
+    template <bool Enable = true>
+    static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
+           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a) {
+        T acc = input * b[0];
+        acc = std::fma(x[0], b[1], acc);
+        acc = std::fma(x[1], b[2], acc);
+        acc = std::fma(y[0], a[0], acc);
+        acc = std::fma(y[1], a[1], acc);
         x[1] = x[0];
         x[0] = input;
         y[1] = y[0];
-        y[0] = b_terms - a_terms;
+        y[0] = acc;
+        return y[0];
+    }
+
+    template <bool Enable = true>
+    static std::enable_if_t<!std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
+           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a) {
+        T acc = input * b[0];
+        acc = x[0] * b[1] + acc;
+        acc = x[1] * b[2] + acc;
+        acc = y[0] * a[0] + acc;
+        acc = y[1] * a[1] + acc;
+        x[1] = x[0];
+        x[0] = input;
+        y[1] = y[0];
+        y[0] = acc;
         return y[0];
     }
 
@@ -88,21 +110,41 @@ class NonNormalizingBiQuadFilterDF1 {
 
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
-        : b{b}, a(a.template slice<1, 3>()), a0{a[0]} {}
+        : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
-        : b{b * gain}, a(a.template slice<1, 3>()), a0{a[0]} {}
+        : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
-    static inline T update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
-                           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a,
-                           T a0) {
-        T b_terms = input * b[0] + x[0] * b[1] + x[1] * b[2];
-        T a_terms = y[0] * a[0] + y[1] * a[1];
+    template <bool Enable = true>
+    static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
+           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a, T a0) {
+        T acc = input * b[0];
+        acc = std::fma(x[0], b[1], acc);
+        acc = std::fma(x[1], b[2], acc);
+        acc = std::fma(y[0], a[0], acc);
+        acc = std::fma(y[1], a[1], acc);
         x[1] = x[0];
         x[0] = input;
         y[1] = y[0];
-        y[0] = (b_terms - a_terms) / a0;
+        y[0] = acc / a0;
+        return y[0];
+    }
+
+    template <bool Enable = true>
+    static std::enable_if_t<!std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &x, AH::Array<T, 2> &y,
+           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a, T a0) {
+        T acc = input * b[0];
+        acc = x[0] * b[1] + acc;
+        acc = x[1] * b[2] + acc;
+        acc = y[0] * a[0] + acc;
+        acc = y[1] * a[1] + acc;
+        x[1] = x[0];
+        x[0] = input;
+        y[1] = y[0];
+        y[0] = acc / a0;
         return y[0];
     }
 
@@ -232,18 +274,38 @@ class NormalizingBiQuadFilterDF2 {
 
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
-        : b{b / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
+        : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
-        : b{b * gain / a[0]}, a{a.template slice<1, 3>() / a[0]} {}
+        : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
-    static inline T update(T input, AH::Array<T, 2> &w,
-                           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a) {
-        double w_2 = w[1];
+    template <bool Enable = true>
+    static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &w, const AH::Array<T, 3> &b,
+           const AH::Array<T, 2> &a) {
+        input = std::fma(a[0], w[0], input);
+        input = std::fma(a[1], w[1], input);
+        T result = b[0] * input;
+        result = std::fma(b[1], w[0], result);
+        result = std::fma(b[2], w[1], result);
         w[1] = w[0];
-        w[0] = input - a[0] * w[1] - a[1] * w_2;
-        return b[0] * w[0] + b[1] * w[1] + b[2] * w_2;
+        w[0] = input;
+        return result;
+    }
+
+    template <bool Enable = true>
+    static std::enable_if_t<!std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &w, const AH::Array<T, 3> &b,
+           const AH::Array<T, 2> &a) {
+        input += a[0] * w[0];
+        input += a[1] * w[1];
+        T result = b[0] * input;
+        result += b[1] * w[0];
+        result += b[2] * w[1];
+        w[1] = w[0];
+        w[0] = input;
+        return result;
     }
 
     /**
@@ -285,19 +347,40 @@ class NonNormalizingBiQuadFilterDF2 {
 
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
-        : b{b}, a(a.template slice<1, 3>()), a0{a[0]} {}
+        : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
-        : b{b * gain}, a(a.template slice<1, 3>()), a0{a[0]} {}
+        : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
-    static inline T update(T input, AH::Array<T, 2> &w,
-                           const AH::Array<T, 3> &b, const AH::Array<T, 2> &a,
-                           T a0) {
-        double w_2 = w[1];
+    template <bool Enable = true>
+    static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &w, const AH::Array<T, 3> &b,
+           const AH::Array<T, 2> &a, T a0) {
+        input = std::fma(a[0], w[0], input);
+        input = std::fma(a[1], w[1], input);
+        input /= a0;
+        T result = b[0] * input;
+        result = std::fma(b[1], w[0], result);
+        result = std::fma(b[2], w[1], result);
         w[1] = w[0];
-        w[0] = (input - a[0] * w[1] - a[1] * w_2) / a0;
-        return b[0] * w[0] + b[1] * w[1] + b[2] * w_2;
+        w[0] = input;
+        return result;
+    }
+
+    template <bool Enable = true>
+    static std::enable_if_t<!std::is_floating_point<T>::value && Enable, T>
+    update(T input, AH::Array<T, 2> &w, const AH::Array<T, 3> &b,
+           const AH::Array<T, 2> &a, T a0) {
+        input += a[0] * w[0];
+        input += a[1] * w[1];
+        input /= a0;
+        T result = b[0] * input;
+        result += b[1] * w[0];
+        result += b[2] * w[1];
+        w[1] = w[0];
+        w[0] = input;
+        return result;
     }
 
     /**
