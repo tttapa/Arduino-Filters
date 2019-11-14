@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/tttapa/Arduino-Filters/workflows/C%2FC%2B%2B%20CI/badge.svg)](https://github.com/tttapa/Arduino-Filters/actions)
 [![Build Status](https://travis-ci.org/tttapa/Arduino-Filters.svg?branch=master)](https://travis-ci.org/tttapa/Arduino-Filters)
 
 # Arduino Filters
