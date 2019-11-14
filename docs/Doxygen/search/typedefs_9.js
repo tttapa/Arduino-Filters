@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['timefunction_984',['timefunction',['../d1/dd0/MillisMicrosTimer_8hpp.html#a4086ab91003e2f23ab3d8d590d6f2fe3',1,'MillisMicrosTimer.hpp']]],
-  ['type_985',['type',['../d7/d6a/structArray.html#a3cbf8f2bfa23eb494f638eaa609a92f4',1,'Array']]]
+  ['soscoefficients_1000',['SOSCoefficients',['../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40',1,'SOSFilter.hpp']]]
 ];

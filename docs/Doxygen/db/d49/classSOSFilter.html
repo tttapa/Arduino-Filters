@@ -88,8 +88,8 @@ Collaboration diagram for SOSFilter&lt; T, N, Implementation &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ada0da693a752bb128a42d39043d23ab9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html#ada0da693a752bb128a42d39043d23ab9">SOSFilter</a> (const AH::Array&lt; Implementation, N &gt; &amp;<a class="el" href="../../db/d49/classSOSFilter.html#a9e102a063a95729a66693b1c94840283">sections</a>)</td></tr>
-<tr class="separator:ada0da693a752bb128a42d39043d23ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9817fd5d3eef61f7863e4666c50f97f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html#a9817fd5d3eef61f7863e4666c50f97f6">SOSFilter</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;sectionCoefficients)</td></tr>
+<tr class="separator:a9817fd5d3eef61f7863e4666c50f97f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666e4e68a6f4ef70f6a592805a5959d4"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html#a666e4e68a6f4ef70f6a592805a5959d4">operator()</a> (T input)</td></tr>
 <tr class="memdesc:a666e4e68a6f4ef70f6a592805a5959d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../db/d49/classSOSFilter.html#a666e4e68a6f4ef70f6a592805a5959d4">More...</a><br /></td></tr>
 <tr class="separator:a666e4e68a6f4ef70f6a592805a5959d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,19 +100,19 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9e102a063a95729a66693b1c94840283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class T, uint8_t N, class Implementation = BiQuadFilterDF1&lt;T&gt;&gt;<br />
+<div class="textblock"><h3>template&lt;class T, size_t N, class Implementation = BiQuadFilterDF1&lt;T&gt;&gt;<br />
 class SOSFilter&lt; T, N, Implementation &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00009">9</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00013">13</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ada0da693a752bb128a42d39043d23ab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada0da693a752bb128a42d39043d23ab9">&#9670;&nbsp;</a></span>SOSFilter()</h2>
+<a id="a9817fd5d3eef61f7863e4666c50f97f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9817fd5d3eef61f7863e4666c50f97f6">&#9670;&nbsp;</a></span>SOSFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
+template&lt;class T , size_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -120,8 +120,8 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
         <tr>
           <td class="memname"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T, N, Implementation &gt;::<a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">const AH::Array&lt; Implementation, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>sections</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sectionCoefficients</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -132,7 +132,7 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00011">11</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -143,7 +143,7 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
+template&lt;class T , size_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -172,7 +172,7 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new output \( y[n] \). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +183,7 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
+template&lt;class T , size_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -199,7 +199,7 @@ template&lt;class T , uint8_t N, class Implementation  = BiQuadFilterDF1&lt;T&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 
 </div>
 </div>

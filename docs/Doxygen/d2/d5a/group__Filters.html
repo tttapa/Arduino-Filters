@@ -125,9 +125,16 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter&lt; T, N, Implementation &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction&lt; NB, NA, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for transfer function coefficients.  <a href="../../d2/d3c/structTransferFunction.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:gabfc22183b370bcc888c1c623e1f86912"><td class="memTemplParams" colspan="2">template&lt;class T  = float&gt; </td></tr>
+<tr class="memitem:gabfc22183b370bcc888c1c623e1f86912"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a> = <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; 3, 3, T &gt;</td></tr>
+<tr class="memdesc:gabfc22183b370bcc888c1c623e1f86912"><td class="mdescLeft">&#160;</td><td class="mdescRight">BiQuadratic transfer function coefficients.  <a href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">More...</a><br /></td></tr>
+<tr class="separator:gabfc22183b370bcc888c1c623e1f86912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafe841ee95be66d8b3affc6f941c643fb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:gafe841ee95be66d8b3affc6f941c643fb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gafe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a> = typename std::conditional&lt; std::is_floating_point&lt; T &gt;::value, <a class="el" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html">NormalizingBiQuadFilterDF1</a>&lt; T &gt;, <a class="el" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a>&lt; T &gt; &gt;::type</td></tr>
 <tr class="memdesc:gafe841ee95be66d8b3affc6f941c643fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise.  <a href="../../d2/d5a/group__Filters.html#gafe841ee95be66d8b3affc6f941c643fb">More...</a><br /></td></tr>
@@ -140,17 +147,63 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga8a323196012f0bcaed646c0875db12de"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">IIRImplementation</a> = typename std::conditional&lt; std::is_floating_point&lt; T &gt;::value, <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a>&lt; NB, NA, T &gt;, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a>&lt; NB, NA, T &gt; &gt;::type</td></tr>
 <tr class="memdesc:ga8a323196012f0bcaed646c0875db12de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise.  <a href="../../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de">More...</a><br /></td></tr>
 <tr class="separator:ga8a323196012f0bcaed646c0875db12de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
+<tr class="memitem:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a> = AH::Array&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, N &gt;</td></tr>
+<tr class="separator:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gac036f5b0e8fe3c88638a320065518645"><td class="memTemplParams" colspan="2">template&lt;uint8_t N, class T  = float&gt; </td></tr>
+<tr class="memitem:gac036f5b0e8fe3c88638a320065518645"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T,(N+1)/2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gac036f5b0e8fe3c88638a320065518645">butter_coeff</a> (double f_c)</td></tr>
+<tr class="memdesc:gac036f5b0e8fe3c88638a320065518645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute Butterworth filter coefficients.  <a href="../../d2/d5a/group__Filters.html#gac036f5b0e8fe3c88638a320065518645">More...</a><br /></td></tr>
+<tr class="separator:gac036f5b0e8fe3c88638a320065518645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99b0be2cad03d253b6c21597ced84971"><td class="memTemplParams" colspan="2">template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1&lt;T&gt;&gt; </td></tr>
 <tr class="memitem:ga99b0be2cad03d253b6c21597ced84971"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T,(N+1)/2, Implementation &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga99b0be2cad03d253b6c21597ced84971">butter</a> (double f_c)</td></tr>
-<tr class="memdesc:ga99b0be2cad03d253b6c21597ced84971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a butterworth filter.  <a href="../../d2/d5a/group__Filters.html#ga99b0be2cad03d253b6c21597ced84971">More...</a><br /></td></tr>
+<tr class="memdesc:ga99b0be2cad03d253b6c21597ced84971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Butterworth filter, implemented as Second Order Sections (SOS).  <a href="../../d2/d5a/group__Filters.html#ga99b0be2cad03d253b6c21597ced84971">More...</a><br /></td></tr>
 <tr class="separator:ga99b0be2cad03d253b6c21597ced84971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade7243615e55c3ae84568840c70ff8b1"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA, class T  = float&gt; </td></tr>
+<tr class="memitem:gade7243615e55c3ae84568840c70ff8b1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gade7243615e55c3ae84568840c70ff8b1">makeIIRFilter</a> (const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; NB, NA, T &gt; &amp;tf)</td></tr>
+<tr class="separator:gade7243615e55c3ae84568840c70ff8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78dfcd91edd6e7f766f8d6b647f4840e"><td class="memTemplParams" colspan="2">template&lt;size_t NB, size_t NA, class T  = float&gt; </td></tr>
+<tr class="memitem:ga78dfcd91edd6e7f766f8d6b647f4840e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt; NB, NA, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga78dfcd91edd6e7f766f8d6b647f4840e">makeIIRFilter</a> (const AH::Array&lt; T, NB &gt; &amp;b_coefficients, const AH::Array&lt; T, NA &gt; &amp;a_coefficients)</td></tr>
+<tr class="separator:ga78dfcd91edd6e7f766f8d6b647f4840e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memTemplParams" colspan="2">template&lt;class T , size_t M, size_t N&gt; </td></tr>
+<tr class="memitem:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M+N *2, M+N *2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga6efe008f33577c0f9bd7b6be5ea5b443">sos2tf_helper</a> (const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;tf, AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, N, false, true &gt; sos)</td></tr>
+<tr class="separator:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memTemplParams" colspan="2">template&lt;class T , size_t M&gt; </td></tr>
+<tr class="memitem:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M+2, M+2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga0952998c8890e77474a6e1f96b25f9c3">sos2tf_helper</a> (const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;tf, AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, 1, false, true &gt; sos)</td></tr>
+<tr class="separator:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
+<tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; N *2+1, N *2+1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">sos2tf</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;sos)</td></tr>
+<tr class="memdesc:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Second Order Section (SOS) coefficients to an equivalent tranfer function representation.  <a href="../../d2/d5a/group__Filters.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">More...</a><br /></td></tr>
+<tr class="separator:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaabf49e4646cc7d2e03d3396cc86c6351">sos2tf</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, 1 &gt; &amp;sos)</td></tr>
+<tr class="separator:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes for basic filtering and hysteresis. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="gabfc22183b370bcc888c1c623e1f86912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfc22183b370bcc888c1c623e1f86912">&#9670;&nbsp;</a></span>BiQuadCoefficients</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T  = float&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a> =  <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt;3, 3, T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BiQuadratic transfer function coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00013">13</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+
+</div>
+</div>
 <a id="gafe841ee95be66d8b3affc6f941c643fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafe841ee95be66d8b3affc6f941c643fb">&#9670;&nbsp;</a></span>BiQuadDF1Implementation</h2>
 
@@ -167,7 +220,7 @@ template&lt;class T &gt; </div>
 
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00175">175</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00195">195</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
@@ -187,7 +240,7 @@ template&lt;class T &gt; </div>
 
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00409">409</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html#l00449">449</a> of file <a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">BiQuad.hpp</a>.</p>
 
 </div>
 </div>
@@ -207,11 +260,72 @@ template&lt;uint8_t NB, uint8_t NA, class T &gt; </div>
 
 <p>Select the <a class="el" href="../../db/d07/classNormalizingIIRFilter.html">NormalizingIIRFilter</a> implementation if <code>T</code> is a floating point type, <a class="el" href="../../dc/d27/classNonNormalizingIIRFilter.html">NonNormalizingIIRFilter</a> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00207">207</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00214">214</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaabcd2526c43fb9fb7c3b4da347ab3d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabcd2526c43fb9fb7c3b4da347ab3d40">&#9670;&nbsp;</a></span>SOSCoefficients</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a> =  AH::Array&lt;<a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt;T&gt;, N&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00010">10</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gac036f5b0e8fe3c88638a320065518645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac036f5b0e8fe3c88638a320065518645">&#9670;&nbsp;</a></span>butter_coeff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t N, class T  = float&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt;T, (N + 1) / 2&gt; butter_coeff </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f_c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute Butterworth filter coefficients. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Order of the filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f_c</td><td>Normalized cut-off frequency. \( f_c \in \left[0, 1\right] \) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the coefficients.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ga99b0be2cad03d253b6c21597ced84971"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga99b0be2cad03d253b6c21597ced84971">&#9670;&nbsp;</a></span>butter()</h2>
 
@@ -230,7 +344,7 @@ template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1
       </table>
 </div><div class="memdoc">
 
-<p>Create a butterworth filter. </p>
+<p>Create a Butterworth filter, implemented as Second Order Sections (SOS). </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">N</td><td>Order of the filter. </td></tr>
@@ -239,13 +353,184 @@ template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f_c</td><td>Normalized cut-off frequency. \( f_c \in \left[0, 1\right] \)</td></tr>
+    <tr><td class="paramname">f_c</td><td>Normalized cut-off frequency. \( f_c \in \left[0, 1\right] \) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of filter values and coefficients. </td></tr>
+    <tr><td class="paramname">Implementation</td><td>The BiQuad implementation to use.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gade7243615e55c3ae84568840c70ff8b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade7243615e55c3ae84568840c70ff8b1">&#9670;&nbsp;</a></span>makeIIRFilter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA, class T  = float&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt;NB, NA, T&gt; makeIIRFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; NB, NA, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00270">270</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga78dfcd91edd6e7f766f8d6b647f4840e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78dfcd91edd6e7f766f8d6b647f4840e">&#9670;&nbsp;</a></span>makeIIRFilter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t NB, size_t NA, class T  = float&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d94/classIIRFilter.html">IIRFilter</a>&lt;NB, NA, T&gt; makeIIRFilter </td>
+          <td>(</td>
+          <td class="paramtype">const AH::Array&lt; T, NB &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b_coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AH::Array&lt; T, NA &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_coefficients</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html#l00275">275</a> of file <a class="el" href="../../dc/d64/IIRFilter_8hpp_source.html">IIRFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6efe008f33577c0f9bd7b6be5ea5b443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6efe008f33577c0f9bd7b6be5ea5b443">&#9670;&nbsp;</a></span>sos2tf_helper() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t M, size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt;M + N * 2, M + N * 2, T&gt; sos2tf_helper </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, N, false, true &gt;&#160;</td>
+          <td class="paramname"><em>sos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00038">38</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga0952998c8890e77474a6e1f96b25f9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0952998c8890e77474a6e1f96b25f9c3">&#9670;&nbsp;</a></span>sos2tf_helper() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t M&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt;M + 2, M + 2, T&gt; sos2tf_helper </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, 1, false, true &gt;&#160;</td>
+          <td class="paramname"><em>sos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa8b7e0ee23e95ae137155d2f2dcfb993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8b7e0ee23e95ae137155d2f2dcfb993">&#9670;&nbsp;</a></span>sos2tf() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt;N * 2 + 1, N * 2 + 1, T&gt; sos2tf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert Second Order Section (SOS) coefficients to an equivalent tranfer function representation. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaabf49e4646cc7d2e03d3396cc86c6351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabf49e4646cc7d2e03d3396cc86c6351">&#9670;&nbsp;</a></span>sos2tf() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt;3, 3, T&gt; sos2tf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../df/ddc/SOSFilter_8hpp_source.html">SOSFilter.hpp</a>.</p>
 
 </div>
 </div>

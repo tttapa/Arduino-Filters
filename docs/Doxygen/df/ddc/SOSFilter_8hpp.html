@@ -75,16 +75,20 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">SOSFilter.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">Filters/BiQuad.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d5/db6/ArrayHelpers_8hpp_source.html">AH/Containers/ArrayHelpers.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/dde/BiQuad_8hpp_source.html">Filters/BiQuad.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SOSFilter.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d84/SOSFilter_8hpp__incl.svg" width="1128" height="635"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d84/SOSFilter_8hpp__incl.svg" width="1070" height="710"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -98,6 +102,28 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter&lt; T, N, Implementation &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
+<tr class="memitem:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a> = AH::Array&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, N &gt;</td></tr>
+<tr class="separator:gaabcd2526c43fb9fb7c3b4da347ab3d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memTemplParams" colspan="2">template&lt;class T , size_t M, size_t N&gt; </td></tr>
+<tr class="memitem:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M+N *2, M+N *2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga6efe008f33577c0f9bd7b6be5ea5b443">sos2tf_helper</a> (const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;tf, AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, N, false, true &gt; sos)</td></tr>
+<tr class="separator:ga6efe008f33577c0f9bd7b6be5ea5b443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memTemplParams" colspan="2">template&lt;class T , size_t M&gt; </td></tr>
+<tr class="memitem:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M+2, M+2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#ga0952998c8890e77474a6e1f96b25f9c3">sos2tf_helper</a> (const <a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; M, M, T &gt; &amp;tf, AH::ArraySlice&lt; <a class="el" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">BiQuadCoefficients</a>&lt; T &gt;, 1, false, true &gt; sos)</td></tr>
+<tr class="separator:ga0952998c8890e77474a6e1f96b25f9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
+<tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; N *2+1, N *2+1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">sos2tf</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;sos)</td></tr>
+<tr class="memdesc:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Second Order Section (SOS) coefficients to an equivalent tranfer function representation.  <a href="../../d2/d5a/group__Filters.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">More...</a><br /></td></tr>
+<tr class="separator:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d5a/group__Filters.html#gaabf49e4646cc7d2e03d3396cc86c6351">sos2tf</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, 1 &gt; &amp;sos)</td></tr>
+<tr class="separator:gaabf49e4646cc7d2e03d3396cc86c6351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

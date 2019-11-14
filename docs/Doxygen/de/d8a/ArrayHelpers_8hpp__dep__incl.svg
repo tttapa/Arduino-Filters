@@ -12,23 +12,36 @@
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="115,-224.5 115,-243.5 207,-243.5 207,-224.5 115,-224.5"/>
-<text text-anchor="middle" x="161" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArrayHelpers.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="239,-224.5 239,-243.5 331,-243.5 331,-224.5 239,-224.5"/>
+<text text-anchor="middle" x="285" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArrayHelpers.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="../../d2/d05/StaticSizeExtendedIOElement_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="77,-168.5 77,-187.5 245,-187.5 245,-168.5 77,-168.5"/>
-<text text-anchor="middle" x="161" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">StaticSizeExtendedIOElement.hpp</text>
+<polygon fill="white" stroke="black" points="104,-168.5 104,-187.5 272,-187.5 272,-168.5 104,-168.5"/>
+<text text-anchor="middle" x="188" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">StaticSizeExtendedIOElement.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M161,-213.805C161,-204.91 161,-194.78 161,-187.751"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="157.5,-214.083 161,-224.083 164.5,-214.083 157.5,-214.083"/>
+<path fill="none" stroke="midnightblue" d="M260.665,-219.453C242.757,-209.483 218.946,-196.228 203.546,-187.655"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="258.975,-222.518 269.415,-224.324 262.38,-216.402 258.975,-222.518"/>
+</g>
+<!-- Node11 -->
+<g id="node11" class="node"><title>Node11</title>
+<g id="a_node11"><a xlink:href="../../df/ddc/SOSFilter_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="344,-168.5 344,-187.5 422,-187.5 422,-168.5 344,-168.5"/>
+<text text-anchor="middle" x="383" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">SOSFilter.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node11 -->
+<g id="edge13" class="edge"><title>Node1&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M309.586,-219.453C327.678,-209.483 351.735,-196.228 367.294,-187.655"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="307.815,-216.432 300.745,-224.324 311.193,-222.563 307.815,-216.432"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -40,8 +53,8 @@
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M134.481,-163.862C114.27,-153.849 87.0129,-140.346 69.4693,-131.655"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="132.973,-167.021 143.487,-168.324 136.08,-160.748 132.973,-167.021"/>
+<path fill="none" stroke="midnightblue" d="M156.865,-164.638C131.343,-154.504 95.8913,-140.427 73.4488,-131.516"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="155.865,-168.006 166.45,-168.444 158.448,-161.5 155.865,-168.006"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -53,8 +66,8 @@
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M161,-157.805C161,-148.91 161,-138.78 161,-131.751"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="157.5,-158.083 161,-168.083 164.5,-158.083 157.5,-158.083"/>
+<path fill="none" stroke="midnightblue" d="M178.991,-158.983C174.408,-149.817 169.046,-139.092 165.376,-131.751"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="175.939,-160.704 183.541,-168.083 182.2,-157.573 175.939,-160.704"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
@@ -66,8 +79,8 @@
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M189.773,-164.368C212.807,-154.255 244.484,-140.349 264.601,-131.516"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="188.239,-161.219 180.49,-168.444 191.053,-167.628 188.239,-161.219"/>
+<path fill="none" stroke="midnightblue" d="M212.574,-163.177C230.239,-153.241 253.513,-140.149 268.614,-131.655"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="210.424,-160.371 203.424,-168.324 213.856,-166.472 210.424,-160.371"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
@@ -148,6 +161,19 @@
 <g id="edge12" class="edge"><title>Node10&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M435.458,-29.6911C436.106,-38.6353 435.676,-48.9272 434.166,-56.083"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="438.923,-29.2002 434.131,-19.7511 431.985,-30.1262 438.923,-29.2002"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node"><title>Node12</title>
+<g id="a_node12"><a xlink:href="../../d4/d40/Butterworth_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="368,-112.5 368,-131.5 454,-131.5 454,-112.5 368,-112.5"/>
+<text text-anchor="middle" x="411" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Butterworth.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge14" class="edge"><title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M392.342,-158.983C397.095,-149.817 402.656,-139.092 406.462,-131.751"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="389.12,-157.594 387.624,-168.083 395.334,-160.817 389.12,-157.594"/>
 </g>
 </g>
 </svg>
