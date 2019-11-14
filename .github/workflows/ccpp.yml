@@ -9,12 +9,14 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@2.0.0
     - name: CMake
       run: cmake ..
       working-directory: build
     - name: Build
       run: make -j4
       working-directory: build
-    - name: Run Tests
+    - name: Run tests
       run: make check
       working-directory: build
