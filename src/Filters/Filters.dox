@@ -1,0 +1,16 @@
+/**
+ * @defgroup    Filters Arduino Filters
+ * @brief   Main module containing all filters and filter utilities.
+ */
+
+/**
+ * @defgroup    FilterImplementations   Filter Implementations
+ * @brief   Different implementations.
+ * @ingroup Filters
+ */
+
+/** 
+ * @defgroup    FilterDesign    Filter Design
+ * @brief   Filter design tools.
+ * @ingroup Filters
+ */

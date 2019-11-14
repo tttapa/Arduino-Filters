@@ -7,10 +7,14 @@
 /// @addtogroup Filters
 /// @{
 
-
 /// BiQuadratic transfer function coefficients.
 template <class T = float>
 using BiQuadCoefficients = TransferFunction<3, 3, T>;
+
+/// @}
+
+/// @addtogroup FilterImplementations
+/// @{
 
 // Direct Form 1 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -279,7 +283,12 @@ class BiQuadFilterDF1 : public BiQuadDF1Implementation<T> {
     }
 };
 
+/// @}
+
 // Direct Form 2 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+/// @addtogroup FilterImplementations
+/// @{
 
 /** 
  * @brief   BiQuad filter Direct Form 2 implementation that normalizes the

@@ -4,7 +4,7 @@
 #include <AH/STL/type_traits>
 #include <Filters/TransferFunction.hpp>
 
-/// @addtogroup Filters
+/// @addtogroup FilterImplementations
 /// @{
 
 /** 

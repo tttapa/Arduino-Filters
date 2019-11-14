@@ -6,12 +6,22 @@
 /// @addtogroup Filters
 /// @{
 
+/**
+ * @brief   Second Order Sections filter. Higher cost, but better numerical
+ *          stability.
+ * 
+ * @tparam  T 
+ *          The type of the signals and filter coefficients.
+ * @tparam  N 
+ *          The number of sections.
+ */
 template <class T, size_t N>
 using SOSCoefficients = AH::Array<BiQuadCoefficients<T>, N>;
 
 template <class T, size_t N, class Implementation = BiQuadFilterDF1<T>>
 class SOSFilter {
   public:
+    /// Constructor.
     SOSFilter(const SOSCoefficients<T, N> &sectionCoefficients)
         : sections{AH::copyAs<Implementation>(sectionCoefficients)} {}
 
@@ -59,7 +69,7 @@ sos2tf_helper(const TransferFunction<M, M, T> &tf,
 /**
  * @brief   Convert Second Order Section (SOS) coefficients to an equivalent 
  *          tranfer function representation.
- * @ingroup    Filters
+ * @ingroup    FilterDesign
  */
 template <class T, size_t N>
 TransferFunction<N * 2 + 1, N * 2 + 1, T>
