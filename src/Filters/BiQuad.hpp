@@ -2,9 +2,15 @@
 
 #include <AH/Containers/Array.hpp>
 #include <AH/STL/cmath>
+#include <Filters/TransferFunction.hpp>
 
 /// @addtogroup Filters
 /// @{
+
+
+/// BiQuadratic transfer function coefficients.
+template <class T = float>
+using BiQuadCoefficients = TransferFunction<3, 3, T>;
 
 // Direct Form 1 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -34,9 +40,16 @@ class NormalizingBiQuadFilterDF1 {
                                const AH::Array<T, 3> &a)
         : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
+    NormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients)
+        : NormalizingBiQuadFilterDF1{coefficients.b, coefficients.a} {}
+
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
         : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+
+    NormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients,
+                               T gain)
+        : NormalizingBiQuadFilterDF1{coefficients.b, coefficients.a, gain} {}
 
     template <bool Enable = true>
     static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
@@ -112,9 +125,16 @@ class NonNormalizingBiQuadFilterDF1 {
                                   const AH::Array<T, 3> &a)
         : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
+    NonNormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients)
+        : NonNormalizingBiQuadFilterDF1{coefficients.b, coefficients.a} {}
+
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
         : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+
+    NonNormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients,
+                                  T gain)
+        : NonNormalizingBiQuadFilterDF1{coefficients.b, coefficients.a, gain} {}
 
     template <bool Enable = true>
     static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
@@ -213,6 +233,9 @@ class BiQuadFilterDF1 : public BiQuadDF1Implementation<T> {
                     const AH::Array<T, 3> &a_coefficients)
         : BiQuadDF1Implementation<T>{b_coefficients, a_coefficients} {}
 
+    BiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients)
+        : BiQuadDF1Implementation<T>{coefficients} {}
+
     /**
      * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.
      * 
@@ -234,6 +257,9 @@ class BiQuadFilterDF1 : public BiQuadDF1Implementation<T> {
     BiQuadFilterDF1(const AH::Array<T, 3> &b_coefficients,
                     const AH::Array<T, 3> &a_coefficients, T gain)
         : BiQuadDF1Implementation<T>{b_coefficients, a_coefficients, gain} {}
+
+    BiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients, T gain)
+        : BiQuadDF1Implementation<T>{coefficients, gain} {}
 
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and
@@ -276,9 +302,16 @@ class NormalizingBiQuadFilterDF2 {
                                const AH::Array<T, 3> &a)
         : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
 
+    NormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients)
+        : NormalizingBiQuadFilterDF2{coefficients.b, coefficients.a} {}
+
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
         : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+
+    NormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients,
+                               T gain)
+        : NormalizingBiQuadFilterDF2{coefficients.b, coefficients.a, gain} {}
 
     template <bool Enable = true>
     static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
@@ -349,9 +382,16 @@ class NonNormalizingBiQuadFilterDF2 {
                                   const AH::Array<T, 3> &a)
         : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
 
+    NonNormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients)
+        : NonNormalizingBiQuadFilterDF2{coefficients.b, coefficients.a} {}
+
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
         : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+
+    NonNormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients,
+                                  T gain)
+        : NonNormalizingBiQuadFilterDF2{coefficients.b, coefficients.a, gain} {}
 
     template <bool Enable = true>
     static std::enable_if_t<std::is_floating_point<T>::value && Enable, T>
@@ -447,6 +487,9 @@ class BiQuadFilterDF2 : public BiQuadDF2Implementation<T> {
                     const AH::Array<T, 3> &a_coefficients)
         : BiQuadDF2Implementation<T>{b_coefficients, a_coefficients} {}
 
+    BiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients)
+        : BiQuadDF2Implementation<T>{coefficients} {}
+
     /**
      * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.
      * 
@@ -468,6 +511,9 @@ class BiQuadFilterDF2 : public BiQuadDF2Implementation<T> {
     BiQuadFilterDF2(const AH::Array<T, 3> &b_coefficients,
                     const AH::Array<T, 3> &a_coefficients, T gain)
         : BiQuadDF2Implementation<T>{b_coefficients, a_coefficients, gain} {}
+
+    BiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients, T gain)
+        : BiQuadDF2Implementation<T>{coefficients, gain} {}
 
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and

@@ -2,6 +2,7 @@
 
 #include <AH/Containers/Array.hpp>
 #include <AH/STL/type_traits>
+#include <Filters/TransferFunction.hpp>
 
 /// @addtogroup Filters
 /// @{
@@ -49,6 +50,9 @@ class NonNormalizingIIRFilter {
         for (uint8_t i = 0; i < 2 * MA - 1; ++i)
             this->a_coefficients[i] = a_coefficients[(2 * MA - 2 - i) % MA + 1];
     }
+
+    NonNormalizingIIRFilter(const TransferFunction<NB, NA, T> &tf)
+        : NonNormalizingIIRFilter{tf.b, tf.a} {}
 
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and
@@ -149,6 +153,9 @@ class NormalizingIIRFilter {
                 a_coefficients[(2 * MA - 2 - i) % MA + 1] / a0;
     }
 
+    NormalizingIIRFilter(const TransferFunction<NB, NA, T> &tf)
+        : NormalizingIIRFilter{tf.b, tf.a} {}
+
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and
      *          return the new output @f$ y[n] @f$.
@@ -243,6 +250,9 @@ class IIRFilter : public IIRImplementation<NB, NA, T> {
               const AH::Array<T, NA> &a_coefficients)
         : IIRImplementation<NB, NA, T>{b_coefficients, a_coefficients} {}
 
+    IIRFilter(const TransferFunction<NB, NA, T> &tf)
+        : IIRImplementation<NB, NA, T>{tf} {}
+
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and
      *          return the new output @f$ y[n] @f$.
@@ -255,5 +265,16 @@ class IIRFilter : public IIRImplementation<NB, NA, T> {
         return IIRImplementation<NB, NA, T>::operator()(input);
     }
 };
+
+template <size_t NB, size_t NA, class T = float>
+IIRFilter<NB, NA, T> makeIIRFilter(const TransferFunction<NB, NA, T> &tf) {
+    return tf;
+}
+
+template <size_t NB, size_t NA, class T = float>
+IIRFilter<NB, NA, T> makeIIRFilter(const AH::Array<T, NB> &b_coefficients,
+                                   const AH::Array<T, NA> &a_coefficients) {
+    return {b_coefficients, a_coefficients};
+}
 
 /// @}
