@@ -205,6 +205,8 @@ class NormalizingIIRFilter {
     AH::Array<T, 2 * MA - 1> a_coefficients;
 };
 
+/// @}
+
 /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating
 /// point type, @ref NonNormalizingIIRFilter otherwise.
 template <uint8_t NB, uint8_t NA, class T>
@@ -212,6 +214,9 @@ using IIRImplementation =
     typename std::conditional<std::is_floating_point<T>::value,
                               NormalizingIIRFilter<NB, NA, T>,
                               NonNormalizingIIRFilter<NB, NA, T>>::type;
+
+/// @addtogroup Filters
+/// @{
 
 /** 
  * @brief   Generic Infinite Impulse Response filter class.
@@ -266,11 +271,13 @@ class IIRFilter : public IIRImplementation<NB, NA, T> {
     }
 };
 
+/// Create an IIRFilter from the given transfer function.
 template <size_t NB, size_t NA, class T = float>
 IIRFilter<NB, NA, T> makeIIRFilter(const TransferFunction<NB, NA, T> &tf) {
     return tf;
 }
 
+/// Create an IIRFilter from the given transfer function coefficients.
 template <size_t NB, size_t NA, class T = float>
 IIRFilter<NB, NA, T> makeIIRFilter(const AH::Array<T, NB> &b_coefficients,
                                    const AH::Array<T, NA> &a_coefficients) {

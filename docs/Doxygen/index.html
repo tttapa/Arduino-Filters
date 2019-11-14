@@ -74,7 +74,7 @@ $(function() {
 <div class="title">Arduino Filters Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.org/tttapa/Arduino-Filters"><img src="https://travis-ci.org/tttapa/Arduino-Filters.svg?branch=master" alt="Build Status" class="inline"/></a></p>
+<div class="textblock"><p><a href="https://github.com/tttapa/Arduino-Filters/actions"><img src="https://github.com/tttapa/Arduino-Filters/workflows/CI%20Tests/badge.svg" alt="Build Status" class="inline"/></a> <a href="https://travis-ci.org/tttapa/Arduino-Filters"><img src="https://travis-ci.org/tttapa/Arduino-Filters.svg?branch=master" alt="Build Status" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md27"></a>
 Arduino Filters</h1>
 <h2><a class="anchor" id="autotoc_md28"></a>
@@ -83,16 +83,51 @@ Features</h2>
 <li><b>Infinite Impulse Response Filters</b></li>
 <li><b>Finite Impulse Response Filters</b></li>
 <li><b>BiQuad Filters</b></li>
+<li><b>Butterworth Filters</b></li>
 <li><b>Simple and Exponential Moving Average Filters</b></li>
 <li><b><a class="el" href="d2/dcb/classHysteresis.html" title="A class for applying hysteresis to a given input.">Hysteresis</a></b></li>
 </ul>
-<p>These filters were originally part of the <a href="https://github.com/tttapa/Filters">old Filters library</a>, with parts of</p>
+<p>These filters were originally part of the <a href="https://github.com/tttapa/Filters">old Filters library</a>. <br  />
+ It has been updated completely, with continuous integration, unit tests, etc.</p>
 <h2><a class="anchor" id="autotoc_md29"></a>
 Documentation</h2>
 <p>The automatically generated Doxygen documentation for this library can be found <a href="https://tttapa.github.io/Arduino-Filters/Doxygen/index.html">here</a>. <br  />
- Test coverage information can be found <a href="https://tttapa.github.io/Arduino-Filters/Coverage/index.html">here</a>. </p>
-</div></div><!-- PageDoc -->
+ Test coverage information can be found <a href="https://tttapa.github.io/Arduino-Filters/Coverage/index.html">here</a>.</p>
+<p>You might want to start <a href="https://tttapa.github.io/Arduino-Filters/Doxygen/d2/d5a/group__Filters.html"><b>here</b></a>.</p>
+<h2><a class="anchor" id="autotoc_md30"></a>
+Example: Butterworth filter</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="d1/d7d/Filters_8h.html">Filters.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="d1/dd0/MillisMicrosTimer_8hpp.html">AH/Timing/MillisMicrosTimer.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="d4/d40/Butterworth_8hpp.html">Filters/Butterworth.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">  Serial.begin(115200);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Sampling frequency</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_s = 100; <span class="comment">// Hz</span></div>
+<div class="line"><span class="comment">// Cut-off frequency (-3 dB)</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_c = 40; <span class="comment">// Hz</span></div>
+<div class="line"><span class="comment">// Normalized cut-off frequency</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_n = f_c / f_s;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Sample timer</span></div>
+<div class="line"><a class="code" href="dc/dea/classTimer.html">Timer&lt;micros&gt;</a> timer = std::round(1e6 / f_s);</div>
+<div class="line"><span class="comment">// Sixth-order Butterworth filter</span></div>
+<div class="line"><span class="keyword">auto</span> filter = butter&lt;6&gt;(f_n);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">  <span class="keywordflow">if</span> (timer)</div>
+<div class="line">    Serial.println(filter(<a class="code" href="d8/d3d/namespaceExtIO.html#a7203d161f7e9676d191ed320d9dad00f">analogRead</a>(A0)));</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
+<div class="ttc" id="aButterworth_8hpp_html"><div class="ttname"><a href="d4/d40/Butterworth_8hpp.html">Butterworth.hpp</a></div></div>
+<div class="ttc" id="aMillisMicrosTimer_8hpp_html"><div class="ttname"><a href="d1/dd0/MillisMicrosTimer_8hpp.html">MillisMicrosTimer.hpp</a></div></div>
+<div class="ttc" id="aFilters_8h_html"><div class="ttname"><a href="d1/d7d/Filters_8h.html">Filters.h</a></div><div class="ttdoc">Dummy header file for Arduino builder. You have to add this file first, so the other headers are in t...</div></div>
+<div class="ttc" id="aclassTimer_html"><div class="ttname"><a href="dc/dea/classTimer.html">Timer</a></div><div class="ttdoc">A class for easily managing timed events.</div><div class="ttdef"><b>Definition:</b> <a href="d1/dd0/MillisMicrosTimer_8hpp_source.html#l00022">MillisMicrosTimer.hpp:22</a></div></div>
+<div class="ttc" id="anamespaceExtIO_html_a7203d161f7e9676d191ed320d9dad00f"><div class="ttname"><a href="d8/d3d/namespaceExtIO.html#a7203d161f7e9676d191ed320d9dad00f">ExtIO::analogRead</a></div><div class="ttdeci">analog_t analogRead(pin_t pin)</div><div class="ttdoc">An ExtIO version of the Arduino function.</div><div class="ttdef"><b>Definition:</b> <a href="d6/d3c/ExtendedInputOutput_8cpp_source.html#l00084">ExtendedInputOutput.cpp:84</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -186,6 +186,8 @@ class NonNormalizingBiQuadFilterDF1 {
     T a0 = T{1};            ///< First denominator coefficient
 };
 
+/// @}
+
 /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating
 /// point type, @ref NonNormalizingIIRFilter otherwise.
 template <class T>
@@ -193,6 +195,9 @@ using BiQuadDF1Implementation =
     typename std::conditional<std::is_floating_point<T>::value,
                               NormalizingBiQuadFilterDF1<T>,
                               NonNormalizingBiQuadFilterDF1<T>>::type;
+
+/// @addtogroup Filters
+/// @{
 
 /** 
  * @brief   Generic BiQuad (Bi-Quadratic) filter class, Direct Form 1 
@@ -440,6 +445,8 @@ class NonNormalizingBiQuadFilterDF2 {
     T a0 = T{1};            ///< First denominator coefficient
 };
 
+/// @}
+
 /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating
 /// point type, @ref NonNormalizingIIRFilter otherwise.
 template <class T>
@@ -447,6 +454,9 @@ using BiQuadDF2Implementation =
     typename std::conditional<std::is_floating_point<T>::value,
                               NormalizingBiQuadFilterDF2<T>,
                               NonNormalizingBiQuadFilterDF2<T>>::type;
+
+/// @addtogroup Filters
+/// @{
 
 /** 
  * @brief   Generic BiQuad (Bi-Quadratic) filter class, Direct Form 2 

@@ -33,6 +33,8 @@ class SOSFilter {
     AH::Array<Implementation, N> sections;
 };
 
+/// @}
+
 template <class T, size_t M, size_t N>
 TransferFunction<M + N * 2, M + N * 2, T>
 sos2tf_helper(const TransferFunction<M, M, T> &tf,
@@ -54,8 +56,11 @@ sos2tf_helper(const TransferFunction<M, M, T> &tf,
     };
 }
 
-/// Convert Second Order Section (SOS) coefficients to an equivalent tranfer
-/// function representation.
+/**
+ * @brief   Convert Second Order Section (SOS) coefficients to an equivalent 
+ *          tranfer function representation.
+ * @ingroup    Filters
+ */
 template <class T, size_t N>
 TransferFunction<N * 2 + 1, N * 2 + 1, T>
 sos2tf(const SOSCoefficients<T, N> &sos) {
@@ -66,5 +71,3 @@ template <class T>
 TransferFunction<3, 3, T> sos2tf(const SOSCoefficients<T, 1> &sos) {
     return sos[0];
 }
-
-/// @}

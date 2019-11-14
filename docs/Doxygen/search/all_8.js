@@ -2,7 +2,7 @@ var searchData=
 [
   ['iirfilter_244',['IIRFilter',['../d5/d94/classIIRFilter.html',1,'IIRFilter&lt; NB, NA, T &gt;'],['../d5/d94/classIIRFilter.html#a80d470da0d59ac174cd5bd34421eb028',1,'IIRFilter::IIRFilter(const AH::Array&lt; T, NB &gt; &amp;b_coefficients, const AH::Array&lt; T, NA &gt; &amp;a_coefficients)'],['../d5/d94/classIIRFilter.html#aade2e4f0ce020488a7bde86f6dc3bc38',1,'IIRFilter::IIRFilter(const TransferFunction&lt; NB, NA, T &gt; &amp;tf)']]],
   ['iirfilter_2ehpp_245',['IIRFilter.hpp',['../dc/d64/IIRFilter_8hpp.html',1,'']]],
-  ['iirimplementation_246',['IIRImplementation',['../d2/d5a/group__Filters.html#ga8a323196012f0bcaed646c0875db12de',1,'IIRFilter.hpp']]],
+  ['iirimplementation_246',['IIRImplementation',['../dc/d64/IIRFilter_8hpp.html#a8a323196012f0bcaed646c0875db12de',1,'IIRFilter.hpp']]],
   ['increasebitdepth_247',['increaseBitDepth',['../df/d13/group__Math.html#ga46fa72568df66520decc1fd69b4d37be',1,'IncreaseBitDepth.hpp']]],
   ['increasebitdepth_2ecpp_248',['IncreaseBitDepth.cpp',['../de/d9b/IncreaseBitDepth_8cpp.html',1,'']]],
   ['increasebitdepth_2ehpp_249',['IncreaseBitDepth.hpp',['../d5/dee/IncreaseBitDepth_8hpp.html',1,'']]],
