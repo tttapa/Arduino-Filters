@@ -112,7 +112,16 @@ template <class T, size_t N, class U>
 USE_CONSTEXPR_ARRAY_HELPERS Array<T, N> copyAs(const Array<U, N> &src) {
     Array<T, N> dest{};
     for (size_t i = 0; i < N; ++i)
-        dest[i] = src[i];
+        dest[i] = T(src[i]);
+    return dest;
+}
+
+template <class F, class U, size_t N>
+USE_CONSTEXPR_ARRAY_HELPERS Array<decltype(F{}(U{})), N>
+apply(const Array<U, N> &src, F f) {
+    Array<decltype(F{}(U{})), N> dest{};
+    for (size_t i = 0; i < N; ++i)
+        dest[i] = f(src[i]);
     return dest;
 }
 

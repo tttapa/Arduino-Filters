@@ -187,7 +187,7 @@ class NonNormalizingBiQuadFilterDF1 {
     AH::Array<T, 2> y = {}; ///< Previous outputs
     AH::Array<T, 3> b = {}; ///< Numerator coefficients
     AH::Array<T, 2> a = {}; ///< Denominator coefficients
-    T a0 = T{1};            ///< First denominator coefficient
+    T a0 = T(1.);           ///< First denominator coefficient
 };
 
 /// @}
@@ -451,7 +451,7 @@ class NonNormalizingBiQuadFilterDF2 {
     AH::Array<T, 2> w = {}; ///< Internal state
     AH::Array<T, 3> b = {}; ///< Numerator coefficients
     AH::Array<T, 2> a = {}; ///< Denominator coefficients
-    T a0 = T{1};            ///< First denominator coefficient
+    T a0 = T(1.);           ///< First denominator coefficient
 };
 
 /// @}
