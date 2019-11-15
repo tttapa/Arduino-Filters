@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['filters_1060',['Filters',['../d2/d5a/group__Filters.html',1,'']]]
+  ['error_1109',['Error',['../d0/df7/group__AH__Error.html',1,'']]],
+  ['extended_20input_2foutput_1110',['Extended Input/Output',['../db/dd3/group__AH__ExtIO.html',1,'']]]
 ];

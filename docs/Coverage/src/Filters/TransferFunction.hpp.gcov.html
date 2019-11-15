@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 8f4695e88ac323835baf03984aa1a440c0c5311d - src/Filters/TransferFunction.hpp</title>
+  <title>LCOV - 14dafc9ca0733971bc26b897b50d491427710110 - src/Filters/TransferFunction.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">8f4695e88ac323835baf03984aa1a440c0c5311d</td>
+            <td class="headerValue">14dafc9ca0733971bc26b897b50d491427710110</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">5</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-14 01:11:57</td>
+            <td class="headerValue">2019-11-15 22:01:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">14</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -85,14 +85,14 @@
 <a name="15"><span class="lineNum">      15 </span>            :  */</a>
 <a name="16"><span class="lineNum">      16 </span>            : template &lt;size_t NB, size_t NA = NB, class T = float&gt;</a>
 <a name="17"><span class="lineNum">      17 </span>            : struct TransferFunction {</a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">         13 :     TransferFunction() = default;</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">        103 :     TransferFunction() = default;</span></a>
 <a name="19"><span class="lineNum">      19 </span>            : </a>
 <a name="20"><span class="lineNum">      20 </span>            :     /// Construct a new Transfer Function object.</a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">         18 :     TransferFunction(const AH::Array&lt;T, NB&gt; &amp;b, const AH::Array&lt;T, NA&gt; &amp;a)</span></a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">         18 :         : b(b), a(a) {}</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">         78 :     TransferFunction(const AH::Array&lt;T, NB&gt; &amp;b, const AH::Array&lt;T, NA&gt; &amp;a)</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">         78 :         : b(b), a(a) {}</span></a>
 <a name="23"><span class="lineNum">      23 </span>            : </a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">         13 :     AH::Array&lt;T, NB&gt; b = {};</span></a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">         13 :     AH::Array&lt;T, NA&gt; a = {};</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">        133 :     AH::Array&lt;T, NB&gt; b = {};</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">        133 :     AH::Array&lt;T, NA&gt; a = {};</span></a>
 <a name="26"><span class="lineNum">      26 </span>            : };</a>
 <a name="27"><span class="lineNum">      27 </span>            : </a>
 <a name="28"><span class="lineNum">      28 </span>            : /// @}</a>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 8f4695e88ac323835baf03984aa1a440c0c5311d - src/Filters/IIRFilter.hpp</title>
+  <title>LCOV - 14dafc9ca0733971bc26b897b50d491427710110 - src/Filters/IIRFilter.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">8f4695e88ac323835baf03984aa1a440c0c5311d</td>
+            <td class="headerValue">14dafc9ca0733971bc26b897b50d491427710110</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">67</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-14 01:11:57</td>
+            <td class="headerValue">2019-11-15 22:01:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">30</td>
@@ -74,7 +74,7 @@
 <a name="4"><span class="lineNum">       4 </span>            : #include &lt;AH/STL/type_traits&gt;</a>
 <a name="5"><span class="lineNum">       5 </span>            : #include &lt;Filters/TransferFunction.hpp&gt;</a>
 <a name="6"><span class="lineNum">       6 </span>            : </a>
-<a name="7"><span class="lineNum">       7 </span>            : /// @addtogroup Filters</a>
+<a name="7"><span class="lineNum">       7 </span>            : /// @addtogroup FilterImplementations</a>
 <a name="8"><span class="lineNum">       8 </span>            : /// @{</a>
 <a name="9"><span class="lineNum">       9 </span>            : </a>
 <a name="10"><span class="lineNum">      10 </span>            : /** </a>
@@ -275,79 +275,86 @@
 <a name="205"><span class="lineNum">     205 </span>            :     AH::Array&lt;T, 2 * MA - 1&gt; a_coefficients;</a>
 <a name="206"><span class="lineNum">     206 </span>            : };</a>
 <a name="207"><span class="lineNum">     207 </span>            : </a>
-<a name="208"><span class="lineNum">     208 </span>            : /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating</a>
-<a name="209"><span class="lineNum">     209 </span>            : /// point type, @ref NonNormalizingIIRFilter otherwise.</a>
-<a name="210"><span class="lineNum">     210 </span>            : template &lt;uint8_t NB, uint8_t NA, class T&gt;</a>
-<a name="211"><span class="lineNum">     211 </span>            : using IIRImplementation =</a>
-<a name="212"><span class="lineNum">     212 </span>            :     typename std::conditional&lt;std::is_floating_point&lt;T&gt;::value,</a>
-<a name="213"><span class="lineNum">     213 </span>            :                               NormalizingIIRFilter&lt;NB, NA, T&gt;,</a>
-<a name="214"><span class="lineNum">     214 </span>            :                               NonNormalizingIIRFilter&lt;NB, NA, T&gt;&gt;::type;</a>
-<a name="215"><span class="lineNum">     215 </span>            : </a>
-<a name="216"><span class="lineNum">     216 </span>            : /** </a>
-<a name="217"><span class="lineNum">     217 </span>            :  * @brief   Generic Infinite Impulse Response filter class.</a>
-<a name="218"><span class="lineNum">     218 </span>            :  * </a>
-<a name="219"><span class="lineNum">     219 </span>            :  * Uses the @ref NormalizingIIRFilter implementation for floating point </a>
-<a name="220"><span class="lineNum">     220 </span>            :  * types, and @ref NonNormalizingIIRFilter for all other types. </a>
-<a name="221"><span class="lineNum">     221 </span>            :  * </a>
-<a name="222"><span class="lineNum">     222 </span>            :  * Implements the following difference equation using the Direct-Form 1 </a>
-<a name="223"><span class="lineNum">     223 </span>            :  * implementation:</a>
-<a name="224"><span class="lineNum">     224 </span>            :  * </a>
-<a name="225"><span class="lineNum">     225 </span>            :  * @f[</a>
-<a name="226"><span class="lineNum">     226 </span>            :  * y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i]</a>
-<a name="227"><span class="lineNum">     227 </span>            :  *                          - \sum_{i=1}^{N_a-1} a_i \cdot y[n-i] \right)</a>
-<a name="228"><span class="lineNum">     228 </span>            :  * @f]</a>
-<a name="229"><span class="lineNum">     229 </span>            :  */</a>
-<a name="230"><span class="lineNum">     230 </span>            : template &lt;uint8_t NB, uint8_t NA = NB, class T = float&gt;</a>
-<a name="231"><span class="lineNum">     231 </span>            : class IIRFilter : public IIRImplementation&lt;NB, NA, T&gt; {</a>
-<a name="232"><span class="lineNum">     232 </span>            :   public:</a>
-<a name="233"><span class="lineNum">     233 </span>            :     /**</a>
-<a name="234"><span class="lineNum">     234 </span>            :      * @brief   Construct a new IIR Filter object.</a>
-<a name="235"><span class="lineNum">     235 </span>            :      * </a>
-<a name="236"><span class="lineNum">     236 </span>            :      * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</a>
-<a name="237"><span class="lineNum">     237 </span>            :      * function:</a>
-<a name="238"><span class="lineNum">     238 </span>            :      * </a>
-<a name="239"><span class="lineNum">     239 </span>            :      * @f[</a>
-<a name="240"><span class="lineNum">     240 </span>            :      * H(z) = \frac{b_0 + b_1 z^{-1} + \ldots + b_{N_b} z ^{-N_b}}</a>
-<a name="241"><span class="lineNum">     241 </span>            :      *             {a_0 + a_1 z^{-1} + \ldots + a_{N_b} z ^{-N_a}}</a>
-<a name="242"><span class="lineNum">     242 </span>            :      * @f]</a>
+<a name="208"><span class="lineNum">     208 </span>            : /// @}</a>
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<a name="210"><span class="lineNum">     210 </span>            : /// Select the @ref NormalizingIIRFilter implementation if @p T is a floating</a>
+<a name="211"><span class="lineNum">     211 </span>            : /// point type, @ref NonNormalizingIIRFilter otherwise.</a>
+<a name="212"><span class="lineNum">     212 </span>            : template &lt;uint8_t NB, uint8_t NA, class T&gt;</a>
+<a name="213"><span class="lineNum">     213 </span>            : using IIRImplementation =</a>
+<a name="214"><span class="lineNum">     214 </span>            :     typename std::conditional&lt;std::is_floating_point&lt;T&gt;::value,</a>
+<a name="215"><span class="lineNum">     215 </span>            :                               NormalizingIIRFilter&lt;NB, NA, T&gt;,</a>
+<a name="216"><span class="lineNum">     216 </span>            :                               NonNormalizingIIRFilter&lt;NB, NA, T&gt;&gt;::type;</a>
+<a name="217"><span class="lineNum">     217 </span>            : </a>
+<a name="218"><span class="lineNum">     218 </span>            : /// @addtogroup Filters</a>
+<a name="219"><span class="lineNum">     219 </span>            : /// @{</a>
+<a name="220"><span class="lineNum">     220 </span>            : </a>
+<a name="221"><span class="lineNum">     221 </span>            : /** </a>
+<a name="222"><span class="lineNum">     222 </span>            :  * @brief   Generic Infinite Impulse Response filter class.</a>
+<a name="223"><span class="lineNum">     223 </span>            :  * </a>
+<a name="224"><span class="lineNum">     224 </span>            :  * Uses the @ref NormalizingIIRFilter implementation for floating point </a>
+<a name="225"><span class="lineNum">     225 </span>            :  * types, and @ref NonNormalizingIIRFilter for all other types. </a>
+<a name="226"><span class="lineNum">     226 </span>            :  * </a>
+<a name="227"><span class="lineNum">     227 </span>            :  * Implements the following difference equation using the Direct-Form 1 </a>
+<a name="228"><span class="lineNum">     228 </span>            :  * implementation:</a>
+<a name="229"><span class="lineNum">     229 </span>            :  * </a>
+<a name="230"><span class="lineNum">     230 </span>            :  * @f[</a>
+<a name="231"><span class="lineNum">     231 </span>            :  * y[n] = \frac{1}{a_0} \left(\sum_{i=0}^{N_b-1} b_i \cdot x[n-i]</a>
+<a name="232"><span class="lineNum">     232 </span>            :  *                          - \sum_{i=1}^{N_a-1} a_i \cdot y[n-i] \right)</a>
+<a name="233"><span class="lineNum">     233 </span>            :  * @f]</a>
+<a name="234"><span class="lineNum">     234 </span>            :  */</a>
+<a name="235"><span class="lineNum">     235 </span>            : template &lt;uint8_t NB, uint8_t NA = NB, class T = float&gt;</a>
+<a name="236"><span class="lineNum">     236 </span>            : class IIRFilter : public IIRImplementation&lt;NB, NA, T&gt; {</a>
+<a name="237"><span class="lineNum">     237 </span>            :   public:</a>
+<a name="238"><span class="lineNum">     238 </span>            :     /**</a>
+<a name="239"><span class="lineNum">     239 </span>            :      * @brief   Construct a new IIR Filter object.</a>
+<a name="240"><span class="lineNum">     240 </span>            :      * </a>
+<a name="241"><span class="lineNum">     241 </span>            :      * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</a>
+<a name="242"><span class="lineNum">     242 </span>            :      * function:</a>
 <a name="243"><span class="lineNum">     243 </span>            :      * </a>
-<a name="244"><span class="lineNum">     244 </span>            :      * @param   b_coefficients </a>
-<a name="245"><span class="lineNum">     245 </span>            :      *          The coefficients of the transfer function numerator.</a>
-<a name="246"><span class="lineNum">     246 </span>            :      * @param   a_coefficients </a>
-<a name="247"><span class="lineNum">     247 </span>            :      *          The coefficients of the transfer function denominator.</a>
-<a name="248"><span class="lineNum">     248 </span>            :      */</a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineCov">          8 :     IIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
-<a name="250"><span class="lineNum">     250 </span>            :               const AH::Array&lt;T, NA&gt; &amp;a_coefficients)</a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">          8 :         : IIRImplementation&lt;NB, NA, T&gt;{b_coefficients, a_coefficients} {}</span></a>
-<a name="252"><span class="lineNum">     252 </span>            : </a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          1 :     IIRFilter(const TransferFunction&lt;NB, NA, T&gt; &amp;tf)</span></a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">          1 :         : IIRImplementation&lt;NB, NA, T&gt;{tf} {}</span></a>
-<a name="255"><span class="lineNum">     255 </span>            : </a>
-<a name="256"><span class="lineNum">     256 </span>            :     /**</a>
-<a name="257"><span class="lineNum">     257 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
-<a name="258"><span class="lineNum">     258 </span>            :      *          return the new output @f$ y[n] @f$.</a>
-<a name="259"><span class="lineNum">     259 </span>            :      * </a>
-<a name="260"><span class="lineNum">     260 </span>            :      * @param   input </a>
-<a name="261"><span class="lineNum">     261 </span>            :      *          The new input @f$ x[n] @f$.</a>
-<a name="262"><span class="lineNum">     262 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
-<a name="263"><span class="lineNum">     263 </span>            :      */</a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">        180 :     T operator()(T input) {</span></a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">        180 :         return IIRImplementation&lt;NB, NA, T&gt;::operator()(input);</span></a>
-<a name="266"><span class="lineNum">     266 </span>            :     }</a>
-<a name="267"><span class="lineNum">     267 </span>            : };</a>
-<a name="268"><span class="lineNum">     268 </span>            : </a>
-<a name="269"><span class="lineNum">     269 </span>            : template &lt;size_t NB, size_t NA, class T = float&gt;</a>
-<a name="270"><span class="lineNum">     270 </span><span class="lineCov">          1 : IIRFilter&lt;NB, NA, T&gt; makeIIRFilter(const TransferFunction&lt;NB, NA, T&gt; &amp;tf) {</span></a>
-<a name="271"><span class="lineNum">     271 </span><span class="lineCov">          1 :     return tf;</span></a>
-<a name="272"><span class="lineNum">     272 </span>            : }</a>
+<a name="244"><span class="lineNum">     244 </span>            :      * @f[</a>
+<a name="245"><span class="lineNum">     245 </span>            :      * H(z) = \frac{b_0 + b_1 z^{-1} + \ldots + b_{N_b} z ^{-N_b}}</a>
+<a name="246"><span class="lineNum">     246 </span>            :      *             {a_0 + a_1 z^{-1} + \ldots + a_{N_b} z ^{-N_a}}</a>
+<a name="247"><span class="lineNum">     247 </span>            :      * @f]</a>
+<a name="248"><span class="lineNum">     248 </span>            :      * </a>
+<a name="249"><span class="lineNum">     249 </span>            :      * @param   b_coefficients </a>
+<a name="250"><span class="lineNum">     250 </span>            :      *          The coefficients of the transfer function numerator.</a>
+<a name="251"><span class="lineNum">     251 </span>            :      * @param   a_coefficients </a>
+<a name="252"><span class="lineNum">     252 </span>            :      *          The coefficients of the transfer function denominator.</a>
+<a name="253"><span class="lineNum">     253 </span>            :      */</a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">          8 :     IIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</span></a>
+<a name="255"><span class="lineNum">     255 </span>            :               const AH::Array&lt;T, NA&gt; &amp;a_coefficients)</a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">          8 :         : IIRImplementation&lt;NB, NA, T&gt;{b_coefficients, a_coefficients} {}</span></a>
+<a name="257"><span class="lineNum">     257 </span>            : </a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">          1 :     IIRFilter(const TransferFunction&lt;NB, NA, T&gt; &amp;tf)</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">          1 :         : IIRImplementation&lt;NB, NA, T&gt;{tf} {}</span></a>
+<a name="260"><span class="lineNum">     260 </span>            : </a>
+<a name="261"><span class="lineNum">     261 </span>            :     /**</a>
+<a name="262"><span class="lineNum">     262 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
+<a name="263"><span class="lineNum">     263 </span>            :      *          return the new output @f$ y[n] @f$.</a>
+<a name="264"><span class="lineNum">     264 </span>            :      * </a>
+<a name="265"><span class="lineNum">     265 </span>            :      * @param   input </a>
+<a name="266"><span class="lineNum">     266 </span>            :      *          The new input @f$ x[n] @f$.</a>
+<a name="267"><span class="lineNum">     267 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
+<a name="268"><span class="lineNum">     268 </span>            :      */</a>
+<a name="269"><span class="lineNum">     269 </span><span class="lineCov">        180 :     T operator()(T input) {</span></a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineCov">        180 :         return IIRImplementation&lt;NB, NA, T&gt;::operator()(input);</span></a>
+<a name="271"><span class="lineNum">     271 </span>            :     }</a>
+<a name="272"><span class="lineNum">     272 </span>            : };</a>
 <a name="273"><span class="lineNum">     273 </span>            : </a>
-<a name="274"><span class="lineNum">     274 </span>            : template &lt;size_t NB, size_t NA, class T = float&gt;</a>
-<a name="275"><span class="lineNum">     275 </span>            : IIRFilter&lt;NB, NA, T&gt; makeIIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</a>
-<a name="276"><span class="lineNum">     276 </span>            :                                    const AH::Array&lt;T, NA&gt; &amp;a_coefficients) {</a>
-<a name="277"><span class="lineNum">     277 </span>            :     return {b_coefficients, a_coefficients};</a>
+<a name="274"><span class="lineNum">     274 </span>            : /// Create an IIRFilter from the given transfer function.</a>
+<a name="275"><span class="lineNum">     275 </span>            : template &lt;size_t NB, size_t NA, class T = float&gt;</a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">          1 : IIRFilter&lt;NB, NA, T&gt; makeIIRFilter(const TransferFunction&lt;NB, NA, T&gt; &amp;tf) {</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">          1 :     return tf;</span></a>
 <a name="278"><span class="lineNum">     278 </span>            : }</a>
 <a name="279"><span class="lineNum">     279 </span>            : </a>
-<a name="280"><span class="lineNum">     280 </span>            : /// @}</a>
+<a name="280"><span class="lineNum">     280 </span>            : /// Create an IIRFilter from the given transfer function coefficients.</a>
+<a name="281"><span class="lineNum">     281 </span>            : template &lt;size_t NB, size_t NA, class T = float&gt;</a>
+<a name="282"><span class="lineNum">     282 </span>            : IIRFilter&lt;NB, NA, T&gt; makeIIRFilter(const AH::Array&lt;T, NB&gt; &amp;b_coefficients,</a>
+<a name="283"><span class="lineNum">     283 </span>            :                                    const AH::Array&lt;T, NA&gt; &amp;a_coefficients) {</a>
+<a name="284"><span class="lineNum">     284 </span>            :     return {b_coefficients, a_coefficients};</a>
+<a name="285"><span class="lineNum">     285 </span>            : }</a>
+<a name="286"><span class="lineNum">     286 </span>            : </a>
+<a name="287"><span class="lineNum">     287 </span>            : /// @}</a>
 </pre>
       </td>
     </tr>
