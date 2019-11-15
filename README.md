@@ -9,6 +9,7 @@
 - **Finite Impulse Response Filters**
 - **BiQuad Filters**
 - **Butterworth Filters**
+- **Median Filters**
 - **Simple and Exponential Moving Average Filters**
 - **Hysteresis**
 
