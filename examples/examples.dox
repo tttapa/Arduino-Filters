@@ -387,6 +387,20 @@
  */
 
 /**
+ * @example   "MedianFilter.ino"
+ * 
+ * MedianFilter
+ * ============
+ *
+ * Example of median filter.
+ * 
+ * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * 
+ * Written by PieterP, 2019-11-16
+ * https://github.com/tttapa/Arduino-Helpers
+ */
+
+/**
  * @example   "Butterworth.ino"
  * 
  * Butterworth
