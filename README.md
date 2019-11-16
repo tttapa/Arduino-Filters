@@ -20,11 +20,13 @@ It has been updated completely, with continuous integration, unit tests, etc.
 ## Documentation
 
 The automatically generated Doxygen documentation for this library can be found 
-[here](https://tttapa.github.io/Arduino-Filters/Doxygen/index.html).  
-Test coverage information can be found 
-[here](https://tttapa.github.io/Arduino-Filters/Coverage/index.html).
+here:  
+[**Documentation**](https://tttapa.github.io/Arduino-Filters/Doxygen/index.html)  
+Test coverage information can be found here:  
+[**Code Coverage**](https://tttapa.github.io/Arduino-Filters/Coverage/index.html)
 
-You might want to start [**here**](https://tttapa.github.io/Arduino-Filters/Doxygen/d2/d5a/group__Filters.html).
+You might want to start with the 
+[**Filters Module**](https://tttapa.github.io/Arduino-Filters/Doxygen/d2/d5a/group__Filters.html).
 
 ## Example: Butterworth filter
 
@@ -55,3 +57,8 @@ void loop() {
     Serial.println(filter(analogRead(A0)));
 }
 ```
+
+## Related Projects
+
+This library uses the
+[**Arduino Helpers utility library**](https://github.com/tttapa/Arduino-Helpers)
