@@ -4,7 +4,7 @@ var searchData=
   ['m_5fbytesep_1007',['M_bytesep',['../d5/d93/structSetbytesep.html#aae3b7063d949661cdedb23d77e4ff74c',1,'Setbytesep']]],
   ['m_5fn_1008',['M_n',['../d7/d70/structSetprecision.html#a0938bbcf6988d5a3e473bd14ca87287b',1,'Setprecision']]],
   ['ma_1009',['MA',['../dc/d27/classNonNormalizingIIRFilter.html#ad1989839f3ec64bb3442c917cd675113',1,'NonNormalizingIIRFilter::MA()'],['../db/d07/classNormalizingIIRFilter.html#ac0d1a95b56654c023acb35af1ad91388',1,'NormalizingIIRFilter::MA()']]],
-  ['mapfn_1010',['mapFn',['../da/da7/classFilteredAnalog.html#a25e6f2ae1567ee7fdf13517c5bf22717',1,'FilteredAnalog']]],
+  ['mapfn_1010',['mapFn',['../da/da7/classFilteredAnalog.html#a1925c382957ffaea91ab8e5de67b2953',1,'FilteredAnalog']]],
   ['margin_1011',['margin',['../d2/dcb/classHysteresis.html#acf0ff7dc0691f62004e3b58428fe92b5',1,'Hysteresis']]],
   ['max_5fin_1012',['max_in',['../d2/dcb/classHysteresis.html#a91ae21e42f8a911c511a463f80f5c334',1,'Hysteresis']]],
   ['max_5fout_1013',['max_out',['../d2/dcb/classHysteresis.html#ad27dca7fd0316ed630090cc1e878ac1b',1,'Hysteresis']]],

@@ -1,5 +1,6 @@
 [![Build Status](https://github.com/tttapa/Arduino-Filters/workflows/CI%20Tests/badge.svg)](https://github.com/tttapa/Arduino-Filters/actions)
 [![Build Status](https://travis-ci.org/tttapa/Arduino-Filters.svg?branch=master)](https://travis-ci.org/tttapa/Arduino-Filters)
+[![GitHub](https://img.shields.io/github/stars/tttapa/Arduino-Filters?label=GitHub&logo=github)](https://github.com/tttapa/Arduino-Filters)
 
 # Arduino Filters
 

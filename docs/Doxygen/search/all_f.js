@@ -20,7 +20,7 @@ var searchData=
   ['settings_2ehpp_470',['Settings.hpp',['../db/d02/Settings_8hpp.html',1,'']]],
   ['settingswrapper_2ecpp_471',['SettingsWrapper.cpp',['../d9/dcf/SettingsWrapper_8cpp.html',1,'']]],
   ['settingswrapper_2ehpp_472',['SettingsWrapper.hpp',['../d2/dd5/SettingsWrapper_8hpp.html',1,'']]],
-  ['setupadc_473',['setupADC',['../da/da7/classFilteredAnalog.html#a5a3518c354ba9da25720c6fa93445e72',1,'FilteredAnalog']]],
+  ['setupadc_473',['setupADC',['../da/da7/classFilteredAnalog.html#a1a2095b531b00be08057bcfd02f9b1a1',1,'FilteredAnalog']]],
   ['sevensegmentcharacters_474',['SevenSegmentCharacters',['../d5/d0c/MAX7219SevenSegmentDisplay_8hpp.html#a5a6ac1773492df06f2083501ada5e692',1,'MAX7219SevenSegmentDisplay.hpp']]],
   ['shiftout_475',['shiftOut',['../d8/d3d/namespaceExtIO.html#aaa363601af9782e76375355968252cc3',1,'ExtIO::shiftOut(pin_t dataPin, pin_t clockPin, uint8_t bitOrder, uint8_t val)'],['../d8/d3d/namespaceExtIO.html#a1396c29ef255279ab322d1bed2576612',1,'ExtIO::shiftOut(int dataPin, int clockPin, uint8_t bitOrder, uint8_t val)']]],
   ['shiftregisterout_476',['ShiftRegisterOut',['../d1/d5c/classShiftRegisterOut.html',1,'ShiftRegisterOut&lt; N &gt;'],['../d1/d5c/classShiftRegisterOut.html#a7cd17e20ee72d99e572c9f99301b2d1d',1,'ShiftRegisterOut::ShiftRegisterOut()']]],
