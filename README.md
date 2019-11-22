@@ -9,6 +9,7 @@
 - **Finite Impulse Response Filters**
 - **BiQuad Filters**
 - **Butterworth Filters**
+- **Notch Filters**
 - **Median Filters**
 - **Simple and Exponential Moving Average Filters**
 - **Hysteresis**
@@ -24,6 +25,8 @@ here:
 [**Documentation**](https://tttapa.github.io/Arduino-Filters/Doxygen/index.html)  
 Test coverage information can be found here:  
 [**Code Coverage**](https://tttapa.github.io/Arduino-Filters/Coverage/index.html)
+Arduino examples can be found here:  
+[**Examples**](https://tttapa.github.io/Arduino-Filters/Doxygen/examples.html)
 
 You might want to start with the 
 [**Filters Module**](https://tttapa.github.io/Arduino-Filters/Doxygen/d2/d5a/group__Filters.html).
