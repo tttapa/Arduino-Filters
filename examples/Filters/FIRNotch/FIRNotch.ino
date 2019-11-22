@@ -10,6 +10,8 @@
  * or less constant error to your measurements.  
  * It's best to add an analog anti-aliasing filter as well.
  * 
+ * ![Filtered mains power noise signal (blue is unfilterd, red is filtered)](50Hz-notch.png)
+ * 
  * Written by PieterP, 2019-11-22  
  * https://github.com/tttapa/Arduino-Filters
  */
