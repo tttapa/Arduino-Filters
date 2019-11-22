@@ -11,8 +11,8 @@
  * @tparam  N
  *          Order of the filter.
  * @param   f_n
- *          Normalized cut-off frequency.
- *          @f$ f_n = \frac{f_c}{f_s} \in \left[0, \frac{1}{2}\right] @f$, where
+ *          Normalized cut-off frequency in half-cycles per sample.  
+ *          @f$ f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] @f$, where
  *          @f$ f_s @f$ is the sample frequency in @f$ \text{Hz} @f$, and 
  *          @f$ f_c @f$ is the cut-off frequency in @f$ \text{Hz} @f$.
  * @param   normalize
@@ -92,8 +92,8 @@ SOSCoefficients<T, (N + 1) / 2> butter_coeff(double f_n,
  * @tparam  N
  *          Order of the filter.
  * @param   f_n
- *          Normalized cut-off frequency.
- *          @f$ f_n = \frac{f_c}{f_s} \in \left[0, \frac{1}{2}\right] @f$, where
+ *          Normalized cut-off frequency in half-cycles per sample.  
+ *          @f$ f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] @f$, where
  *          @f$ f_s @f$ is the sample frequency in @f$ \text{Hz} @f$, and 
  *          @f$ f_c @f$ is the cut-off frequency in @f$ \text{Hz} @f$.
  * @tparam  T

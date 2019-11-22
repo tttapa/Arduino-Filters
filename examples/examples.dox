@@ -413,6 +413,27 @@
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html>
  * 
  * Written by PieterP, 2019-11-12
- * https://github.com/tttapa/Arduino-Helpers
+ * https://github.com/tttapa/Arduino-Filters
+ */
+
+/**
+ * @example   "FIRNotch.ino"
+ * 
+ * FIRNotch
+ * ========
+ *
+ * Example of 50 Hz (+harmonics) notch filter.
+ * 
+ * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * 
+ * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html>
+ * 
+ * Be careful when selecting a sampling frequency that's a multiple of 50 Hz, as
+ * this will alias 50 Hz harmonics to 0 Hz (DC), and this might introduce a more
+ * or less constant error to your measurements.  
+ * It's best to add an analog anti-aliasing filter as well.
+ * 
+ * Written by PieterP, 2019-11-22  
+ * https://github.com/tttapa/Arduino-Filters
  */
 
