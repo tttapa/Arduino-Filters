@@ -24,7 +24,7 @@ The automatically generated Doxygen documentation for this library can be found
 here:  
 [**Documentation**](https://tttapa.github.io/Arduino-Filters/Doxygen/index.html)  
 Test coverage information can be found here:  
-[**Code Coverage**](https://tttapa.github.io/Arduino-Filters/Coverage/index.html)
+[**Code Coverage**](https://tttapa.github.io/Arduino-Filters/Coverage/index.html)  
 Arduino examples can be found here:  
 [**Examples**](https://tttapa.github.io/Arduino-Filters/Doxygen/examples.html)
 
