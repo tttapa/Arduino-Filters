@@ -113,10 +113,11 @@ Example: Butterworth filter</h2>
 <div class="line"><span class="comment">// Cut-off frequency (-3 dB)</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_c = 40; <span class="comment">// Hz</span></div>
 <div class="line"><span class="comment">// Normalized cut-off frequency</span></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_n = f_c / f_s;</div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> f_n = 2 * f_c / f_s;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Sample timer</span></div>
 <div class="line"><a class="code" href="dc/dea/classTimer.html">Timer&lt;micros&gt;</a> timer = std::round(1e6 / f_s);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Sixth-order Butterworth filter</span></div>
 <div class="line"><span class="keyword">auto</span> filter = butter&lt;6&gt;(f_n);</div>
 <div class="line"> </div>
