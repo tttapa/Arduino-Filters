@@ -9,8 +9,8 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>Graphical Class Hierarchy</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-24 287,-24 287,4 -4,4"/>
-<!-- Node68 -->
-<g id="node1" class="node"><title>Node68</title>
+<!-- Node75 -->
+<g id="node1" class="node"><title>Node75</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="0,-0.5 0,-19.5 134,-19.5 134,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="67" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BiQuadDF1Implementation</text>
@@ -25,8 +25,8 @@
 </a>
 </g>
 </g>
-<!-- Node68&#45;&gt;Node0 -->
-<g id="edge1" class="edge"><title>Node68&#45;&gt;Node0</title>
+<!-- Node75&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node75&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M144.613,-10C153.072,-10 161.564,-10 169.698,-10"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="144.338,-6.5001 134.338,-10 144.338,-13.5001 144.338,-6.5001"/>
 </g>

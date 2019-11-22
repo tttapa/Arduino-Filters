@@ -95,6 +95,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga272e5d90c31ff15c5168de84223da64e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt; T,(N+1)/2, Implementation &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/da4/group__FilterDesign.html#ga272e5d90c31ff15c5168de84223da64e">butter</a> (double f_n, bool normalize=true)</td></tr>
 <tr class="memdesc:ga272e5d90c31ff15c5168de84223da64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Butterworth filter, implemented as Second Order Sections (SOS) filter.  <a href="../../de/da4/group__FilterDesign.html#ga272e5d90c31ff15c5168de84223da64e">More...</a><br /></td></tr>
 <tr class="separator:ga272e5d90c31ff15c5168de84223da64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3343a1dff3c1cc7e3f713079cfdb5ba"><td class="memTemplParams" colspan="2">template&lt;class T  = float&gt; </td></tr>
+<tr class="memitem:gaa3343a1dff3c1cc7e3f713079cfdb5ba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/da4/group__FilterDesign.html#gaa3343a1dff3c1cc7e3f713079cfdb5ba">simpleNotchFIR</a> (double f_n)</td></tr>
+<tr class="memdesc:gaa3343a1dff3c1cc7e3f713079cfdb5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a very simple second-order FIR notch filter.  <a href="../../de/da4/group__FilterDesign.html#gaa3343a1dff3c1cc7e3f713079cfdb5ba">More...</a><br /></td></tr>
+<tr class="separator:gaa3343a1dff3c1cc7e3f713079cfdb5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
 <tr class="memitem:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d3c/structTransferFunction.html">TransferFunction</a>&lt; N *2+1, N *2+1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/da4/group__FilterDesign.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">sos2tf</a> (const <a class="el" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt; T, N &gt; &amp;sos)</td></tr>
 <tr class="memdesc:gaa8b7e0ee23e95ae137155d2f2dcfb993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Second Order Section (SOS) coefficients to an equivalent tranfer function representation.  <a href="../../de/da4/group__FilterDesign.html#gaa8b7e0ee23e95ae137155d2f2dcfb993">More...</a><br /></td></tr>
@@ -140,7 +144,8 @@ template&lt;uint8_t N, class T  = float&gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f_n</td><td>Normalized cut-off frequency. \( f_n = \frac{f_c}{f_s} \in \left[0, \frac{1}{2}\right] \), where \( f_s \) is the sample frequency in \( \text{Hz} \), and \( f_c \) is the cut-off frequency in \( \text{Hz} \). </td></tr>
+    <tr><td class="paramname">f_n</td><td>Normalized cut-off frequency in half-cycles per sample. <br  />
+ \( f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] \), where \( f_s \) is the sample frequency in \( \text{Hz} \), and \( f_c \) is the cut-off frequency in \( \text{Hz} \). </td></tr>
     <tr><td class="paramname">normalize</td><td>If true, normalize all coefficients such that \( a_0 = 1 \). </td></tr>
   </table>
   </dd>
@@ -194,7 +199,8 @@ template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f_n</td><td>Normalized cut-off frequency. \( f_n = \frac{f_c}{f_s} \in \left[0, \frac{1}{2}\right] \), where \( f_s \) is the sample frequency in \( \text{Hz} \), and \( f_c \) is the cut-off frequency in \( \text{Hz} \). </td></tr>
+    <tr><td class="paramname">f_n</td><td>Normalized cut-off frequency in half-cycles per sample. <br  />
+ \( f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] \), where \( f_s \) is the sample frequency in \( \text{Hz} \), and \( f_c \) is the cut-off frequency in \( \text{Hz} \). </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,6 +225,44 @@ template&lt;uint8_t N, class T  = float, class Implementation  = BiQuadFilterDF1
 <dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../d4/d40/Butterworth_8hpp_source.html">Butterworth.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa3343a1dff3c1cc7e3f713079cfdb5ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3343a1dff3c1cc7e3f713079cfdb5ba">&#9670;&nbsp;</a></span>simpleNotchFIR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T  = float&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d32/classFIRFilter.html">FIRFilter</a>&lt;3, T&gt; simpleNotchFIR </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f_n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a very simple second-order FIR notch filter. </p>
+<p class="formulaDsp">
+\[ H(z) = \frac{z^2 - 2\cos\left(\omega_{c,d}\right)z + 1} {2 - 2\cos\left(\omega_{c,d}\right)} \]
+</p>
+<p> where \( \omega_{c,d} = \pi f_n = 2\pi \frac{f_c}{f_n} \)</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f_n</td><td>Normalized notch frequency in half-cycles per sample. <br  />
+ \( f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] \), where \( f_s \) is the sample frequency in \( \text{Hz} \), and \( f_c \) is the analog notch frequency in \( \text{Hz} \). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d8/d63/FIRNotch_8ino-example.html#a1">FIRNotch.ino</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/da1/Notch_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../df/da1/Notch_8hpp_source.html">Notch.hpp</a>.</p>
 
 </div>
 </div>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cac0852cf2c553907d0bde06ddbc69428b73be48 - src/AH/Containers/Array.hpp</title>
+  <title>LCOV - 425c38adf3ad6068dac0bf639b4b13bd0aef82d7 - src/AH/Containers/Array.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">cac0852cf2c553907d0bde06ddbc69428b73be48</td>
+            <td class="headerValue">425c38adf3ad6068dac0bf639b4b13bd0aef82d7</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">133</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-16 00:23:54</td>
+            <td class="headerValue">2019-11-22 20:47:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">334</td>
-            <td class="headerCovTableEntry">336</td>
+            <td class="headerCovTableEntry">340</td>
+            <td class="headerCovTableEntry">342</td>
             <td class="headerCovTableEntryHi">99.4 %</td>
           </tr>
           <tr>
@@ -113,12 +113,12 @@
 <a name="43"><span class="lineNum">      43 </span>            :      * @param   index</a>
 <a name="44"><span class="lineNum">      44 </span>            :      *          The (zero-based) index of the element to return.</a>
 <a name="45"><span class="lineNum">      45 </span>            :      */</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      70448 :     T &amp;operator[](size_t index) {</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">      70448 :         if (index &gt;= N) { // TODO</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      71228 :     T &amp;operator[](size_t index) {</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">      71228 :         if (index &gt;= N) { // TODO</span></a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">          1 :             ERROR(F(&quot;Index out of bounds: &quot;) &lt;&lt; index &lt;&lt; F(&quot; ≥ &quot;) &lt;&lt; N, 0xEDED);</span></a>
 <a name="49"><span class="lineNum">      49 </span><span class="lineNoCov">          0 :             index = N - 1;</span></a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineNoCov">          0 :         }</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">      70447 :         return data[index];</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">      71227 :         return data[index];</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :     }</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : </a>
 <a name="54"><span class="lineNum">      54 </span>            :     /**</a>
@@ -130,18 +130,18 @@
 <a name="60"><span class="lineNum">      60 </span>            :      * @param   index</a>
 <a name="61"><span class="lineNum">      61 </span>            :      *          The (zero-based) index of the element to return.</a>
 <a name="62"><span class="lineNum">      62 </span>            :      */</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">      31348 :     const T &amp;operator[](size_t index) const {</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">      31348 :         if (index &gt;= N) { // TODO</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">      31480 :     const T &amp;operator[](size_t index) const {</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">      31480 :         if (index &gt;= N) { // TODO</span></a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">          1 :             ERROR(F(&quot;Index out of bounds: &quot;) &lt;&lt; index &lt;&lt; F(&quot; ≥ &quot;) &lt;&lt; N, 0xEDED);</span></a>
 <a name="66"><span class="lineNum">      66 </span><span class="lineNoCov">          0 :             index = N - 1;</span></a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineNoCov">          0 :         }</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">      31347 :         return data[index];</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">      31479 :         return data[index];</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">          1 :     }</span></a>
 <a name="70"><span class="lineNum">      70 </span>            : </a>
 <a name="71"><span class="lineNum">      71 </span>            :     /**</a>
 <a name="72"><span class="lineNum">      72 </span>            :      * @brief   Get a pointer to the first element.</a>
 <a name="73"><span class="lineNum">      73 </span>            :      */</a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">        586 :     T *begin() { return &amp;data[0]; }</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">        588 :     T *begin() { return &amp;data[0]; }</span></a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <a name="76"><span class="lineNum">      76 </span>            :     /**</a>
 <a name="77"><span class="lineNum">      77 </span>            :      * @brief   Get a pointer to the first element.</a>
@@ -151,7 +151,7 @@
 <a name="81"><span class="lineNum">      81 </span>            :     /**</a>
 <a name="82"><span class="lineNum">      82 </span>            :      * @brief   Get a pointer to the memory beyond the array.</a>
 <a name="83"><span class="lineNum">      83 </span>            :      */</a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">       1002 :     T *end() { return &amp;data[N]; }</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">       1004 :     T *end() { return &amp;data[N]; }</span></a>
 <a name="85"><span class="lineNum">      85 </span>            : </a>
 <a name="86"><span class="lineNum">      86 </span>            :     /**</a>
 <a name="87"><span class="lineNum">      87 </span>            :      * @brief   Get a pointer to the memory beyond the array.</a>
@@ -239,7 +239,7 @@
 <a name="169"><span class="lineNum">     169 </span>            : </a>
 <a name="170"><span class="lineNum">     170 </span>            :   public:</a>
 <a name="171"><span class="lineNum">     171 </span>            :     /// Constructor</a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">        227 :     ArraySlice(ElementPtrType array) : array{array} {}</span></a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">        229 :     ArraySlice(ElementPtrType array) : array{array} {}</span></a>
 <a name="173"><span class="lineNum">     173 </span>            : </a>
 <a name="174"><span class="lineNum">     174 </span>            :     /// Implicit conversion from slice to new array (creates a copy).</a>
 <a name="175"><span class="lineNum">     175 </span><span class="lineCov">          1 :     operator Array&lt;T, N&gt;() const { return asArray(); }</span></a>
@@ -305,15 +305,15 @@
 <a name="235"><span class="lineNum">     235 </span>            :      * @param   index</a>
 <a name="236"><span class="lineNum">     236 </span>            :      *          The (zero-based) index of the element to return.</a>
 <a name="237"><span class="lineNum">     237 </span>            :      */</a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       1169 :     ElementRefType operator[](size_t index) const {</span></a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       1169 :         if (index &gt;= N) { // TODO</span></a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       1299 :     ElementRefType operator[](size_t index) const {</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       1299 :         if (index &gt;= N) { // TODO</span></a>
 <a name="240"><span class="lineNum">     240 </span><span class="lineNoCov">          0 :             ERROR(F(&quot;Index out of bounds: &quot;) &lt;&lt; index &lt;&lt; F(&quot; ≥ &quot;) &lt;&lt; N, 0xEDEF);</span></a>
 <a name="241"><span class="lineNum">     241 </span><span class="lineNoCov">          0 :             index = N - 1;</span></a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineNoCov">          0 :         }</span></a>
 <a name="243"><span class="lineNum">     243 </span>            :         if (Reverse)</a>
 <a name="244"><span class="lineNum">     244 </span><span class="lineCov">         12 :             return array[-index];</span></a>
 <a name="245"><span class="lineNum">     245 </span>            :         else</a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       1157 :             return array[index];</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       1287 :             return array[index];</span></a>
 <a name="247"><span class="lineNum">     247 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="248"><span class="lineNum">     248 </span>            : </a>
 <a name="249"><span class="lineNum">     249 </span><span class="lineCov">          3 :     Iterator begin() const {</span></a>
@@ -350,10 +350,10 @@
 <a name="280"><span class="lineNum">     280 </span>            : template &lt;class T, size_t N&gt;</a>
 <a name="281"><span class="lineNum">     281 </span>            : template &lt;size_t Start, size_t End&gt;</a>
 <a name="282"><span class="lineNum">     282 </span>            : inline ArraySlice&lt;T, abs_diff(Start, End) + 1, (End &lt; Start), true&gt;</a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineCov">        194 : Array&lt;T, N&gt;::slice() const {</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">        196 : Array&lt;T, N&gt;::slice() const {</span></a>
 <a name="284"><span class="lineNum">     284 </span>            :     static_assert(Start &lt; N, &quot;&quot;);</a>
 <a name="285"><span class="lineNum">     285 </span>            :     static_assert(End &lt; N, &quot;&quot;);</a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">        194 :     return &amp;(*this)[Start];</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">        196 :     return &amp;(*this)[Start];</span></a>
 <a name="287"><span class="lineNum">     287 </span>            : }</a>
 <a name="288"><span class="lineNum">     288 </span>            : </a>
 <a name="289"><span class="lineNum">     289 </span>            : template &lt;class T, size_t N, bool Reverse, bool Const&gt;</a>
@@ -530,17 +530,17 @@
 <a name="460"><span class="lineNum">     460 </span>            : /// Slice / Scalar</a>
 <a name="461"><span class="lineNum">     461 </span>            : template &lt;class T1, class T2, size_t N1, bool Reverse1, bool Const1&gt;</a>
 <a name="462"><span class="lineNum">     462 </span>            : Array&lt;decltype(T1{} / T2{}), N1&gt;</a>
-<a name="463"><span class="lineNum">     463 </span><span class="lineCov">         85 : operator/(ArraySlice&lt;T1, N1, Reverse1, Const1&gt; a, T2 b) {</span></a>
-<a name="464"><span class="lineNum">     464 </span><span class="lineCov">         85 :     Array&lt;decltype(T1{} / T2{}), N1&gt; result = {};</span></a>
-<a name="465"><span class="lineNum">     465 </span><span class="lineCov">        330 :     for (size_t i = 0; i &lt; N1; ++i)</span></a>
-<a name="466"><span class="lineNum">     466 </span><span class="lineCov">        245 :         result[i] = a[i] / b;</span></a>
-<a name="467"><span class="lineNum">     467 </span><span class="lineCov">         85 :     return result;</span></a>
+<a name="463"><span class="lineNum">     463 </span><span class="lineCov">         87 : operator/(ArraySlice&lt;T1, N1, Reverse1, Const1&gt; a, T2 b) {</span></a>
+<a name="464"><span class="lineNum">     464 </span><span class="lineCov">         87 :     Array&lt;decltype(T1{} / T2{}), N1&gt; result = {};</span></a>
+<a name="465"><span class="lineNum">     465 </span><span class="lineCov">        462 :     for (size_t i = 0; i &lt; N1; ++i)</span></a>
+<a name="466"><span class="lineNum">     466 </span><span class="lineCov">        375 :         result[i] = a[i] / b;</span></a>
+<a name="467"><span class="lineNum">     467 </span><span class="lineCov">         87 :     return result;</span></a>
 <a name="468"><span class="lineNum">     468 </span>            : }</a>
 <a name="469"><span class="lineNum">     469 </span>            : </a>
 <a name="470"><span class="lineNum">     470 </span>            : /// Array / Scalar</a>
 <a name="471"><span class="lineNum">     471 </span>            : template &lt;class T1, class T2, size_t N1&gt;</a>
-<a name="472"><span class="lineNum">     472 </span><span class="lineCov">         84 : Array&lt;decltype(T1{} / T2{}), N1&gt; operator/(const Array&lt;T1, N1&gt; &amp;a, T2 b) {</span></a>
-<a name="473"><span class="lineNum">     473 </span><span class="lineCov">         84 :     return a.slice() / b;</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">         86 : Array&lt;decltype(T1{} / T2{}), N1&gt; operator/(const Array&lt;T1, N1&gt; &amp;a, T2 b) {</span></a>
+<a name="473"><span class="lineNum">     473 </span><span class="lineCov">         86 :     return a.slice() / b;</span></a>
 <a name="474"><span class="lineNum">     474 </span>            : }</a>
 <a name="475"><span class="lineNum">     475 </span>            : </a>
 <a name="476"><span class="lineNum">     476 </span>            : /// Slice /= Scalar</a>
