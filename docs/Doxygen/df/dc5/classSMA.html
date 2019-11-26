@@ -75,9 +75,12 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d81/classSMA-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SMA&lt; N, input_t, sum_t &gt; Class Template Reference</div>  </div>
+<div class="title">SMA&lt; N, input_t, sum_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../d2/d5a/group__Filters.html">Arduino Filters</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Simple Moving Average filter.  
+ <a href="../../df/dc5/classSMA.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -90,6 +93,7 @@ Collaboration diagram for SMA&lt; N, input_t, sum_t &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a68abb815378c11d582a31a8afe0194a6"><td class="memItemLeft" align="right" valign="top">input_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#a68abb815378c11d582a31a8afe0194a6">operator()</a> (input_t input)</td></tr>
+<tr class="memdesc:a68abb815378c11d582a31a8afe0194a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../df/dc5/classSMA.html#a68abb815378c11d582a31a8afe0194a6">More...</a><br /></td></tr>
 <tr class="separator:a68abb815378c11d582a31a8afe0194a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -105,8 +109,21 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt;<br />
 class SMA&lt; N, input_t, sum_t &gt;</h3>
 
+<p>Simple Moving Average filter. </p>
+<p class="formulaDsp">
+\[ y[n] = \frac{1}{N} \sum_{i=0}^{N-1}x[n-i] \]
+</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Simple%20Moving%20Average/Simple-Moving-Average.html">https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Simple%20Moving%20Average/Simple-Moving-Average.html</a></dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>The number of samples to average. </td></tr>
+    <tr><td class="paramname">input_t</td><td>The type of the input (and output) of the filter. </td></tr>
+    <tr><td class="paramname">sum_t</td><td>The type to use for the accumulator, must be large enough to fit N times the maximum input value. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a68abb815378c11d582a31a8afe0194a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68abb815378c11d582a31a8afe0194a6">&#9670;&nbsp;</a></span>operator()()</h2>
@@ -134,7 +151,16 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00047">47</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p>Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The new input \( x[n] \). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new output \( y[n] \). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00075">75</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
@@ -161,7 +187,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
@@ -187,7 +213,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
@@ -213,7 +239,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>

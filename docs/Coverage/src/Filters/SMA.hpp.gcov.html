@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 313dee81da16a25e3c5858128c401749a3843100 - src/Filters/SMA.hpp</title>
+  <title>LCOV - 22fc1a5e78e6c14a35ff84905dd765124a70abbf - src/Filters/SMA.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">313dee81da16a25e3c5858128c401749a3843100</td>
+            <td class="headerValue">22fc1a5e78e6c14a35ff84905dd765124a70abbf</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">5</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-22 22:32:47</td>
+            <td class="headerValue">2019-11-26 19:47:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -111,28 +111,53 @@
 <a name="41"><span class="lineNum">      41 </span><span class="lineCov">        130 :     return round_div_helper&lt;N, T&gt;::div(val);</span></a>
 <a name="42"><span class="lineNum">      42 </span>            : }</a>
 <a name="43"><span class="lineNum">      43 </span>            : </a>
-<a name="44"><span class="lineNum">      44 </span>            : template &lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt;</a>
-<a name="45"><span class="lineNum">      45 </span>            : class SMA {</a>
-<a name="46"><span class="lineNum">      46 </span>            :   public:</a>
-<a name="47"><span class="lineNum">      47 </span>            :     input_t operator()(input_t input) {</a>
-<a name="48"><span class="lineNum">      48 </span>            :         sum -= previousInputs[index];</a>
-<a name="49"><span class="lineNum">      49 </span>            :         sum += input;</a>
-<a name="50"><span class="lineNum">      50 </span>            :         previousInputs[index] = input;</a>
-<a name="51"><span class="lineNum">      51 </span>            :         if (++index == N)</a>
-<a name="52"><span class="lineNum">      52 </span>            :             index = 0;</a>
-<a name="53"><span class="lineNum">      53 </span>            :         return round_div&lt;N&gt;(sum);</a>
-<a name="54"><span class="lineNum">      54 </span>            :     }</a>
-<a name="55"><span class="lineNum">      55 </span>            : </a>
-<a name="56"><span class="lineNum">      56 </span>            :     static_assert(</a>
-<a name="57"><span class="lineNum">      57 </span>            :         sum_t(0) &lt; sum_t(-1), // Check that `sum_t` is an unsigned type</a>
-<a name="58"><span class="lineNum">      58 </span>            :         &quot;Error: sum data type should be an unsigned integer, otherwise, &quot;</a>
-<a name="59"><span class="lineNum">      59 </span>            :         &quot;the rounding operation in the return statement is invalid.&quot;);</a>
-<a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span>            :   private:</a>
-<a name="62"><span class="lineNum">      62 </span>            :     uint8_t index = 0;</a>
-<a name="63"><span class="lineNum">      63 </span>            :     AH::Array&lt;input_t, N&gt; previousInputs = {};</a>
-<a name="64"><span class="lineNum">      64 </span>            :     sum_t sum = 0;</a>
-<a name="65"><span class="lineNum">      65 </span>            : };</a>
+<a name="44"><span class="lineNum">      44 </span>            : /// @addtogroup Filters</a>
+<a name="45"><span class="lineNum">      45 </span>            : /// @{</a>
+<a name="46"><span class="lineNum">      46 </span>            : </a>
+<a name="47"><span class="lineNum">      47 </span>            : /** </a>
+<a name="48"><span class="lineNum">      48 </span>            :  * @brief   Simple Moving Average filter.</a>
+<a name="49"><span class="lineNum">      49 </span>            :  * </a>
+<a name="50"><span class="lineNum">      50 </span>            :  * @f[</a>
+<a name="51"><span class="lineNum">      51 </span>            :  * y[n] = \frac{1}{N} \sum_{i=0}^{N-1}x[n-i]</a>
+<a name="52"><span class="lineNum">      52 </span>            :  * @f]</a>
+<a name="53"><span class="lineNum">      53 </span>            :  * </a>
+<a name="54"><span class="lineNum">      54 </span>            :  * @see     https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Simple%20Moving%20Average/Simple-Moving-Average.html</a>
+<a name="55"><span class="lineNum">      55 </span>            :  * </a>
+<a name="56"><span class="lineNum">      56 </span>            :  * @tparam  N</a>
+<a name="57"><span class="lineNum">      57 </span>            :  *          The number of samples to average.</a>
+<a name="58"><span class="lineNum">      58 </span>            :  * @tparam  input_t</a>
+<a name="59"><span class="lineNum">      59 </span>            :  *          The type of the input (and output) of the filter.</a>
+<a name="60"><span class="lineNum">      60 </span>            :  * @tparam  sum_t</a>
+<a name="61"><span class="lineNum">      61 </span>            :  *          The type to use for the accumulator, must be large enough to fit</a>
+<a name="62"><span class="lineNum">      62 </span>            :  *          N times the maximum input value.</a>
+<a name="63"><span class="lineNum">      63 </span>            :  */</a>
+<a name="64"><span class="lineNum">      64 </span>            : template &lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt;</a>
+<a name="65"><span class="lineNum">      65 </span>            : class SMA {</a>
+<a name="66"><span class="lineNum">      66 </span>            :   public:</a>
+<a name="67"><span class="lineNum">      67 </span>            :     /**</a>
+<a name="68"><span class="lineNum">      68 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
+<a name="69"><span class="lineNum">      69 </span>            :      *          return the new output @f$ y[n] @f$.</a>
+<a name="70"><span class="lineNum">      70 </span>            :      * </a>
+<a name="71"><span class="lineNum">      71 </span>            :      * @param   input </a>
+<a name="72"><span class="lineNum">      72 </span>            :      *          The new input @f$ x[n] @f$.</a>
+<a name="73"><span class="lineNum">      73 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
+<a name="74"><span class="lineNum">      74 </span>            :      */</a>
+<a name="75"><span class="lineNum">      75 </span>            :     input_t operator()(input_t input) {</a>
+<a name="76"><span class="lineNum">      76 </span>            :         sum -= previousInputs[index];</a>
+<a name="77"><span class="lineNum">      77 </span>            :         sum += input;</a>
+<a name="78"><span class="lineNum">      78 </span>            :         previousInputs[index] = input;</a>
+<a name="79"><span class="lineNum">      79 </span>            :         if (++index == N)</a>
+<a name="80"><span class="lineNum">      80 </span>            :             index = 0;</a>
+<a name="81"><span class="lineNum">      81 </span>            :         return round_div&lt;N&gt;(sum);</a>
+<a name="82"><span class="lineNum">      82 </span>            :     }</a>
+<a name="83"><span class="lineNum">      83 </span>            : </a>
+<a name="84"><span class="lineNum">      84 </span>            :   private:</a>
+<a name="85"><span class="lineNum">      85 </span>            :     uint8_t index = 0;</a>
+<a name="86"><span class="lineNum">      86 </span>            :     AH::Array&lt;input_t, N&gt; previousInputs = {};</a>
+<a name="87"><span class="lineNum">      87 </span>            :     sum_t sum = 0;</a>
+<a name="88"><span class="lineNum">      88 </span>            : };</a>
+<a name="89"><span class="lineNum">      89 </span>            : </a>
+<a name="90"><span class="lineNum">      90 </span>            : /// @}</a>
 </pre>
       </td>
     </tr>
