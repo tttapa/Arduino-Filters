@@ -116,6 +116,9 @@ USE_CONSTEXPR_ARRAY_HELPERS Array<T, N> copyAs(const Array<U, N> &src) {
     return dest;
 }
 
+/**
+ * @brief   Apply a function to all elements of the array and return a copy.
+ */
 template <class F, class U, size_t N>
 USE_CONSTEXPR_ARRAY_HELPERS Array<decltype(F{}(U{})), N>
 apply(const Array<U, N> &src, F f) {
@@ -124,6 +127,9 @@ apply(const Array<U, N> &src, F f) {
     return dest;
 }
 
+/** 
+ * @brief   Fill the array with the same value for each element.
+ */
 template <class T, size_t N, class... Args>
 USE_CONSTEXPR_ARRAY_HELPERS Array<T, N> fillArray(Args... args) {
     return generateArray<N>([&]() { return T{args...}; });
