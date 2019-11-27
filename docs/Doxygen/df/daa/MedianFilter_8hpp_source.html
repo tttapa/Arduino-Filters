@@ -247,7 +247,7 @@ $(function() {
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">    /// The last index in the ring buffer.</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../d6/d25/classMedianFilter.html#aeb2c35f5c0cf78ec89839f6da789b8ed">  168</a></span>&#160;<span class="comment"></span>    uint8_t <a class="code" href="../../d6/d25/classMedianFilter.html#aeb2c35f5c0cf78ec89839f6da789b8ed">index</a> = 0;<span class="comment"></span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">    /// A ring buffer to keep track of the N last inputs.</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../d6/d25/classMedianFilter.html#a856463ca337174f6ca6706b981327183">  170</a></span>&#160;<span class="comment"></span>    std::array&lt;T, N&gt; <a class="code" href="../../d6/d25/classMedianFilter.html#a856463ca337174f6ca6706b981327183">previousInputs</a> = {};</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../d6/d25/classMedianFilter.html#a856463ca337174f6ca6706b981327183">  170</a></span>&#160;<span class="comment"></span>    std::array&lt;T, N&gt; <a class="code" href="../../d6/d25/classMedianFilter.html#a856463ca337174f6ca6706b981327183">previousInputs</a> = {{}};</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>

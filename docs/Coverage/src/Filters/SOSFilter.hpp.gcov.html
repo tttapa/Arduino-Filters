@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - d219e65b13c7c968c3ed9a282d6e883fe6d13945 - src/Filters/SOSFilter.hpp</title>
+  <title>LCOV - 3772096c3f7780940e769aaeab782a2ca838c208 - src/Filters/SOSFilter.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">d219e65b13c7c968c3ed9a282d6e883fe6d13945</td>
+            <td class="headerValue">3772096c3f7780940e769aaeab782a2ca838c208</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">17</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-27 23:47:46</td>
+            <td class="headerValue">2019-11-28 00:57:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -92,8 +92,8 @@
 <a name="22"><span class="lineNum">      22 </span>            : class SOSFilter {</a>
 <a name="23"><span class="lineNum">      23 </span>            :   public:</a>
 <a name="24"><span class="lineNum">      24 </span>            :     /// Constructor.</a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">         10 :     SOSFilter(const SOSCoefficients&lt;T, N&gt; &amp;sectionCoefficients)</span></a>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">         10 :         : sections{AH::copyAs&lt;Implementation&gt;(sectionCoefficients)} {}</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">         12 :     SOSFilter(const SOSCoefficients&lt;T, N&gt; &amp;sectionCoefficients)</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">         12 :         : sections{AH::copyAs&lt;Implementation&gt;(sectionCoefficients)} {}</span></a>
 <a name="27"><span class="lineNum">      27 </span>            : </a>
 <a name="28"><span class="lineNum">      28 </span>            :     /**</a>
 <a name="29"><span class="lineNum">      29 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
@@ -103,10 +103,10 @@
 <a name="33"><span class="lineNum">      33 </span>            :      *          The new input @f$ x[n] @f$.</a>
 <a name="34"><span class="lineNum">      34 </span>            :      * @return  The new output @f$ y[n] @f$.</a>
 <a name="35"><span class="lineNum">      35 </span>            :      */</a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">        560 :     T operator()(T input) {</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">       6476 :         for (auto &amp;section : sections)</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">       5916 :             input = section(input);</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        560 :         return input;</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">        600 :     T operator()(T input) {</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">       6656 :         for (auto &amp;section : sections)</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">       6056 :             input = section(input);</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        600 :         return input;</span></a>
 <a name="40"><span class="lineNum">      40 </span>            :     }</a>
 <a name="41"><span class="lineNum">      41 </span>            : </a>
 <a name="42"><span class="lineNum">      42 </span>            :   private:</a>

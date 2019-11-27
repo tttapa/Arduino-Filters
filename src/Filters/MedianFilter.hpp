@@ -167,7 +167,7 @@ class MedianFilter {
     /// The last index in the ring buffer.
     uint8_t index = 0;
     /// A ring buffer to keep track of the N last inputs.
-    std::array<T, N> previousInputs = {};
+    std::array<T, N> previousInputs = {{}};
 };
 
 #endif

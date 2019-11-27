@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - d219e65b13c7c968c3ed9a282d6e883fe6d13945 - src/AH/Containers/ArrayHelpers.hpp</title>
+  <title>LCOV - 3772096c3f7780940e769aaeab782a2ca838c208 - src/AH/Containers/ArrayHelpers.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">d219e65b13c7c968c3ed9a282d6e883fe6d13945</td>
+            <td class="headerValue">3772096c3f7780940e769aaeab782a2ca838c208</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">41</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-11-27 23:47:46</td>
+            <td class="headerValue">2019-11-28 00:57:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">56</td>
@@ -179,11 +179,11 @@
 <a name="109"><span class="lineNum">     109 </span>            :  *          The source array to be copied.</a>
 <a name="110"><span class="lineNum">     110 </span>            :  */</a>
 <a name="111"><span class="lineNum">     111 </span>            : template &lt;class T, size_t N, class U&gt;</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         19 : USE_CONSTEXPR_ARRAY_HELPERS Array&lt;T, N&gt; copyAs(const Array&lt;U, N&gt; &amp;src) {</span></a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">         80 :     Array&lt;T, N&gt; dest{{}};</span></a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         19 :     std::transform(std::begin(src), std::end(src), std::begin(dest),</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        668 :                    [](const U &amp;src) { return T(src); });</span></a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">         19 :     return dest;</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         21 : USE_CONSTEXPR_ARRAY_HELPERS Array&lt;T, N&gt; copyAs(const Array&lt;U, N&gt; &amp;src) {</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">         87 :     Array&lt;T, N&gt; dest{{}};</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         21 :     std::transform(std::begin(src), std::end(src), std::begin(dest),</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        675 :                    [](const U &amp;src) { return T(src); });</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">         21 :     return dest;</span></a>
 <a name="117"><span class="lineNum">     117 </span>            : }</a>
 <a name="118"><span class="lineNum">     118 </span>            : </a>
 <a name="119"><span class="lineNum">     119 </span>            : /**</a>
