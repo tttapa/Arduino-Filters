@@ -21,8 +21,8 @@ struct TransferFunction {
     TransferFunction(const AH::Array<T, NB> &b, const AH::Array<T, NA> &a)
         : b(b), a(a) {}
 
-    AH::Array<T, NB> b = {};
-    AH::Array<T, NA> a = {};
+    AH::Array<T, NB> b = {{}};
+    AH::Array<T, NA> a = {{}};
 };
 
 /// @}

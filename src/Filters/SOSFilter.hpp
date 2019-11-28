@@ -23,7 +23,7 @@ class SOSFilter {
   public:
     /// Constructor.
     SOSFilter(const SOSCoefficients<T, N> &sectionCoefficients)
-        : sections{AH::copyAs<Implementation>(sectionCoefficients)} {}
+        : sections(AH::copyAs<Implementation>(sectionCoefficients)) {}
 
     /**
      * @brief   Update the internal state with the new input @f$ x[n] @f$ and

@@ -42,14 +42,14 @@ class NormalizingBiQuadFilterDF1 {
 
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
-        : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+        : b(b / a[0]), a(-a.template slice<1, 2>() / a[0]) {}
 
     NormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients)
         : NormalizingBiQuadFilterDF1{coefficients.b, coefficients.a} {}
 
     NormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
-        : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+        : b(b * gain / a[0]), a(-a.template slice<1, 2>() / a[0]) {}
 
     NormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients,
                                T gain)
@@ -98,10 +98,10 @@ class NormalizingBiQuadFilterDF1 {
     T operator()(T input) { return update(input, x, y, b, a); }
 
   private:
-    AH::Array<T, 2> x = {}; ///< Previous inputs
-    AH::Array<T, 2> y = {}; ///< Previous outputs
-    AH::Array<T, 3> b = {}; ///< Numerator coefficients
-    AH::Array<T, 2> a = {}; ///< Denominator coefficients
+    AH::Array<T, 2> x = {{}}; ///< Previous inputs
+    AH::Array<T, 2> y = {{}}; ///< Previous outputs
+    AH::Array<T, 3> b = {{}}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {{}}; ///< Denominator coefficients
 };
 
 /** 
@@ -127,14 +127,14 @@ class NonNormalizingBiQuadFilterDF1 {
 
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
-        : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+        : b(b), a(-a.template slice<1, 2>()), a0(a[0]) {}
 
     NonNormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients)
         : NonNormalizingBiQuadFilterDF1{coefficients.b, coefficients.a} {}
 
     NonNormalizingBiQuadFilterDF1(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
-        : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+        : b(b * gain), a(-a.template slice<1, 2>()), a0(a[0]) {}
 
     NonNormalizingBiQuadFilterDF1(const BiQuadCoefficients<T> &coefficients,
                                   T gain)
@@ -183,11 +183,11 @@ class NonNormalizingBiQuadFilterDF1 {
     T operator()(T input) { return update(input, x, y, b, a, a0); }
 
   private:
-    AH::Array<T, 2> x = {}; ///< Previous inputs
-    AH::Array<T, 2> y = {}; ///< Previous outputs
-    AH::Array<T, 3> b = {}; ///< Numerator coefficients
-    AH::Array<T, 2> a = {}; ///< Denominator coefficients
-    T a0 = T(1.);           ///< First denominator coefficient
+    AH::Array<T, 2> x = {{}}; ///< Previous inputs
+    AH::Array<T, 2> y = {{}}; ///< Previous outputs
+    AH::Array<T, 3> b = {{}}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {{}}; ///< Denominator coefficients
+    T a0 = T(1.);             ///< First denominator coefficient
 };
 
 /// @}
@@ -314,14 +314,14 @@ class NormalizingBiQuadFilterDF2 {
 
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a)
-        : b{b / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+        : b(b / a[0]), a(-a.template slice<1, 2>() / a[0]) {}
 
     NormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients)
         : NormalizingBiQuadFilterDF2{coefficients.b, coefficients.a} {}
 
     NormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                const AH::Array<T, 3> &a, T gain)
-        : b{b * gain / a[0]}, a{-a.template slice<1, 2>() / a[0]} {}
+        : b(b * gain / a[0]), a(-a.template slice<1, 2>() / a[0]) {}
 
     NormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients,
                                T gain)
@@ -366,9 +366,9 @@ class NormalizingBiQuadFilterDF2 {
     T operator()(T input) { return update(input, w, b, a); }
 
   private:
-    AH::Array<T, 2> w = {}; ///< Internal state
-    AH::Array<T, 3> b = {}; ///< Numerator coefficients
-    AH::Array<T, 2> a = {}; ///< Denominator coefficients
+    AH::Array<T, 2> w = {{}}; ///< Internal state
+    AH::Array<T, 3> b = {{}}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {{}}; ///< Denominator coefficients
 };
 
 /** 
@@ -394,14 +394,14 @@ class NonNormalizingBiQuadFilterDF2 {
 
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a)
-        : b{b}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+        : b(b), a(-a.template slice<1, 2>()), a0(a[0]) {}
 
     NonNormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients)
         : NonNormalizingBiQuadFilterDF2{coefficients.b, coefficients.a} {}
 
     NonNormalizingBiQuadFilterDF2(const AH::Array<T, 3> &b,
                                   const AH::Array<T, 3> &a, T gain)
-        : b{b * gain}, a(-a.template slice<1, 2>()), a0{a[0]} {}
+        : b(b * gain), a(-a.template slice<1, 2>()), a0(a[0]) {}
 
     NonNormalizingBiQuadFilterDF2(const BiQuadCoefficients<T> &coefficients,
                                   T gain)
@@ -448,10 +448,10 @@ class NonNormalizingBiQuadFilterDF2 {
     T operator()(T input) { return update(input, w, b, a, a0); }
 
   private:
-    AH::Array<T, 2> w = {}; ///< Internal state
-    AH::Array<T, 3> b = {}; ///< Numerator coefficients
-    AH::Array<T, 2> a = {}; ///< Denominator coefficients
-    T a0 = T(1.);           ///< First denominator coefficient
+    AH::Array<T, 2> w = {{}}; ///< Internal state
+    AH::Array<T, 3> b = {{}}; ///< Numerator coefficients
+    AH::Array<T, 2> a = {{}}; ///< Denominator coefficients
+    T a0 = T(1.);             ///< First denominator coefficient
 };
 
 /// @}

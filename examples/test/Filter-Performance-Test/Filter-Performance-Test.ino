@@ -1,7 +1,7 @@
 /**
  * Performance test for different filters.
  * 
- * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * Written by PieterP, 2019-11-26  
  * https://github.com/tttapa/Arduino-Helpers

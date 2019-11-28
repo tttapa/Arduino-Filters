@@ -1,7 +1,7 @@
 /**
  * Example of 50 Hz (+harmonics) notch filter.
  * 
- * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html>
  * 
