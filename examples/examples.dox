@@ -6,7 +6,7 @@
  *
  * Example of median filter.
  * 
- * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * Written by PieterP, 2019-11-16
  * https://github.com/tttapa/Arduino-Helpers
@@ -20,7 +20,7 @@
  *
  * Example of Butterworth filter.
  * 
- * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html>
  * 
@@ -36,7 +36,7 @@
  *
  * Example of 50 Hz (+harmonics) notch filter.
  * 
- * @boards  AVR, AVR USB, Teensy 3.x, ESP32
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html>
  * 

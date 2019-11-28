@@ -130,7 +130,25 @@ Example: Butterworth filter</h2>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Related Projects</h2>
-<p>This library uses the <a href="https://github.com/tttapa/Arduino-Helpers"><b>Arduino Helpers utility library</b></a> </p>
+<p>This library uses the <a href="https://github.com/tttapa/Arduino-Helpers"><b>Arduino Helpers utility library</b></a></p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Supported boards</h2>
+<p>For each commit, the continuous integration tests compile the examples for the following boards:</p>
+<ul>
+<li>Arduino UNO</li>
+<li>Arduino Leonardo</li>
+<li>Teensy 3.2</li>
+<li>Arduino Due</li>
+<li>Arduino Nano 33 IoT</li>
+<li>ESP8266</li>
+<li>ESP32</li>
+</ul>
+<p>This covers a very large part of the Arduino platform, and similar boards will also work (e.g. Arduino Nano, Arduino Mega, etc.).</p>
+<p>If you have a board that's not supported, please <a href="https://github.com/tttapa/Arduino-Helpers/issues/new">open an issue</a> and let me know!</p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Known limitations</h3>
+<p>The Arduino Due toolchain provided by Arduino is very old, and has some configuration problems. As a result, some math functions are not available. <br  />
+ There is nothing I can do about it in this library, it's a bug in the Arduino Due Core. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <div class="ttc" id="aButterworth_8hpp_html"><div class="ttname"><a href="d4/d40/Butterworth_8hpp.html">Butterworth.hpp</a></div></div>
