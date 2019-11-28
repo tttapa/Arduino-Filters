@@ -68,3 +68,30 @@ void loop() {
 
 This library uses the
 [**Arduino Helpers utility library**](https://github.com/tttapa/Arduino-Helpers)
+
+## Supported boards
+
+For each commit, the continuous integration tests compile the examples for the
+following boards:
+
+- Arduino UNO
+- Arduino Leonardo
+- Teensy 3.2
+- Arduino Due
+- Arduino Nano 33 IoT
+- ESP8266
+- ESP32
+
+This covers a very large part of the Arduino platform, and similar boards will
+also work (e.g. Arduino Nano, Arduino Mega, etc.).
+
+If you have a board that's not supported, please 
+[open an issue](https://github.com/tttapa/Arduino-Helpers/issues/new)
+and let me know!
+
+### Known limitations
+
+The Arduino Due toolchain provided by Arduino is very old, and has some 
+configuration problems. As a result, some math functions are not available.  
+There is nothing I can do about it in this library, it's a bug in the Arduino 
+Due Core.
