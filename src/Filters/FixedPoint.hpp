@@ -111,6 +111,9 @@ class FixedPoint {
         return raw(div_N(T2(this->val) * T2(rhs.val)));
     }
 
+    /// Multiplication with normal integer.
+    T2 operator*(T2 rhs) const { return div_N(T2(this->val) * T2(rhs)); }
+
     /// Division.
     FixedPoint operator/(FixedPoint rhs) const {
         if (rhs.val == one)
@@ -133,6 +136,18 @@ class FixedPoint {
   private:
     T val;
 };
+
+/// Multiply normal integer with fixed point integer.
+template <class T, uint8_t N, class T2>
+T2 operator*(T lhs, FixedPoint<T, N, T2> rhs) {
+    return rhs * lhs;
+}
+
+/// Multiply normal integer with fixed point integer.
+template <class T, uint8_t N, class T2>
+T2 operator*(T2 lhs, FixedPoint<T, N, T2> rhs) {
+    return rhs * lhs;
+}
 
 #ifndef ARDUINO
 

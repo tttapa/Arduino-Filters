@@ -97,15 +97,15 @@ TEST(FixedPoint, divide) {
 
     constexpr uint8_t NBits = 2;
     using fp = FixedPoint<int8_t, NBits>;
-    
+
     AH::Array<fp, 32> dividends;
     generate(begin(dividends), end(dividends),
              [i = 0]() mutable { return fp::raw(i++); });
     fp divisor = 5;
-    
+
     AH::Array<double, dividends.length> quotients =
         AH::copyAs<double>(dividends) / double(divisor);
-    
+
     for (size_t i = 0; i < dividends.length; ++i) {
         EXPECT_NEAR(double(dividends[i] / divisor), quotients[i], pow(2., -2));
         // cout << (quotients[i] - double(dividends[i] / divisor)) << '\n';
@@ -117,19 +117,34 @@ TEST(FixedPoint, mult) {
 
     constexpr uint8_t NBits = 6;
     using fp = FixedPoint<int8_t, NBits>;
-    
+
     AH::Array<fp, 65> input;
     generate(begin(input), end(input),
              [i = 0]() mutable { return fp::raw(i++); });
     fp fac = fp::raw(12);
-    
+
     AH::Array<double, input.length> expected =
         AH::copyAs<double>(input) * double(fac);
-    
+
     for (size_t i = 0; i < input.length; ++i) {
         EXPECT_NEAR(double(input[i] * fac), expected[i], pow(2., -6));
         // cout << (expected[i] - double(input[i] * fac)) << '\n';
     }
+}
+
+TEST(FixedPoint, multNormalInt) {
+    using namespace std;
+
+    constexpr uint8_t NBits = 30;
+    using fp = FixedPoint<uint32_t, NBits>;
+
+    double ffac = 2.1;
+    fp fac = ffac;
+
+    uint32_t integer = 1'000'000'000;
+
+    EXPECT_NEAR(double(integer * fac), integer *ffac, pow(2., -6));
+    EXPECT_NEAR(double(fac * integer), integer *ffac, pow(2., -6));
 }
 
 TEST(FixedPoint, add) {
@@ -137,16 +152,16 @@ TEST(FixedPoint, add) {
 
     constexpr uint8_t NBits = 6;
     using fp = FixedPoint<int8_t, NBits>;
-    
+
     AH::Array<fp, 65> input;
     generate(begin(input), end(input),
              [i = 0]() mutable { return fp::raw(i++); });
     fp add = fp::raw(13);
-    
+
     AH::Array<double, input.length> expected =
         AH::copyAs<double>(input) +
         AH::fillArray<double, input.length>(double(add));
-    
+
     for (size_t i = 0; i < input.length; ++i) {
         EXPECT_FLOAT_EQ(double(input[i] + add), expected[i]);
         // cout << (expected[i] - double(input[i] + add)) << '\n';
@@ -158,7 +173,7 @@ TEST(FixedPoint, sub) {
 
     constexpr uint8_t NBits = 6;
     using fp = FixedPoint<int8_t, NBits>;
-    
+
     AH::Array<fp, 65> input;
     generate(begin(input), end(input),
              [i = 0]() mutable { return fp::raw(i++); });
@@ -167,7 +182,7 @@ TEST(FixedPoint, sub) {
     AH::Array<double, input.length> expected =
         AH::copyAs<double>(input) -
         AH::fillArray<double, input.length>(double(sub));
-    
+
     for (size_t i = 0; i < input.length; ++i) {
         EXPECT_FLOAT_EQ(double(input[i] - sub), expected[i]);
         // cout << (expected[i] - double(input[i] - sub)) << '\n';
