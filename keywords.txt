@@ -11,6 +11,7 @@
 
 Arduino_Helpers	KEYWORD1
 AH	KEYWORD1
+Filters	KEYWORD1
 
 # AH/Math
 #########
@@ -218,4 +219,11 @@ Hysteresis	KEYWORD1
 filter	KEYWORD2
 update	KEYWORD2
 getValue	KEYWORD2
+
+# Filters
+#########
+
+MedianFilter	KEYWORD1
+
+butter	KEYWORD2
 

@@ -5,7 +5,7 @@
  * 
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html>
  * 
- * Written by PieterP, 2019-11-12
+ * Written by PieterP, 2019-11-12  
  * https://github.com/tttapa/Arduino-Filters
  */
 
