@@ -9,9 +9,9 @@
 
 #include <Filters.h>
 
-#include <AH/STL/cmath>
-#include <AH/Timing/MillisMicrosTimer.hpp>
-#include <Filters/MedianFilter.hpp>
+#include <AH/STL/cmath>                    // std::round
+#include <AH/Timing/MillisMicrosTimer.hpp> // Timer
+#include <Filters/MedianFilter.hpp>        // MedianFilter
 
 void setup() {
   Serial.begin(115200);
@@ -26,6 +26,6 @@ Timer<micros> timer = std::round(1e6 / f_s);
 MedianFilter<10, uint16_t> medfilt = {512};
 
 void loop() {
-  if (timer)
+  if (timer) // returns true once every 10 ms, determines sampling frequency
     Serial.println(medfilt(analogRead(A0)));
 }
