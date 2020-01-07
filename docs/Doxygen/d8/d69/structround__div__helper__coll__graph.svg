@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-200 132,-200 132,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Select the right rounding division operator, depending on whether T is an integer or not.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-57.5 128,-57.5 128,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="64" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">round_div_helper&lt; N, T &gt;</text>
 <polyline fill="none" stroke="black" points="0,-38.5 128,-38.5 "/>

@@ -86,11 +86,18 @@ $(function() {
 <div class="dynheader">
 Collaboration diagram for SMA&lt; N, input_t, sum_t &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dd4/classSMA__coll__graph.svg" width="187" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dd4/classSMA__coll__graph.svg" width="187" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab76727e2c2a0699d2a967af200c39c55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#ab76727e2c2a0699d2a967af200c39c55">SMA</a> ()=default</td></tr>
+<tr class="memdesc:ab76727e2c2a0699d2a967af200c39c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (initial state is initialized to all zeros).  <a href="../../df/dc5/classSMA.html#ab76727e2c2a0699d2a967af200c39c55">More...</a><br /></td></tr>
+<tr class="separator:ab76727e2c2a0699d2a967af200c39c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b74ae605792bda19d684df4130f49b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#ae0b74ae605792bda19d684df4130f49b">SMA</a> (input_t initialValue)</td></tr>
+<tr class="memdesc:ae0b74ae605792bda19d684df4130f49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor (initial state is initialized to given value).  <a href="../../df/dc5/classSMA.html#ae0b74ae605792bda19d684df4130f49b">More...</a><br /></td></tr>
+<tr class="separator:ae0b74ae605792bda19d684df4130f49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68abb815378c11d582a31a8afe0194a6"><td class="memItemLeft" align="right" valign="top">input_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#a68abb815378c11d582a31a8afe0194a6">operator()</a> (input_t input)</td></tr>
 <tr class="memdesc:a68abb815378c11d582a31a8afe0194a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the internal state with the new input \( x[n] \) and return the new output \( y[n] \).  <a href="../../df/dc5/classSMA.html#a68abb815378c11d582a31a8afe0194a6">More...</a><br /></td></tr>
 <tr class="separator:a68abb815378c11d582a31a8afe0194a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,8 +106,8 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0c11f1991e88a8b64fdc69dffc84f65c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#a0c11f1991e88a8b64fdc69dffc84f65c">index</a> = 0</td></tr>
 <tr class="separator:a0c11f1991e88a8b64fdc69dffc84f65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbe5f4854f537b8c95375b8cc69fbf5"><td class="memItemLeft" align="right" valign="top">AH::Array&lt; input_t, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#aecbe5f4854f537b8c95375b8cc69fbf5">previousInputs</a> = {}</td></tr>
-<tr class="separator:aecbe5f4854f537b8c95375b8cc69fbf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91fa4d0911beb86bc4ea41e079d11e3b"><td class="memItemLeft" align="right" valign="top">input_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#a91fa4d0911beb86bc4ea41e079d11e3b">previousInputs</a> [N] = {}</td></tr>
+<tr class="separator:a91fa4d0911beb86bc4ea41e079d11e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fee2f8a75d5d5cd5d797e65ec58218f"><td class="memItemLeft" align="right" valign="top">sum_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classSMA.html#a9fee2f8a75d5d5cd5d797e65ec58218f">sum</a> = 0</td></tr>
 <tr class="separator:a9fee2f8a75d5d5cd5d797e65ec58218f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -109,6 +116,7 @@ Private Attributes</h2></td></tr>
 class SMA&lt; N, input_t, sum_t &gt;</h3>
 
 <p>Simple Moving Average filter. </p>
+<p>Returns the average of the N most recent input values.</p>
 <p class="formulaDsp">
 \[ y[n] = \frac{1}{N} \sum_{i=0}^{N-1}x[n-i] \]
 </p>
@@ -121,16 +129,87 @@ class SMA&lt; N, input_t, sum_t &gt;</h3>
   </table>
   </dd>
 </dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="../../d3/d8d/SimpleMovingAverage_8ino-example.html#_a1">SimpleMovingAverage.ino</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab76727e2c2a0699d2a967af200c39c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab76727e2c2a0699d2a967af200c39c55">&#9670;&nbsp;</a></span>SMA() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/classSMA.html">SMA</a>&lt; N, input_t, sum_t &gt;::<a class="el" href="../../df/dc5/classSMA.html">SMA</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor (initial state is initialized to all zeros). </p>
+
+</div>
+</div>
+<a id="ae0b74ae605792bda19d684df4130f49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b74ae605792bda19d684df4130f49b">&#9670;&nbsp;</a></span>SMA() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/classSMA.html">SMA</a>&lt; N, input_t, sum_t &gt;::<a class="el" href="../../df/dc5/classSMA.html">SMA</a> </td>
+          <td>(</td>
+          <td class="paramtype">input_t&#160;</td>
+          <td class="paramname"><em>initialValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor (initial state is initialized to given value). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialValue</td><td>Determines the initial state of the filter: <br  />
+ \( x[-N] =\ \ldots\ = x[-2] = x[-1] = \text{initialValue} \) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a68abb815378c11d582a31a8afe0194a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68abb815378c11d582a31a8afe0194a6">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </div>
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -159,7 +238,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new output \( y[n] \). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00075">75</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
@@ -170,7 +249,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </div>
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -186,23 +265,23 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00069">69</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aecbe5f4854f537b8c95375b8cc69fbf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecbe5f4854f537b8c95375b8cc69fbf5">&#9670;&nbsp;</a></span>previousInputs</h2>
+<a id="a91fa4d0911beb86bc4ea41e079d11e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91fa4d0911beb86bc4ea41e079d11e3b">&#9670;&nbsp;</a></span>previousInputs</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </div>
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AH::Array&lt;input_t, N&gt; <a class="el" href="../../df/dc5/classSMA.html">SMA</a>&lt; N, input_t, sum_t &gt;::previousInputs = {}</td>
+          <td class="memname">input_t <a class="el" href="../../df/dc5/classSMA.html">SMA</a>&lt; N, input_t, sum_t &gt;::previousInputs[N] = {}</td>
         </tr>
       </table>
   </td>
@@ -212,7 +291,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +301,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </div>
+template&lt;uint8_t N, class input_t = uint16_t, class sum_t = uint32_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -238,7 +317,7 @@ template&lt;uint8_t N, class input_t  = uint16_t, class sum_t  = uint32_t&gt; </
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d9c/SMA_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../dc/d9c/SMA_8hpp_source.html">SMA.hpp</a>.</p>
 
 </div>
 </div>
