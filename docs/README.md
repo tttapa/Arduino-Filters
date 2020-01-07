@@ -1,5 +1,3 @@
-# Arduino Filters
-
 Documentation for the [**Arduino Filters**](https://github.com/tttapa/Arduino-Filters) library.
 
 - [master](https://tttapa.github.io/Arduino-Filters/Doxygen/index.html)
