@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5 - src/Filters/FixedPoint.hpp</title>
+  <title>LCOV - 1fbef4c39b228fa52be721a0b79ad4d0e7a916c7 - src/Filters/FixedPoint.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5</td>
+            <td class="headerValue">1fbef4c39b228fa52be721a0b79ad4d0e7a916c7</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">28</td>
-            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">29</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-01-07 16:42:23</td>
+            <td class="headerValue">2020-01-08 17:40:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">38</td>
@@ -196,8 +196,8 @@
 <a name="126"><span class="lineNum">     126 </span>            :         static_assert(std::is_unsigned&lt;T2&gt;::value || (-97 * 2) &gt;&gt; 1 == -97,</a>
 <a name="127"><span class="lineNum">     127 </span>            :                       &quot;Negative signed right shift incorrect&quot;);</a>
 <a name="128"><span class="lineNum">     128 </span><span class="lineCov">      14307 :         int neg = val &lt; 0 ? 1 : 0;</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">      14307 :         return (val + (1 &lt;&lt; (N - 1)) - neg) &gt;&gt; N;</span></a>
-<a name="130"><span class="lineNum">     130 </span>            :     }</a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">      28614 :         return (val + (1 &lt;&lt; (N - 1)) - neg) &gt;&gt; N;</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">      14307 :     }</span></a>
 <a name="131"><span class="lineNum">     131 </span>            : </a>
 <a name="132"><span class="lineNum">     132 </span>            :     explicit operator long double() const { return (long double)val / one; }</a>
 <a name="133"><span class="lineNum">     133 </span><span class="lineCov">        714 :     explicit operator double() const { return (double)val / one; }</span></a>

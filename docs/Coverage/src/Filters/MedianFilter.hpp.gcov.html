@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5 - src/Filters/MedianFilter.hpp</title>
+  <title>LCOV - 1fbef4c39b228fa52be721a0b79ad4d0e7a916c7 - src/Filters/MedianFilter.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5</td>
+            <td class="headerValue">1fbef4c39b228fa52be721a0b79ad4d0e7a916c7</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">17</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-01-07 16:42:23</td>
+            <td class="headerValue">2020-01-08 17:40:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -227,11 +227,11 @@
 <a name="157"><span class="lineNum">     157 </span>            :         // average of its two center elements.</a>
 <a name="158"><span class="lineNum">     158 </span>            :         if (N % 2 == 0) {</a>
 <a name="159"><span class="lineNum">     159 </span><span class="lineCov">         12 :             auto beforeHalfWay = std::max_element(sorted.begin(), halfWay);</span></a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         12 :             return (*halfWay + *beforeHalfWay) / 2;</span></a>
-<a name="161"><span class="lineNum">     161 </span>            :         } else {</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         12 :             return *halfWay;</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         24 :             return (*halfWay + *beforeHalfWay) / 2;</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">         12 :         } else {</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         24 :             return *halfWay;</span></a>
 <a name="163"><span class="lineNum">     163 </span>            :         }</a>
-<a name="164"><span class="lineNum">     164 </span>            :     }</a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">         24 :     }</span></a>
 <a name="165"><span class="lineNum">     165 </span>            : </a>
 <a name="166"><span class="lineNum">     166 </span>            :   private:</a>
 <a name="167"><span class="lineNum">     167 </span>            :     /// The last index in the ring buffer.</a>

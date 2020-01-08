@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5 - src/Filters/BiQuad.hpp</title>
+  <title>LCOV - 1fbef4c39b228fa52be721a0b79ad4d0e7a916c7 - src/Filters/BiQuad.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">be8a37f5b8b0c743b2fd637c9310a27fe9b3abb5</td>
+            <td class="headerValue">1fbef4c39b228fa52be721a0b79ad4d0e7a916c7</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">81</td>
-            <td class="headerCovTableEntry">81</td>
+            <td class="headerCovTableEntry">85</td>
+            <td class="headerCovTableEntry">85</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-01-07 16:42:23</td>
+            <td class="headerValue">2020-01-08 17:40:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">60</td>
@@ -138,8 +138,8 @@
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">       3188 :         x[0] = input;</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">       3188 :         y[1] = y[0];</span></a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">       3188 :         y[0] = acc;</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       3188 :         return y[0];</span></a>
-<a name="72"><span class="lineNum">      72 </span>            :     }</a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       6376 :         return y[0];</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">       3188 :     }</span></a>
 <a name="73"><span class="lineNum">      73 </span>            : </a>
 <a name="74"><span class="lineNum">      74 </span>            :     template &lt;bool Enable = true&gt;</a>
 <a name="75"><span class="lineNum">      75 </span>            :     static std::enable_if_t&lt;!std::is_floating_point&lt;T&gt;::value &amp;&amp; Enable, T&gt;</a>
@@ -239,8 +239,8 @@
 <a name="169"><span class="lineNum">     169 </span><span class="lineCov">       2908 :         x[0] = input;</span></a>
 <a name="170"><span class="lineNum">     170 </span><span class="lineCov">       2908 :         y[1] = y[0];</span></a>
 <a name="171"><span class="lineNum">     171 </span><span class="lineCov">       2908 :         y[0] = acc / a0;</span></a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">       2908 :         return y[0];</span></a>
-<a name="173"><span class="lineNum">     173 </span>            :     }</a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">       2968 :         return y[0];</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       2908 :     }</span></a>
 <a name="174"><span class="lineNum">     174 </span>            : </a>
 <a name="175"><span class="lineNum">     175 </span>            :     /**</a>
 <a name="176"><span class="lineNum">     176 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>
@@ -408,8 +408,8 @@
 <a name="338"><span class="lineNum">     338 </span><span class="lineCov">         20 :         result = std::fma(b[2], w[1], result);</span></a>
 <a name="339"><span class="lineNum">     339 </span><span class="lineCov">         20 :         w[1] = w[0];</span></a>
 <a name="340"><span class="lineNum">     340 </span><span class="lineCov">         20 :         w[0] = input;</span></a>
-<a name="341"><span class="lineNum">     341 </span><span class="lineCov">         20 :         return result;</span></a>
-<a name="342"><span class="lineNum">     342 </span>            :     }</a>
+<a name="341"><span class="lineNum">     341 </span><span class="lineCov">         40 :         return result;</span></a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">         20 :     }</span></a>
 <a name="343"><span class="lineNum">     343 </span>            : </a>
 <a name="344"><span class="lineNum">     344 </span>            :     template &lt;bool Enable = true&gt;</a>
 <a name="345"><span class="lineNum">     345 </span>            :     static std::enable_if_t&lt;!std::is_floating_point&lt;T&gt;::value &amp;&amp; Enable, T&gt;</a>
@@ -504,8 +504,8 @@
 <a name="434"><span class="lineNum">     434 </span><span class="lineCov">         20 :         result += b[2] * w[1];</span></a>
 <a name="435"><span class="lineNum">     435 </span><span class="lineCov">         20 :         w[1] = w[0];</span></a>
 <a name="436"><span class="lineNum">     436 </span><span class="lineCov">         20 :         w[0] = input;</span></a>
-<a name="437"><span class="lineNum">     437 </span><span class="lineCov">         20 :         return result;</span></a>
-<a name="438"><span class="lineNum">     438 </span>            :     }</a>
+<a name="437"><span class="lineNum">     437 </span><span class="lineCov">         40 :         return result;</span></a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineCov">         20 :     }</span></a>
 <a name="439"><span class="lineNum">     439 </span>            : </a>
 <a name="440"><span class="lineNum">     440 </span>            :     /**</a>
 <a name="441"><span class="lineNum">     441 </span>            :      * @brief   Update the internal state with the new input @f$ x[n] @f$ and</a>

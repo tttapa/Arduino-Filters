@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['iirfilter_828',['IIRFilter',['../d5/d94/classIIRFilter.html#a80d470da0d59ac174cd5bd34421eb028',1,'IIRFilter::IIRFilter(const AH::Array&lt; T, NB &gt; &amp;b_coefficients, const AH::Array&lt; T, NA &gt; &amp;a_coefficients)'],['../d5/d94/classIIRFilter.html#aade2e4f0ce020488a7bde86f6dc3bc38',1,'IIRFilter::IIRFilter(const TransferFunction&lt; NB, NA, T &gt; &amp;tf)']]],
-  ['increasebitdepth_829',['increaseBitDepth',['../dd/d5e/group__AH__Math.html#ga46fa72568df66520decc1fd69b4d37be',1,'IncreaseBitDepth.hpp']]],
-  ['increasebitdepthimpl_830',['increaseBitDepthImpl',['../d5/dee/IncreaseBitDepth_8hpp.html#a5b765f75de6e0e108893b447265568ca',1,'increaseBitDepthImpl(T_in in):&#160;IncreaseBitDepth.hpp'],['../d5/dee/IncreaseBitDepth_8hpp.html#a7ef664640695e1363e8d871303073eb2',1,'increaseBitDepthImpl(T_in in):&#160;IncreaseBitDepth.hpp']]],
-  ['incrementbutton_831',['IncrementButton',['../df/d38/classIncrementButton.html#ad0133d3b080fa4093b24ade7acd2f2c1',1,'IncrementButton']]],
-  ['incrementdecrementbuttons_832',['IncrementDecrementButtons',['../d5/d20/classIncrementDecrementButtons.html#ac59f4c72e86f8d1cd8665d959f526ca9',1,'IncrementDecrementButtons']]],
-  ['incrementor_833',['Incrementor',['../d5/d4a/classdetail_1_1Incrementor.html#aa8934fb3bc9c14ea5cf63cde6cab77d0',1,'detail::Incrementor']]],
-  ['init_834',['init',['../da/dd0/classMAX7219__Base.html#abc1d2ae777d19ca9aaf8eb7d1f500716',1,'MAX7219_Base']]],
-  ['inrange_835',['inRange',['../d8/d3d/namespaceExtIO.html#aedf6005ecc64cea16059965b80ce5f85',1,'ExtIO']]],
-  ['insertbefore_836',['insertBefore',['../dd/d16/classDoublyLinkedList.html#a534cc4a8db91810e6266243ef9a0b8f0',1,'DoublyLinkedList::insertBefore(Node *toBeInserted, Node *before)'],['../dd/d16/classDoublyLinkedList.html#a13888d516363e617de1a76b539804796',1,'DoublyLinkedList::insertBefore(Node &amp;toBeInserted, Node &amp;before)']]],
-  ['insertsorted_837',['insertSorted',['../dd/d16/classDoublyLinkedList.html#aaac21d927c86879dd877dc4c9cbdf81d',1,'DoublyLinkedList::insertSorted(Node *node, Compare cmp)'],['../dd/d16/classDoublyLinkedList.html#ae75df28899191ac4cb60d3390a11210a',1,'DoublyLinkedList::insertSorted(Node *node)']]],
-  ['invert_838',['invert',['../d1/d19/classButton.html#a1027f25dee91c915849d531515365aab',1,'Button::invert()'],['../da/da7/classFilteredAnalog.html#abb6ad2b60a60e2268dff3ef2c8415f26',1,'FilteredAnalog::invert()']]],
-  ['isenabled_839',['isEnabled',['../d5/de0/classUpdatable.html#a883138a1262a82e8b9e05c75d576e36d',1,'Updatable']]],
-  ['iterator_840',['Iterator',['../d9/d1a/classArraySlice_1_1Iterator.html#aaa45e30b5c89fd99ee6f74105d00d9a0',1,'ArraySlice::Iterator']]]
+  ['iirfilter_837',['IIRFilter',['../d5/d94/classIIRFilter.html#a57cc08e4e91ec56c53d88079641866e8',1,'IIRFilter::IIRFilter(const AH::Array&lt; T, NB &gt; &amp;b_coefficients, const AH::Array&lt; T, NA &gt; &amp;a_coefficients)'],['../d5/d94/classIIRFilter.html#a952293da4414af5fd4d1ec9f7024937d',1,'IIRFilter::IIRFilter(const TransferFunction&lt; NB, NA, T &gt; &amp;tf)']]],
+  ['increasebitdepth_838',['increaseBitDepth',['../dd/d5e/group__AH__Math.html#ga46fa72568df66520decc1fd69b4d37be',1,'IncreaseBitDepth.hpp']]],
+  ['increasebitdepthimpl_839',['increaseBitDepthImpl',['../d5/dee/IncreaseBitDepth_8hpp.html#a5b765f75de6e0e108893b447265568ca',1,'increaseBitDepthImpl(T_in in):&#160;IncreaseBitDepth.hpp'],['../d5/dee/IncreaseBitDepth_8hpp.html#a7ef664640695e1363e8d871303073eb2',1,'increaseBitDepthImpl(T_in in):&#160;IncreaseBitDepth.hpp']]],
+  ['incrementbutton_840',['IncrementButton',['../df/d38/classIncrementButton.html#a1299f0d578092838e092dd6045762006',1,'IncrementButton']]],
+  ['incrementdecrementbuttons_841',['IncrementDecrementButtons',['../d5/d20/classIncrementDecrementButtons.html#a169fb832f90b7d02106cf895e3c13f13',1,'IncrementDecrementButtons']]],
+  ['incrementor_842',['Incrementor',['../d5/d4a/classdetail_1_1Incrementor.html#a5481dc3bb7d4149bce5951e582912639',1,'detail::Incrementor']]],
+  ['init_843',['init',['../da/dd0/classMAX7219__Base.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'MAX7219_Base']]],
+  ['inrange_844',['inRange',['../d8/d3d/namespaceExtIO.html#aedf6005ecc64cea16059965b80ce5f85',1,'ExtIO']]],
+  ['insertbefore_845',['insertBefore',['../dd/d16/classDoublyLinkedList.html#acf4811805cad3ff26197d352e77a5984',1,'DoublyLinkedList::insertBefore(Node *toBeInserted, Node *before)'],['../dd/d16/classDoublyLinkedList.html#aee52709fe1679f32142402cea825a7f5',1,'DoublyLinkedList::insertBefore(Node &amp;toBeInserted, Node &amp;before)']]],
+  ['insertsorted_846',['insertSorted',['../dd/d16/classDoublyLinkedList.html#ad72e675f001fbacd813452efbd15a6f2',1,'DoublyLinkedList::insertSorted(Node *node, Compare cmp)'],['../dd/d16/classDoublyLinkedList.html#ab894c7e00c61dc14cb8bfed56aeed324',1,'DoublyLinkedList::insertSorted(Node *node)']]],
+  ['invert_847',['invert',['../d1/d19/classButton.html#a7fa1616cc61c19a5efcc863c950f7f30',1,'Button::invert()'],['../da/da7/classFilteredAnalog.html#a7fa1616cc61c19a5efcc863c950f7f30',1,'FilteredAnalog::invert()']]],
+  ['isenabled_848',['isEnabled',['../d5/de0/classUpdatable.html#a56722b6f1c22da04885bc9853148bb71',1,'Updatable']]],
+  ['iterator_849',['Iterator',['../d9/d1a/classArraySlice_1_1Iterator.html#a85c519faf6acc81f7d56b31eb1c9d1cb',1,'ArraySlice::Iterator']]]
 ];

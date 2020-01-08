@@ -49,6 +49,7 @@
                                 // overflow_error
 // #include <iosfwd>
 // #include <bits/cxxabi_forced.h>
+#include "algorithm"
 
 #define _GLIBCXX_BITSET_BITS_PER_WORD  (__CHAR_BIT__ * __SIZEOF_LONG__)
 #define _GLIBCXX_BITSET_WORDS(__n) \
@@ -777,7 +778,7 @@ _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
       void _M_check(size_t __position, const char *__s) const
       {
 	if (__position >= _Nb)
-	  __throw_out_of_range_index_length(s, __position, _Nb);
+	  __throw_out_of_range_index_length(__s, __position, _Nb);
       }
 
 #endif // __AVR__
