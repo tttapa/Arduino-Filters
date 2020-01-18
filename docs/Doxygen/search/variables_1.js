@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['b_971',['b',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012',1,'NormalizingBiQuadFilterDF1::b()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012',1,'NonNormalizingBiQuadFilterDF1::b()'],['../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012',1,'NormalizingBiQuadFilterDF2::b()'],['../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012',1,'NonNormalizingBiQuadFilterDF2::b()'],['../d2/d3c/structTransferFunction.html#a292d837a6307a0586fdac7d8f9fb4220',1,'TransferFunction::b()']]],
-  ['b_5fcoefficients_972',['b_coefficients',['../dc/d27/classNonNormalizingIIRFilter.html#a18f9a2125e440deb95435194262710a0',1,'NonNormalizingIIRFilter::b_coefficients()'],['../db/d07/classNormalizingIIRFilter.html#a18f9a2125e440deb95435194262710a0',1,'NormalizingIIRFilter::b_coefficients()']]],
-  ['bitorder_973',['bitOrder',['../d8/db4/classShiftRegisterOutBase.html#a4e460a68da9f4a4878ea5bf65fdcaedc',1,'ShiftRegisterOutBase']]],
-  ['bluebit_974',['blueBit',['../d5/d45/structShiftRegisterOutRGB.html#acfafcd5d8289f6ffc9ad09cb6ad5aadc',1,'ShiftRegisterOutRGB']]],
-  ['boolalphaprintstream_975',['boolalphaPrintStream',['../da/d69/PrintStream_8cpp.html#ac031ea43b717d6e00396a00c3caef6f2',1,'PrintStream.cpp']]],
-  ['buffer_976',['buffer',['../db/de9/classBitArray.html#a6a292007425eb6c5d4eb7d5eb2d1e0ed',1,'BitArray::buffer()'],['../dc/d19/classMAX7219.html#aa34c8c6d924621c8ccc675ae399b2733',1,'MAX7219::buffer()'],['../d8/db4/classShiftRegisterOutBase.html#a52f28b99ebaf530ae5b8219ccc6f4f81',1,'ShiftRegisterOutBase::buffer()']]],
-  ['bufferlength_977',['bufferLength',['../db/de9/classBitArray.html#a9d55ac509c001d869fee5a71a4302a0e',1,'BitArray']]],
-  ['button_978',['button',['../df/d38/classIncrementButton.html#aa56e877ca6a7524cf1e891c7435c3ace',1,'IncrementButton']]],
-  ['button_5fdebounce_5ftime_979',['BUTTON_DEBOUNCE_TIME',['../db/d02/Settings_8hpp.html#a838b0bb32d176701ae1362e3188c578d',1,'Settings.hpp']]],
-  ['byteseparatorprintstream_980',['byteSeparatorPrintStream',['../da/d69/PrintStream_8cpp.html#a643fcf8db7c14c0dc68d6ae017366506',1,'PrintStream.cpp']]]
+  ['b_976',['b',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012',1,'NormalizingBiQuadFilterDF1::b()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012',1,'NonNormalizingBiQuadFilterDF1::b()'],['../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012',1,'NormalizingBiQuadFilterDF2::b()'],['../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012',1,'NonNormalizingBiQuadFilterDF2::b()'],['../d2/d3c/structTransferFunction.html#a292d837a6307a0586fdac7d8f9fb4220',1,'TransferFunction::b()']]],
+  ['b_5fcoefficients_977',['b_coefficients',['../dc/d27/classNonNormalizingIIRFilter.html#a18f9a2125e440deb95435194262710a0',1,'NonNormalizingIIRFilter::b_coefficients()'],['../db/d07/classNormalizingIIRFilter.html#a18f9a2125e440deb95435194262710a0',1,'NormalizingIIRFilter::b_coefficients()']]],
+  ['bitorder_978',['bitOrder',['../d8/db4/classShiftRegisterOutBase.html#a4e460a68da9f4a4878ea5bf65fdcaedc',1,'ShiftRegisterOutBase']]],
+  ['bluebit_979',['blueBit',['../d5/d45/structShiftRegisterOutRGB.html#acfafcd5d8289f6ffc9ad09cb6ad5aadc',1,'ShiftRegisterOutRGB']]],
+  ['boolalphaprintstream_980',['boolalphaPrintStream',['../da/d69/PrintStream_8cpp.html#ac031ea43b717d6e00396a00c3caef6f2',1,'PrintStream.cpp']]],
+  ['buffer_981',['buffer',['../db/de9/classBitArray.html#a6a292007425eb6c5d4eb7d5eb2d1e0ed',1,'BitArray::buffer()'],['../dc/d19/classMAX7219.html#aa34c8c6d924621c8ccc675ae399b2733',1,'MAX7219::buffer()'],['../d8/db4/classShiftRegisterOutBase.html#a52f28b99ebaf530ae5b8219ccc6f4f81',1,'ShiftRegisterOutBase::buffer()']]],
+  ['bufferlength_982',['bufferLength',['../db/de9/classBitArray.html#a9d55ac509c001d869fee5a71a4302a0e',1,'BitArray']]],
+  ['button_983',['button',['../df/d38/classIncrementButton.html#aa56e877ca6a7524cf1e891c7435c3ace',1,'IncrementButton']]],
+  ['button_5fdebounce_5ftime_984',['BUTTON_DEBOUNCE_TIME',['../db/d02/Settings_8hpp.html#a838b0bb32d176701ae1362e3188c578d',1,'Settings.hpp']]],
+  ['byteseparatorprintstream_985',['byteSeparatorPrintStream',['../da/d69/PrintStream_8cpp.html#a643fcf8db7c14c0dc68d6ae017366506',1,'PrintStream.cpp']]]
 ];
