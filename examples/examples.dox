@@ -33,7 +33,7 @@
  * increase the resolution, etc.
  * 
  * Written by PieterP, 2019-10-10  
- * https://github.com/tttapa/Arduino-Helpers
+ * https://github.com/tttapa/Arduino-Filters
  */
 
 /**
@@ -70,7 +70,7 @@
  * @ref 1.FilteredAnalog.ino.
  * 
  * Written by PieterP, 2019-10-10  
- * https://github.com/tttapa/Arduino-Helpers
+ * https://github.com/tttapa/Arduino-Filters
  */
 
 /**

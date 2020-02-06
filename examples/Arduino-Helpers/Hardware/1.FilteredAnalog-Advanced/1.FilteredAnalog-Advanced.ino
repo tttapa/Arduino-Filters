@@ -27,11 +27,11 @@
  * @ref 1.FilteredAnalog.ino.
  * 
  * Written by PieterP, 2019-10-10  
- * https://github.com/tttapa/Arduino-Helpers
+ * https://github.com/tttapa/Arduino-Filters
  */
 
 // Include the library
-#include <Arduino_Helpers.h>
+#include <Filters.h>
 
 #include <AH/Hardware/FilteredAnalog.hpp>
 #include <AH/Timing/MillisMicrosTimer.hpp>
