@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arduino Helpers: 1.FilteredAnalog-Advanced.ino</title>
+<title>Arduino Filters: 1.FilteredAnalog-Advanced.ino</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -28,10 +28,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Arduino Helpers
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">Arduino Filters
+   &#160;<span id="projectnumber">master</span>
    </div>
-   <div id="projectbrief">Utility library for Arduino</div>
+   <div id="projectbrief">Filter library for Arduino</div>
   </td>
  </tr>
  </tbody>
@@ -74,17 +74,17 @@ $(function() {
 <div class="title">1.FilteredAnalog-Advanced.ino</div>  </div>
 </div><!--header-->
 <div class="contents">
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 1.FilteredAnalog-Advanced</h1>
 <p>This examples shows how to filter an analog input, so you can get the position of a knob or fader without noise.</p>
 <dl class="section user"><dt>Boards:</dt><dd>AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32</dd></dl>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Connections</h2>
 <ul>
 <li>A0: wiper of a potentiometer</li>
 </ul>
 <p>Connect the left terminal of the potentiometer to ground, and the right one to V<sub>CC</sub>.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Behavior</h2>
 <ul>
 <li>Upload the sketch to the Arduino, and open the Serial Monitor (<code>CTRL+Shift+M</code>)</li>
@@ -94,7 +94,38 @@ Behavior</h2>
 <p>A simpler version of this example can be found in <a class="el" href="../../d3/dbe/1_8FilteredAnalog_8ino-example.html">1.FilteredAnalog.ino</a>.</p>
 <p>Written by PieterP, 2019-10-10 <br  />
  <a href="https://github.com/tttapa/Arduino-Helpers">https://github.com/tttapa/Arduino-Helpers</a></p>
-<div class="fragment"><div class="line"> </div>
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * This examples shows how to filter an analog input, so you can get the </span></div>
+<div class="line"><span class="comment"> * position of a knob or fader without noise.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connections</span></div>
+<div class="line"><span class="comment"> * -----------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * - A0: wiper of a potentiometer</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Connect the left terminal of the potentiometer to ground, and the right one</span></div>
+<div class="line"><span class="comment"> * to V&lt;sub&gt;CC&lt;/sub&gt;.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Behavior</span></div>
+<div class="line"><span class="comment"> * --------</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * - Upload the sketch to the Arduino, and open the Serial Monitor </span></div>
+<div class="line"><span class="comment"> *   (`CTRL+Shift+M`)</span></div>
+<div class="line"><span class="comment"> * - When you turn the potentiometer, you should see the position of the </span></div>
+<div class="line"><span class="comment"> *   potentiometer being printed as a number between 0 and 1023.</span></div>
+<div class="line"><span class="comment"> * - The analog input is filtered, so there shouldn&#39;t be any noise on the </span></div>
+<div class="line"><span class="comment"> *   position. If there is, check your wiring, and make sure that the resistance</span></div>
+<div class="line"><span class="comment"> *   of the potentiometer isn&#39;t too high (10 kΩ is ideal). </span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * A simpler version of this example can be found in </span></div>
+<div class="line"><span class="comment"> * @ref 1.FilteredAnalog.ino.</span></div>
+<div class="line"><span class="comment"> * </span></div>
+<div class="line"><span class="comment"> * Written by PieterP, 2019-10-10  </span></div>
+<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Helpers</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Include the library</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/de6/Arduino__Helpers_8h.html">Arduino_Helpers.h</a>&gt;</span></div>
 <div class="line"> </div>
