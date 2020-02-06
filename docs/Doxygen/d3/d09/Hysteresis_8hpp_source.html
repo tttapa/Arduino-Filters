@@ -84,47 +84,11 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<a class="code" href="../../d1/d65/Warnings_8hpp.html#a9f2deeea1dd06b45ebc381da1633c7ee">AH_DIAGNOSTIC_WERROR</a>() <span class="comment">// Enable errors on warnings</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/// @addtogroup    AH_Filters</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * @brief   A class for applying hysteresis to a given input.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * This reduces the noise by decreasing the resolution, and it prevents flipping</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * back and forth between two values.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * &lt;b&gt;An example for `BITS` = 7 and an input from 0 to 1023&lt;/b&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * ```</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *    7                                                     ┌───◄───┬───</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * o  6                                             ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * u  5                                     ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * t  4                             ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * p  3                     ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * u  2             ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * t  1     ┌───◄───┼───►───┘</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *    0 ────┴───►───┘</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *      0      128     256     384     512     640     768     896    1023</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *                                  i n p u t</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * ```</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @tparam  BITS</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *          The number of bits to decrease in resolution.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *          Increasing this number will result in a decrease in fluctuations.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>8_t BITS, <span class="keyword">class</span> T_in = u<span class="keywordtype">int</span>16_t, <span class="keyword">class</span> T_out = u<span class="keywordtype">int</span>8_t&gt;</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d2/dcb/classHysteresis.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dcb/classHysteresis.html">Hysteresis</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @brief   Update the hysteresis output with a new input value.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * @param   inputLevel</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     *          The input to calculate the output level from.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * @retval  true</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     *          The output level has changed.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * @retval  false</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     *          The output level is still the same.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d2/dcb/classHysteresis.html#a131ea12643cc4dc7874f101f521f4324">   48</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dcb/classHysteresis.html#a131ea12643cc4dc7874f101f521f4324">update</a>(T_in inputLevel) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        T_in prevLevelFull = (T_in(<a class="code" href="../../d2/dcb/classHysteresis.html#a2131cc63eb3bb996deb8881d0a2a9dd1">prevLevel</a>) &lt;&lt; BITS) | <a class="code" href="../../d2/dcb/classHysteresis.html#a10f132094621f75f741b89d6ce038be9">offset</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        T_in lowerbound = <a class="code" href="../../d2/dcb/classHysteresis.html#a2131cc63eb3bb996deb8881d0a2a9dd1">prevLevel</a> &gt; 0 ? prevLevelFull - <a class="code" href="../../d2/dcb/classHysteresis.html#a60f481ee556174be7b3acfb02a6e53ca">margin</a> : 0;</div>
@@ -135,12 +99,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @brief   Get the current output level.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * @return  The output level.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d2/dcb/classHysteresis.html#aa4f4d200e8ddf64eed29dc2c80f9d307">   64</a></span>&#160;    T_out <a class="code" href="../../d2/dcb/classHysteresis.html#aa4f4d200e8ddf64eed29dc2c80f9d307">getValue</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d2/dcb/classHysteresis.html#a2131cc63eb3bb996deb8881d0a2a9dd1">prevLevel</a>; }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">private</span>:</div>
@@ -151,9 +110,8 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d2/dcb/classHysteresis.html#a73cb90fdff9327a69c32e9e9c8e39d2a">   71</a></span>&#160;    constexpr <span class="keyword">static</span> T_out <a class="code" href="../../d2/dcb/classHysteresis.html#a73cb90fdff9327a69c32e9e9c8e39d2a">max_out</a> = static_cast&lt;T_out&gt;(<a class="code" href="../../d2/dcb/classHysteresis.html#a32964102524c8f7f878be5daa02e1c47">max_in</a> &gt;&gt; BITS);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    static_assert(<a class="code" href="../../d2/dcb/classHysteresis.html#a32964102524c8f7f878be5daa02e1c47">max_in</a> &gt; 0, <span class="stringliteral">&quot;Error: only unsigned types are supported&quot;</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/// @}</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<a class="code" href="../../d1/d65/Warnings_8hpp.html#a4f088fb95f1d6dc4279357ca2a562cbe">AH_DIAGNOSTIC_POP</a>()</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aWarnings_8hpp_html"><div class="ttname"><a href="../../d1/d65/Warnings_8hpp.html">Warnings.hpp</a></div></div>

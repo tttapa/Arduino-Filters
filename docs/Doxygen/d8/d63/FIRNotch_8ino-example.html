@@ -87,24 +87,7 @@ FIRNotch</h1>
 Filtered mains power noise signal (blue is unfilterd, red is filtered)</div></div>
    <p>Written by PieterP, 2019-11-22 <br  />
  <a href="https://github.com/tttapa/Arduino-Filters">https://github.com/tttapa/Arduino-Filters</a></p>
-<div class="fragment"><div class="line"><span class="comment">/**</span></div>
-<div class="line"><span class="comment"> * Example of 50 Hz (+harmonics) notch filter.</span></div>
-<div class="line"><span class="comment"> * </span></div>
-<div class="line"><span class="comment"> * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32</span></div>
-<div class="line"><span class="comment"> * </span></div>
-<div class="line"><span class="comment"> * @see &lt;https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/FIR-Notch.html&gt;</span></div>
-<div class="line"><span class="comment"> * </span></div>
-<div class="line"><span class="comment"> * Be careful when selecting a sampling frequency that&#39;s a multiple of 50 Hz, as</span></div>
-<div class="line"><span class="comment"> * this will alias 50 Hz harmonics to 0 Hz (DC), and this might introduce a more</span></div>
-<div class="line"><span class="comment"> * or less constant error to your measurements.  </span></div>
-<div class="line"><span class="comment"> * It&#39;s best to add an analog anti-aliasing filter as well.</span></div>
-<div class="line"><span class="comment"> * </span></div>
-<div class="line"><span class="comment"> * ![Filtered mains power noise signal (blue is unfilterd, red is filtered)](50Hz-notch.png)</span></div>
-<div class="line"><span class="comment"> * </span></div>
-<div class="line"><span class="comment"> * Written by PieterP, 2019-11-22  </span></div>
-<div class="line"><span class="comment"> * https://github.com/tttapa/Arduino-Filters</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"> </div>
+<div class="fragment"><div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d1/d7d/Filters_8h.html">Filters.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d1/dd0/MillisMicrosTimer_8hpp.html">AH/Timing/MillisMicrosTimer.hpp</a>&gt;</span></div>

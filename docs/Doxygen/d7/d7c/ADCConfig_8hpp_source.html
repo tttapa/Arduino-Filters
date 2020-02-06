@@ -79,15 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="../../d7/d7c/ADCConfig_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @file</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * @brief   This file contains the platform-specific ADC resolutions.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *          By default, the library automatically selects the maximum supported</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *          resolution for known boards, otherwise, it falls back to 10 bits.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * @see     @ref AH::ADC_BITS</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d1/d65/Warnings_8hpp.html">AH/Settings/Warnings.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<a class="code" href="../../d1/d65/Warnings_8hpp.html#a9f2deeea1dd06b45ebc381da1633c7ee">AH_DIAGNOSTIC_WERROR</a>() <span class="comment">// Enable errors on warnings</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
@@ -145,10 +137,8 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Unknown/Default</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/// The actual maximum resolution of the built-in ADC.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d7/d7c/ADCConfig_8hpp.html#a00978ca9e8220475258dcbbbb7d29129">   69</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define ADC_RESOLUTION 10</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/// Whether the platform supports the `analogReadResolution` function.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d7/d7c/ADCConfig_8hpp.html#a4af2da2db9e536067c953baac53b70e6">   71</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define HAS_ANALOG_READ_RESOLUTION 0</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define ADC_RESOLUTION 10</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define HAS_ANALOG_READ_RESOLUTION 0</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>

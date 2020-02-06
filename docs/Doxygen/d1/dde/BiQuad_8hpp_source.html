@@ -83,38 +83,15 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../de/d76/Array_8hpp.html">AH/Containers/Array.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AH/STL/cmath&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d2/d03/TransferFunction_8hpp.html">Filters/TransferFunction.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/// @addtogroup Filters</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/// BiQuadratic transfer function coefficients.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T = <span class="keywordtype">float</span>&gt;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d5a/group__Filters.html#gabfc22183b370bcc888c1c623e1f86912">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../d2/d3c/structTransferFunction.html">BiQuadCoefficients</a> = <a class="code" href="../../d2/d3c/structTransferFunction.html">TransferFunction&lt;3, 3, T&gt;</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// @}</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @addtogroup FilterImplementations</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Direct Form 1 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @brief   BiQuad filter Direct Form 1 implementation that normalizes the</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *          coefficients upon initialization.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * This class is faster than @ref NonNormalizingBiQuadFilterDF1, because each </span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * filter iteration involves only addition and multiplication, no divisions.  </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * It works great for floating point numbers, but might be less ideal</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * for integer types, because it can create large rounding errors on the </span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * coefficients.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html">NormalizingBiQuadFilterDF1</a> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span>:</div>
@@ -166,40 +143,16 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>[0] = acc;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>[0];</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">   98</a></span>&#160;    T <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) { <span class="keywordflow">return</span> <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#ae8b4911d308a764ca3ff6cac30ed0572">update</a>(input, <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a>, <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>, <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a>, <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a>); }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">  101</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a> = {{}}; <span class="comment">///&lt; Previous inputs</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">  102</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a> = {{}}; <span class="comment">///&lt; Previous outputs</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">  103</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 3&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; <span class="comment">///&lt; Numerator coefficients</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  104</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; <span class="comment">///&lt; Denominator coefficients</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span>};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * @brief   BiQuad filter Direct Form 1 implementation that does not </span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> *          normalize the coefficients upon initialization, the division by </span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> *          @f$ a_0 @f$ is carried out on each filter iteration.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * This class is slower than @ref NormalizingBiQuadFilterDF1, but it works </span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * better for integer types, because it has no rounding error on the </span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * coefficients.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">  101</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a> = {{}}; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">  102</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a> = {{}}; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">  103</a></span>&#160;    AH::Array&lt;T, 3&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  104</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">  124</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1</a> {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">public</span>:</div>
@@ -251,142 +204,53 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>[0] = acc / <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">a0</a>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>[0];</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">  183</a></span>&#160;    T <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) { <span class="keywordflow">return</span> <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a24d7ac6c49c01564e4abbc70b54b0098">update</a>(input, <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a>, <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a>, <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a>, <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a>, <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">a0</a>); }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">  186</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a> = {{}}; <span class="comment">///&lt; Previous inputs</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">  187</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a> = {{}}; <span class="comment">///&lt; Previous outputs</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">  188</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 3&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; <span class="comment">///&lt; Numerator coefficients</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  189</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; <span class="comment">///&lt; Denominator coefficients</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">  190</a></span>&#160;<span class="comment"></span>    T <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">a0</a> = T(1.);             <span class="comment">///&lt; First denominator coefficient</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"></span>};</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">/// @}</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">/// Select the @ref NormalizingIIRFilter implementation if @p T is a floating</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">/// point type, @ref NonNormalizingIIRFilter otherwise.</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">  186</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7">x</a> = {{}}; </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">  187</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a64af0c8ac647ec9ae4092fb8b1664fca">y</a> = {{}}; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">  188</a></span>&#160;    AH::Array&lt;T, 3&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  189</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">  190</a></span>&#160;    T <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a6177559a0bfd7fdab9b766169d192fba">a0</a> = T(1.);             </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a> =</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">typename</span> std::conditional&lt;std::is_floating_point&lt;T&gt;::value,</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                              <a class="code" href="../../dc/dd3/classNormalizingBiQuadFilterDF1.html">NormalizingBiQuadFilterDF1&lt;T&gt;</a>,</div>
 <div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">  201</a></span>&#160;                              <a class="code" href="../../d3/d11/classNonNormalizingBiQuadFilterDF1.html">NonNormalizingBiQuadFilterDF1&lt;T&gt;</a>&gt;::type;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">/// @addtogroup Filters</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment"> * @brief   Generic BiQuad (Bi-Quadratic) filter class, Direct Form 1 </span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"> *          implementation.</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> * Uses the @ref NormalizingBiQuadFilterDF1 implementation for floating point </span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"> * types, and @ref NonNormalizingBiQuadFilterDF1 for all other types. </span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T = <span class="keywordtype">float</span>&gt;</div>
 <div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html">  221</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html">BiQuadFilterDF1</a> : <span class="keyword">public</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a>&lt;T&gt; {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#a116970dcbf4dda5c299b534626ee1f6f">BiQuadFilterDF1</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">     * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">     * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">     * function:</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">     * @f[</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">     * H(z) = \frac{b_0 + b_1 z^{-1} + b_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">     *             {a_0 + a_1 z^{-1} + a_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">     * @f]</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">     * @param   b_coefficients </span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">     *          The coefficients of the transfer function numerator.</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">     * @param   a_coefficients </span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">     *          The coefficients of the transfer function denominator.</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html#ac562bcdea27b5e622f52b8c3ce91b49c">  241</a></span>&#160;    <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#ac562bcdea27b5e622f52b8c3ce91b49c">BiQuadFilterDF1</a>(<span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;b_coefficients,</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    <span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;a_coefficients)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a>&lt;T&gt;{b_coefficients, a_coefficients} {}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html#ab26e43107dd0784d85a528874be87d87">  245</a></span>&#160;    <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#ab26e43107dd0784d85a528874be87d87">BiQuadFilterDF1</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d3c/structTransferFunction.html">BiQuadCoefficients&lt;T&gt;</a> &amp;coefficients)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a>&lt;T&gt;{coefficients} {}</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">     * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">     * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">     * function:</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">     * @f[</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">     * H(z) = K \frac{b_0 + b_1 z^{-1} + b_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">     *               {a_0 + a_1 z^{-1} + a_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">     * @f]</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">     * @param   b_coefficients </span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">     *          The coefficients of the transfer function numerator.</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">     * @param   a_coefficients </span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">     *          The coefficients of the transfer function denominator.</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">     * @param   gain</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">     *          Gain factor @f$ K @f$.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html#a4c765789e6dd7c40ebe4cbff9940c9ec">  266</a></span>&#160;    <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#a4c765789e6dd7c40ebe4cbff9940c9ec">BiQuadFilterDF1</a>(<span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;b_coefficients,</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;a_coefficients, T gain)</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a>&lt;T&gt;{b_coefficients, a_coefficients, gain} {}</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html#ada20c64b55ad816400e63b4f2c9f1ace">  270</a></span>&#160;    <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#ada20c64b55ad816400e63b4f2c9f1ace">BiQuadFilterDF1</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d3c/structTransferFunction.html">BiQuadCoefficients&lt;T&gt;</a> &amp;coefficients, T gain)</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation</a>&lt;T&gt;{coefficients, gain} {}</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno"><a class="line" href="../../dc/d8e/classBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">  281</a></span>&#160;    T <a class="code" href="../../dc/d8e/classBiQuadFilterDF1.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) {</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#afe841ee95be66d8b3affc6f941c643fb">BiQuadDF1Implementation&lt;T&gt;::operator()</a>(input);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;};</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">/// @}</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">// Direct Form 2 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">/// @addtogroup FilterImplementations</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment"> * @brief   BiQuad filter Direct Form 2 implementation that normalizes the</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment"> *          coefficients upon initialization.</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment"> * This class is faster than @ref NonNormalizingBiQuadFilterDF2, because each </span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment"> * filter iteration involves only addition and multiplication, no divisions.  </span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment"> * It works great for floating point numbers, but might be less ideal</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment"> * for integer types, because it can create large rounding errors on the </span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment"> * coefficients.</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html">  311</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html">NormalizingBiQuadFilterDF2</a> {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">public</span>:</div>
@@ -434,39 +298,15 @@ $(function() {
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a>[0] = input;</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">  366</a></span>&#160;    T <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) { <span class="keywordflow">return</span> <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#ae1465c7e4898f8796b6e46015e5b0cae">update</a>(input, <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a>, <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a>, <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a>); }</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">  369</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a> = {{}}; <span class="comment">///&lt; Internal state</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">  370</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 3&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; <span class="comment">///&lt; Numerator coefficients</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  371</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; <span class="comment">///&lt; Denominator coefficients</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment"></span>};</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> * @brief   BiQuad filter Direct Form 2 implementation that does not </span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"> *          normalize the coefficients upon initialization, the division by </span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"> *          @f$ a_0 @f$ is carried out on each filter iteration.</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> * This class is slower than @ref NormalizingBiQuadFilterDF2, but it works </span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> * better for integer types, because it has no rounding error on the </span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> * coefficients.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">  369</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a> = {{}}; </div>
+<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">  370</a></span>&#160;    AH::Array&lt;T, 3&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; </div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  371</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;};</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html">  391</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html">NonNormalizingBiQuadFilterDF2</a> {</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keyword">public</span>:</div>
@@ -516,112 +356,43 @@ $(function() {
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a>[0] = input;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
 <div class="line"><a name="l00448"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">  448</a></span>&#160;    T <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) { <span class="keywordflow">return</span> <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a33d6882cc4d992cabb813fbc04dc1d28">update</a>(input, <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a>, <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a>, <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a>, <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6177559a0bfd7fdab9b766169d192fba">a0</a>); }</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00451"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">  451</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a> = {{}}; <span class="comment">///&lt; Internal state</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">  452</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 3&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; <span class="comment">///&lt; Numerator coefficients</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  453</a></span>&#160;<span class="comment"></span>    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; <span class="comment">///&lt; Denominator coefficients</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6177559a0bfd7fdab9b766169d192fba">  454</a></span>&#160;<span class="comment"></span>    T <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6177559a0bfd7fdab9b766169d192fba">a0</a> = T(1.);             <span class="comment">///&lt; First denominator coefficient</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment"></span>};</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment">/// @}</span></div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="comment">/// Select the @ref NormalizingIIRFilter implementation if @p T is a floating</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment">/// point type, @ref NonNormalizingIIRFilter otherwise.</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00451"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">  451</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a">w</a> = {{}}; </div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">  452</a></span>&#160;    AH::Array&lt;T, 3&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a8b7b10f618ab456f91454869e25a8012">b</a> = {{}}; </div>
+<div class="line"><a name="l00453"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">  453</a></span>&#160;    AH::Array&lt;T, 2&gt; <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6e06ae1476df7ccdd7a0cf42e1e4aa8e">a</a> = {{}}; </div>
+<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6177559a0bfd7fdab9b766169d192fba">  454</a></span>&#160;    T <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html#a6177559a0bfd7fdab9b766169d192fba">a0</a> = T(1.);             </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;};</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a> =</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keyword">typename</span> std::conditional&lt;std::is_floating_point&lt;T&gt;::value,</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                              <a class="code" href="../../da/d41/classNormalizingBiQuadFilterDF2.html">NormalizingBiQuadFilterDF2&lt;T&gt;</a>,</div>
 <div class="line"><a name="l00465"></a><span class="lineno"><a class="line" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">  465</a></span>&#160;                              <a class="code" href="../../da/df4/classNonNormalizingBiQuadFilterDF2.html">NonNormalizingBiQuadFilterDF2&lt;T&gt;</a>&gt;::type;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">/// @addtogroup Filters</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment"> * @brief   Generic BiQuad (Bi-Quadratic) filter class, Direct Form 2 </span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment"> *          implementation.</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment"> * Uses the @ref NormalizingBiQuadFilterDF2 implementation for floating point </span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="comment"> * types, and @ref NonNormalizingBiQuadFilterDF2 for all other types. </span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="comment"> * Implements the following difference equation:</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="comment"> * @f[</span></div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="comment"> * y[n] = \frac{b_0 \cdot x[n] + b_1 \cdot x[n-1] + b_2 \cdot x[n-2] </span></div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="comment"> *            - a_1 \cdot y[n-1] - a_2 \cdot y[n-2]}{a_0}</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="comment"> * @f]</span></div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T = <span class="keywordtype">float</span>&gt;</div>
 <div class="line"><a name="l00485"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html">  485</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/da5/classBiQuadFilterDF2.html">BiQuadFilterDF2</a> : <span class="keyword">public</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a>&lt;T&gt; {</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#a7dcbee18e11c722559d02aaf62aace11">BiQuadFilterDF2</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment">     * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.</span></div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment">     * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="comment">     * function:</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="comment">     * @f[</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="comment">     * H(z) = \frac{b_0 + b_1 z^{-1} + b_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="comment">     *             {a_0 + a_1 z^{-1} + a_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="comment">     * @f]</span></div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="comment">     * @param   b_coefficients </span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="comment">     *          The coefficients of the transfer function numerator.</span></div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment">     * @param   a_coefficients </span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="comment">     *          The coefficients of the transfer function denominator.</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
 <div class="line"><a name="l00505"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html#abacccd47fcdd190ffa7bb498cee448a1">  505</a></span>&#160;    <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#abacccd47fcdd190ffa7bb498cee448a1">BiQuadFilterDF2</a>(<span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;b_coefficients,</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                    <span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;a_coefficients)</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a>&lt;T&gt;{b_coefficients, a_coefficients} {}</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
 <div class="line"><a name="l00509"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html#a920a60acc4dd2ac00459a07f40f3621d">  509</a></span>&#160;    <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#a920a60acc4dd2ac00459a07f40f3621d">BiQuadFilterDF2</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d3c/structTransferFunction.html">BiQuadCoefficients&lt;T&gt;</a> &amp;coefficients)</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a>&lt;T&gt;{coefficients} {}</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="comment">     * @brief   Construct a new BiQuad (Bi-Quadratic) Filter object.</span></div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="comment">     * The coefficients @f$ b @f$ and @f$ a @f$ can be derived from the transfer</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="comment">     * function:</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="comment">     * @f[</span></div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="comment">     * H(z) = K \frac{b_0 + b_1 z^{-1} + b_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="comment">     *               {a_0 + a_1 z^{-1} + a_2 z ^{-2}}</span></div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="comment">     * @f]</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="comment">     * @param   b_coefficients </span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="comment">     *          The coefficients of the transfer function numerator.</span></div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="comment">     * @param   a_coefficients </span></div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="comment">     *          The coefficients of the transfer function denominator.</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="comment">     * @param   gain</span></div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">     *          Gain factor @f$ K @f$.</span></div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
 <div class="line"><a name="l00530"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html#aa5344daca4f98553f0f0d1784245ee88">  530</a></span>&#160;    <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#aa5344daca4f98553f0f0d1784245ee88">BiQuadFilterDF2</a>(<span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;b_coefficients,</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                    <span class="keyword">const</span> AH::Array&lt;T, 3&gt; &amp;a_coefficients, T gain)</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a>&lt;T&gt;{b_coefficients, a_coefficients, gain} {}</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
 <div class="line"><a name="l00534"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html#a6a7124fe23595f8d897f21543b53595c">  534</a></span>&#160;    <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#a6a7124fe23595f8d897f21543b53595c">BiQuadFilterDF2</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d3c/structTransferFunction.html">BiQuadCoefficients&lt;T&gt;</a> &amp;coefficients, T gain)</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        : <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation</a>&lt;T&gt;{coefficients, gain} {}</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="comment">     * @brief   Update the internal state with the new input @f$ x[n] @f$ and</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="comment">     *          return the new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="comment">     * @param   input </span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="comment">     *          The new input @f$ x[n] @f$.</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="comment">     * @return  The new output @f$ y[n] @f$.</span></div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
 <div class="line"><a name="l00545"></a><span class="lineno"><a class="line" href="../../d0/da5/classBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">  545</a></span>&#160;    T <a class="code" href="../../d0/da5/classBiQuadFilterDF2.html#a375563bf88589f3a86b0cc4326bfea6b">operator()</a>(T input) {</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d1/dde/BiQuad_8hpp.html#a427a02b9bd03827e94d7f6ea8ba7a18a">BiQuadDF2Implementation&lt;T&gt;::operator()</a>(input);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    }</div>

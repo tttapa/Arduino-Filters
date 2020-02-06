@@ -82,26 +82,8 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;AH/STL/cmath&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../df/ddc/SOSFilter_8hpp.html">Filters/SOSFilter.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/// @addtogroup FilterDesign</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/// @{</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * @brief   Compute Butterworth filter coefficients.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * @tparam  N</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *          Order of the filter.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * @param   f_n</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *          Normalized cut-off frequency in half-cycles per sample.  </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *          @f$ f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] @f$, where</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *          @f$ f_s @f$ is the sample frequency in @f$ \text{Hz} @f$, and </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *          @f$ f_c @f$ is the cut-off frequency in @f$ \text{Hz} @f$.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * @param   normalize</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *          If true, normalize all coefficients such that @f$ a_0 = 1 @f$.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @tparam  T</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *          The type of the coefficients.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @see &lt;https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>8_t N, <span class="keyword">class</span> T = <span class="keywordtype">float</span>&gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/da4/group__FilterDesign.html#ga8c966539e8b4426b007152e285ff140a">   26</a></span>&#160;<a class="code" href="../../d2/d5a/group__Filters.html#gaabcd2526c43fb9fb7c3b4da347ab3d40">SOSCoefficients</a>&lt;T, (N + 1) / 2&gt; <a class="code" href="../../de/da4/group__FilterDesign.html#ga8c966539e8b4426b007152e285ff140a">butter_coeff</a>(<span class="keywordtype">double</span> f_n,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                             <span class="keywordtype">bool</span> normalize = <span class="keyword">true</span>) {</div>
@@ -165,26 +147,7 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> sections;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/** </span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> * @brief   Create a Butterworth filter, implemented as Second Order Sections</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> *          (SOS) filter.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * @tparam  N</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *          Order of the filter.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * @param   f_n</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> *          Normalized cut-off frequency in half-cycles per sample.  </span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> *          @f$ f_n = \frac{2 f_c}{f_s} \in \left[0, 1\right] @f$, where</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> *          @f$ f_s @f$ is the sample frequency in @f$ \text{Hz} @f$, and </span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> *          @f$ f_c @f$ is the cut-off frequency in @f$ \text{Hz} @f$.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * @tparam  T</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> *          The type of filter values and coefficients.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * @param   normalize</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> *          If true, normalize all coefficients such that @f$ a_0 = 1 @f$.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * @tparam  Implementation</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> *          The BiQuad implementation to use.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * @see &lt;https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Digital-filters/Discretization/Discretization-of-a-fourth-order-Butterworth-filter.html#discretization-using-second-order-sections-sos&gt;</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>8_t N, <span class="keyword">class</span> T = <span class="keywordtype">float</span>, <span class="keyword">class</span> Implementation = BiQuadFilterDF1&lt;T&gt;&gt;</div>
 <div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../de/da4/group__FilterDesign.html#ga272e5d90c31ff15c5168de84223da64e">  109</a></span>&#160;<a class="code" href="../../db/d49/classSOSFilter.html">SOSFilter</a>&lt;T, (N + 1) / 2, Implementation&gt; <a class="code" href="../../de/da4/group__FilterDesign.html#ga272e5d90c31ff15c5168de84223da64e">butter</a>(<span class="keywordtype">double</span> f_n,</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                 <span class="keywordtype">bool</span> normalize = <span class="keyword">true</span>) {</div>
