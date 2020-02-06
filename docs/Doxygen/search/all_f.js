@@ -61,5 +61,6 @@ var searchData=
   ['staticsizeextendedioelement_2ehpp_524',['StaticSizeExtendedIOElement.hpp',['../d2/d05/StaticSizeExtendedIOElement_8hpp.html',1,'']]],
   ['staticsizeextendedioelement_3c_201_3c_3c_20n_20_3e_525',['StaticSizeExtendedIOElement&lt; 1&lt;&lt; N &gt;',['../d1/d13/classStaticSizeExtendedIOElement.html',1,'']]],
   ['staticsizeextendedioelement_3c_208_20_2a8_20_3e_526',['StaticSizeExtendedIOElement&lt; 8 *8 &gt;',['../d1/d13/classStaticSizeExtendedIOElement.html',1,'']]],
-  ['sum_527',['sum',['../df/dc5/classSMA.html#a23052948829bfef0fb04a7993e24ceff',1,'SMA']]]
+  ['std_527',['std',['../d8/dcc/namespacestd.html',1,'']]],
+  ['sum_528',['sum',['../df/dc5/classSMA.html#a23052948829bfef0fb04a7993e24ceff',1,'SMA']]]
 ];
