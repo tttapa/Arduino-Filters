@@ -64,6 +64,17 @@ void loop() {
 }
 ```
 
+## Tools
+
+The [`python`](python) folder contains some Python scripts to visualize the
+frequency response of the filters used in the examples.  
+
+### Butterworth Filter
+![Butterworth.ino](python/butterworth.svg)
+
+### FIR Notch Filter
+![FIRNotch.ino](python/firnotch.svg)
+
 ## Related Projects
 
 This library uses the

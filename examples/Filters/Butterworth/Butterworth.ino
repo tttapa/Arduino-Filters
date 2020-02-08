@@ -21,7 +21,7 @@ void setup() {
 // Sampling frequency
 const double f_s = 100; // Hz
 // Cut-off frequency (-3 dB)
-const double f_c = 40; // Hz
+const double f_c = 25; // Hz
 // Normalized cut-off frequency
 const double f_n = 2 * f_c / f_s;
 
