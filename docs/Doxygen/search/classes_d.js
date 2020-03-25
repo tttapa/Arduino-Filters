@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uniqueptr_647',['UniquePtr',['../d0/ddd/classUniquePtr.html',1,'']]],
-  ['updatable_648',['Updatable',['../d5/de0/classUpdatable.html',1,'']]]
+  ['timer_679',['Timer',['../dc/dea/classTimer.html',1,'']]],
+  ['transferfunction_680',['TransferFunction',['../d2/d3c/structTransferFunction.html',1,'']]]
 ];

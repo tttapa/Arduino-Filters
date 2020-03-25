@@ -1,4 +1,3 @@
 <map id="NonNormalizingIIRFilter&lt; NB, NA, T &gt;" name="NonNormalizingIIRFilter&lt; NB, NA, T &gt;">
-<area shape="rect" id="node1" title="Infinite Impulse Response filter implementation that does not normalize the coefficients upon initial..." alt="" coords="5,145,188,355"/>
-<area shape="rect" id="node2" title=" " alt="" coords="77,5,116,83"/>
+<area shape="rect" id="node1" title="Infinite Impulse Response filter implementation that does not normalize the coefficients upon initial..." alt="" coords="5,5,188,229"/>
 </map>

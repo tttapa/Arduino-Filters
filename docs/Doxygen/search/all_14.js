@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_564',['x',['../dc/dd3/classNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7',1,'NormalizingBiQuadFilterDF1::x()'],['../d3/d11/classNonNormalizingBiQuadFilterDF1.html#a3b5c38e2d18aecec5266fdadba93b9b7',1,'NonNormalizingBiQuadFilterDF1::x()'],['../d3/d32/classFIRFilter.html#ac8bce3063d02ba944d628be126d903ac',1,'FIRFilter::x()'],['../dc/d27/classNonNormalizingIIRFilter.html#a35669507c93f9827b113e7b08c93900a',1,'NonNormalizingIIRFilter::x()'],['../db/d07/classNormalizingIIRFilter.html#a35669507c93f9827b113e7b08c93900a',1,'NormalizingIIRFilter::x()']]]
+  ['w_593',['w',['../dc/dc7/structQuaternion.html#a56eca241e2896b9f57a79589e76fd24b',1,'Quaternion::w()'],['../da/d41/classNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a',1,'NormalizingBiQuadFilterDF2::w()'],['../da/df4/classNonNormalizingBiQuadFilterDF2.html#aafccdd368a8480c6a5d49ca18d40381a',1,'NonNormalizingBiQuadFilterDF2::w()']]],
+  ['warnings_2ehpp_594',['Warnings.hpp',['../d1/d65/Warnings_8hpp.html',1,'']]]
 ];

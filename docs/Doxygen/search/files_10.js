@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['vector_2ecpp_763',['vector.cpp',['../d4/d1b/vector_8cpp.html',1,'']]]
+  ['uniqueptr_2ecpp_801',['UniquePtr.cpp',['../de/d47/UniquePtr_8cpp.html',1,'']]],
+  ['uniqueptr_2ehpp_802',['UniquePtr.hpp',['../de/d7e/UniquePtr_8hpp.html',1,'']]],
+  ['updatable_2ecpp_803',['Updatable.cpp',['../d6/dea/Updatable_8cpp.html',1,'']]],
+  ['updatable_2ehpp_804',['Updatable.hpp',['../d4/d93/Updatable_8hpp.html',1,'']]]
 ];

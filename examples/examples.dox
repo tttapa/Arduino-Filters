@@ -1,4 +1,41 @@
 /**
+ * @example   "1.FilteredAnalog-Advanced.ino"
+ * 
+ * 1.FilteredAnalog-Advanced
+ * =========================
+ *
+ * This examples shows how to filter an analog input, so you can get the 
+ * position of a knob or fader without noise.
+ * 
+ * @boards  AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
+ * 
+ * Connections
+ * -----------
+ * 
+ * - A0: wiper of a potentiometer
+ * 
+ * Connect the left terminal of the potentiometer to ground, and the right one
+ * to V<sub>CC</sub>.
+ * 
+ * Behavior
+ * --------
+ * 
+ * - Upload the sketch to the Arduino, and open the Serial Monitor 
+ *   (`CTRL+Shift+M`)
+ * - When you turn the potentiometer, you should see the position of the 
+ *   potentiometer being printed as a number between 0 and 1023.
+ * - The analog input is filtered, so there shouldn't be any noise on the 
+ *   position. If there is, check your wiring, and make sure that the resistance
+ *   of the potentiometer isn't too high (10 kΩ is ideal). 
+ * 
+ * A simpler version of this example can be found in 
+ * @ref 1.FilteredAnalog.ino.
+ * 
+ * Written by PieterP, 2019-10-10  
+ * https://github.com/tttapa/Arduino-Filters
+ */
+
+/**
  * @example   "1.FilteredAnalog.ino"
  * 
  * 1.FilteredAnalog
@@ -37,53 +74,17 @@
  */
 
 /**
- * @example   "1.FilteredAnalog-Advanced.ino"
+ * @example   "SimpleMovingAverage.ino"
  * 
- * 1.FilteredAnalog-Advanced
- * =========================
+ * SimpleMovingAverage
+ * ===================
  *
- * This examples shows how to filter an analog input, so you can get the 
- * position of a knob or fader without noise.
- * 
- * @boards  AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
- * 
- * Connections
- * -----------
- * 
- * - A0: wiper of a potentiometer
- * 
- * Connect the left terminal of the potentiometer to ground, and the right one
- * to V<sub>CC</sub>.
- * 
- * Behavior
- * --------
- * 
- * - Upload the sketch to the Arduino, and open the Serial Monitor 
- *   (`CTRL+Shift+M`)
- * - When you turn the potentiometer, you should see the position of the 
- *   potentiometer being printed as a number between 0 and 1023.
- * - The analog input is filtered, so there shouldn't be any noise on the 
- *   position. If there is, check your wiring, and make sure that the resistance
- *   of the potentiometer isn't too high (10 kΩ is ideal). 
- * 
- * A simpler version of this example can be found in 
- * @ref 1.FilteredAnalog.ino.
- * 
- * Written by PieterP, 2019-10-10  
- * https://github.com/tttapa/Arduino-Filters
- */
-
-/**
- * @example   "MedianFilter.ino"
- * 
- * MedianFilter
- * ============
- *
- * Example of median filter.
+ * Example of a Simple Moving Average (SMA, also known as Running Average) 
+ * filter.
  * 
  * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
  * 
- * Written by PieterP, 2019-11-16  
+ * Written by PieterP, 2020-01-07  
  * https://github.com/tttapa/Arduino-Filters
  */
 
@@ -100,6 +101,20 @@
  * @see <https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/Butterworth-Filters.html>
  * 
  * Written by PieterP, 2019-11-12  
+ * https://github.com/tttapa/Arduino-Filters
+ */
+
+/**
+ * @example   "MedianFilter.ino"
+ * 
+ * MedianFilter
+ * ============
+ *
+ * Example of median filter.
+ * 
+ * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
+ * 
+ * Written by PieterP, 2019-11-16  
  * https://github.com/tttapa/Arduino-Filters
  */
 
@@ -123,21 +138,6 @@
  * ![Filtered mains power noise signal (blue is unfilterd, red is filtered)](50Hz-notch.png)
  * 
  * Written by PieterP, 2019-11-22  
- * https://github.com/tttapa/Arduino-Filters
- */
-
-/**
- * @example   "SimpleMovingAverage.ino"
- * 
- * SimpleMovingAverage
- * ===================
- *
- * Example of a Simple Moving Average (SMA, also known as Running Average) 
- * filter.
- * 
- * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
- * 
- * Written by PieterP, 2020-01-07  
  * https://github.com/tttapa/Arduino-Filters
  */
 
