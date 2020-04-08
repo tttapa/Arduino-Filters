@@ -28,18 +28,26 @@ BEGIN_AH_NAMESPACE
  * @nosubgrouping
  */
 template <class Derived>
-class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
+class UpdatableCRTP : public DoublyLinkable<Derived> {
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wattributes"
+
   protected:
     /// Constructor: create an Updatabe and add it to the linked list of
     /// instances.
-    UpdatableCRTP() { updatables.append(this); }
+    UpdatableCRTP() __attribute__((no_sanitize("undefined"))) {
+        updatables.append(CRTP(Derived));
+    }
 
   public:
     /// Destructor: remove the updatable from the linked list of instances.
-    virtual ~UpdatableCRTP() {
-        if (isEnabled())
-            updatables.remove(this);
+    virtual ~UpdatableCRTP() __attribute__((no_sanitize("undefined"))) {
+        if (updatables.couldContain(CRTP(Derived)))
+            updatables.remove(CRTP(Derived));
     }
+
+#pragma GCC diagnostic pop
 
     /// @name Main initialization and updating methods
     /// @{
@@ -47,8 +55,8 @@ class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
     template <class... Args>
     static void applyToAll(void (Derived::*method)(Args &&...),
                            Args &&... args) {
-        for (UpdatableCRTP &el : updatables)
-            (CRTP_INST(Derived, el).*method)(std::forward<Args>(args)...);
+        for (auto &el : updatables)
+            (el.*method)(std::forward<Args>(args)...);
     }
 
     /// @}
@@ -64,7 +72,7 @@ class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
             ERROR(F("Error: This element is already enabled."), 0x1212);
             return;
         }
-        updatables.append(this);
+        updatables.append(CRTP(Derived));
     }
 
     /// Disable this updatable: remove it from the linked list of instances,
@@ -74,7 +82,7 @@ class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
             ERROR(F("Error: This element is already disabled."), 0x1213);
             return;
         }
-        updatables.remove(this);
+        updatables.remove(CRTP(Derived));
     }
 
     /**
@@ -83,7 +91,7 @@ class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
      * @note    Assumes that the updatable is not added to a different linked 
      *          list by the user.
      */
-    bool isEnabled() { return updatables.couldContain(this); }
+    bool isEnabled() { return updatables.couldContain(CRTP(Derived)); }
 
     static void enable(UpdatableCRTP *element) { element->enable(); }
 
@@ -108,11 +116,11 @@ class UpdatableCRTP : public DoublyLinkable<UpdatableCRTP<Derived>> {
     /// @}
 
   protected:
-    static DoublyLinkedList<UpdatableCRTP<Derived>> updatables;
+    static DoublyLinkedList<Derived> updatables;
 };
 
 template <class Derived>
-DoublyLinkedList<UpdatableCRTP<Derived>> UpdatableCRTP<Derived>::updatables;
+DoublyLinkedList<Derived> UpdatableCRTP<Derived>::updatables;
 
 struct NormalUpdatable {};
 
