@@ -1,11 +1,11 @@
 <map id="Butterworth.hpp" name="Butterworth.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="829,5,944,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="731,229,840,256"/>
-<area shape="rect" id="node3" href="$df/ddc/SOSFilter_8hpp.html" title=" " alt="" coords="885,80,1029,107"/>
-<area shape="rect" id="node4" href="$d5/db6/ArrayHelpers_8hpp.html" title=" " alt="" coords="1125,229,1339,256"/>
-<area shape="rect" id="node27" href="$d1/dde/BiQuad_8hpp.html" title=" " alt="" coords="892,155,1023,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="813,5,928,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="729,229,839,256"/>
+<area shape="rect" id="node3" href="$df/ddc/SOSFilter_8hpp.html" title=" " alt="" coords="884,80,1028,107"/>
+<area shape="rect" id="node4" href="$d5/db6/ArrayHelpers_8hpp.html" title=" " alt="" coords="1124,229,1337,256"/>
+<area shape="rect" id="node27" href="$d1/dde/BiQuad_8hpp.html" title=" " alt="" coords="891,155,1021,181"/>
 <area shape="rect" id="node5" href="$d1/d65/Warnings_8hpp.html" title=" " alt="" coords="749,976,926,1003"/>
-<area shape="rect" id="node6" href="$de/d76/Array_8hpp.html" title=" " alt="" coords="1014,304,1093,331"/>
+<area shape="rect" id="node6" href="$de/d76/Array_8hpp.html" title=" " alt="" coords="1013,304,1091,331"/>
 <area shape="rect" id="node9" href="$dd/d80/PrintStream_8hpp.html" title=" " alt="" coords="961,603,1173,629"/>
 <area shape="rect" id="node26" title=" " alt="" coords="1202,304,1329,331"/>
 <area shape="rect" id="node7" href="$d1/d93/Error_8hpp.html" title=" " alt="" coords="353,379,484,405"/>
@@ -26,5 +26,5 @@
 <area shape="rect" id="node19" href="$d7/d7c/ADCConfig_8hpp.html" title="This file contains the platform&#45;specific ADC resolutions. By default, the library automatically selec..." alt="" coords="545,677,743,704"/>
 <area shape="rect" id="node20" title=" " alt="" coords="367,677,431,704"/>
 <area shape="rect" id="node22" title=" " alt="" coords="455,677,521,704"/>
-<area shape="rect" id="node28" href="$d2/d03/TransferFunction_8hpp.html" title=" " alt="" coords="865,229,1050,256"/>
+<area shape="rect" id="node28" href="$d2/d03/TransferFunction_8hpp.html" title=" " alt="" coords="863,229,1049,256"/>
 </map>

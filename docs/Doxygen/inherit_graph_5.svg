@@ -9,27 +9,27 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>Graphical Class Hierarchy</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 287,-24 287,4 -4,4"/>
-<!-- Node81 -->
+<!-- Node87 -->
 <g id="node1" class="node">
-<title>Node81</title>
+<title>Node87</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#ffffff" stroke="#bfbfbf" points="0,-.5 0,-19.5 134,-19.5 134,-.5 0,-.5"/>
-<text text-anchor="middle" x="67" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BiQuadDF2Implementation</text>
+<text text-anchor="middle" x="67" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BiQuadDF1Implementation</text>
 </a>
 </g>
 </g>
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="d0/da5/classBiQuadFilterDF2.html" target="_top" xlink:title="Generic BiQuad (Bi&#45;Quadratic) filter class, Direct Form 2 implementation.">
+<g id="a_node2"><a xlink:href="dc/d8e/classBiQuadFilterDF1.html" target="_top" xlink:title="Generic BiQuad (Bi&#45;Quadratic) filter class, Direct Form 1 implementation.">
 <polygon fill="#ffffff" stroke="#000000" points="170,-.5 170,-19.5 283,-19.5 283,-.5 170,-.5"/>
-<text text-anchor="middle" x="226.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BiQuadFilterDF2&lt; T &gt;</text>
+<text text-anchor="middle" x="226.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BiQuadFilterDF1&lt; T &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node81&#45;&gt;Node0 -->
+<!-- Node87&#45;&gt;Node0 -->
 <g id="edge1" class="edge">
-<title>Node81&#45;&gt;Node0</title>
+<title>Node87&#45;&gt;Node0</title>
 <path fill="none" stroke="#191970" d="M144.3036,-10C152.9633,-10 161.6614,-10 169.9892,-10"/>
 <polygon fill="#191970" stroke="#191970" points="144.1801,-6.5001 134.1801,-10 144.18,-13.5001 144.1801,-6.5001"/>
 </g>
