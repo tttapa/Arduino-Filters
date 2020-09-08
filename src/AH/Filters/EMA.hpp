@@ -41,6 +41,19 @@ AH_DIAGNOSTIC_WERROR() // Enable errors on warnings
 template <uint8_t K, class uint_t>
 class EMA {
   public:
+    EMA(uint_t initial = 0)
+     : filtered((initial << K) - initial) {}
+
+    /**
+     * @brief   Reset the filter to the given value.
+     * 
+     * @param   value 
+     *          The value to reset the filter state to.
+     */
+    void reset(uint_t value = 0) {
+        filtered = (value << K) - value;
+    }
+
     /**
      * @brief   Filter the input: Given @f$ x[n] @f$, calculate @f$ y[n] @f$.
      *
@@ -71,7 +84,7 @@ class EMA {
 
   private:
     uint_t filtered = 0;
-    constexpr static uint_t fixedPointAHalf = 1 << (K - 1);
+    constexpr static uint_t fixedPointAHalf = K > 0 ? 1 << (K - 1) : 0;
 };
 
 // -------------------------------------------------------------------------- //
