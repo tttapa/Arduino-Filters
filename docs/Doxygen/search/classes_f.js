@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['vec2f_734',['Vec2f',['../dc/da0/structVec2f.html',1,'']]],
-  ['vec3f_735',['Vec3f',['../d0/dc7/structVec3f.html',1,'']]]
+  ['updatable_817',['Updatable',['../d5/de0/classUpdatable.html',1,'']]],
+  ['updatablecrtp_818',['UpdatableCRTP',['../d2/dfb/classUpdatableCRTP.html',1,'']]],
+  ['updatablecrtp_3c_20extendedioelement_20_3e_819',['UpdatableCRTP&lt; ExtendedIOElement &gt;',['../d2/dfb/classUpdatableCRTP.html',1,'']]],
+  ['updatablecrtp_3c_20updatable_3c_20normalupdatable_20_3e_20_3e_820',['UpdatableCRTP&lt; Updatable&lt; NormalUpdatable &gt; &gt;',['../d2/dfb/classUpdatableCRTP.html',1,'']]]
 ];
