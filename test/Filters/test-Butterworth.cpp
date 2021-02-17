@@ -1,4 +1,4 @@
-#include <gtest-wrapper.h>
+#include <gtest/gtest.h>
 
 #include <Filters/Butterworth.hpp>
 #include <Filters/IIRFilter.hpp>

@@ -2,7 +2,7 @@
  * Example of a Simple Moving Average (SMA, also known as Running Average) 
  * filter.
  * 
- * @boards  AVR, AVR USB, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
+ * @boards  AVR, AVR USB, Nano 33 IoT, Nano 33 BLE, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * Written by PieterP, 2020-01-07  
  * https://github.com/tttapa/Arduino-Filters
