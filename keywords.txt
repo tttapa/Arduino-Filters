@@ -32,12 +32,16 @@ stableTime	KEYWORD2
 onButtonChanged	KEYWORD2
 begin	KEYWORD2
 update	KEYWORD2
+reset	KEYWORD2
+resetToCurrentValue	KEYWORD2
+getMappingFunction	KEYWORD2
 map	KEYWORD2
 invert	KEYWORD2
 update	KEYWORD2
 getValue	KEYWORD2
 getFloatValue	KEYWORD2
 getRawValue	KEYWORD2
+getMaxRawValue	KEYWORD2
 setupADC	KEYWORD2
 begin	KEYWORD2
 update	KEYWORD2
@@ -87,6 +91,7 @@ CD74HC4051	KEYWORD1
 ExtIO	KEYWORD1
 ExtendedIOElement	KEYWORD1
 MAX7219	KEYWORD1
+MCP23017	KEYWORD1
 ShiftRegisterOut	KEYWORD1
 ShiftRegisterOutRGB	KEYWORD1
 SPIShiftRegisterOut	KEYWORD1
@@ -110,6 +115,8 @@ redBit	KEYWORD2
 greenBit	KEYWORD2
 blueBit	KEYWORD2
 pins	KEYWORD2
+pinA	KEYWORD2
+pinB	KEYWORD2
 
 # AH/Hardware/LEDs
 ##################
@@ -154,7 +161,6 @@ const_iterator	KEYWORD1
 reverse_iterator	KEYWORD1
 const_reverse_iterator	KEYWORD1
 DoublyLinkable	KEYWORD1
-UniquePtr	KEYWORD1
 NormalUpdatable	KEYWORD1
 Updatable	KEYWORD1
 
@@ -182,10 +188,6 @@ insertSorted	KEYWORD2
 remove	KEYWORD2
 moveDown	KEYWORD2
 couldContain	KEYWORD2
-reset	KEYWORD2
-get	KEYWORD2
-release	KEYWORD2
-MakeUnique	KEYWORD2
 update	KEYWORD2
 begin	KEYWORD2
 enable	KEYWORD2

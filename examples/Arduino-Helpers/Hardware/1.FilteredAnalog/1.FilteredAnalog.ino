@@ -2,7 +2,7 @@
  * This examples shows how to filter an analog input, so you can get the 
  * position of a knob or fader without noise.
  * 
- * @boards  AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
+ * @boards  AVR, AVR USB, Nano Every, Nano 33 IoT, Nano 33 BLE, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * Connections
  * -----------
@@ -42,10 +42,12 @@ FilteredAnalog<> analog = A0;
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial)
-    ;
+  while (!Serial);
   // Select the correct ADC resolution
   analog.setupADC();
+  // Initialize the filter to whatever the value on the input is right now
+  // (otherwise, the filter is initialized to zero and you get transients)
+  analog.resetToCurrentValue();
 }
 
 void loop() {

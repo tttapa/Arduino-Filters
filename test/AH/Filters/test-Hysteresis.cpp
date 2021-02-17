@@ -1,7 +1,8 @@
-#include <gtest-wrapper.h>
+#include <gtest/gtest.h>
 
 #include <AH/Filters/Hysteresis.hpp>
 #include <algorithm>
+#include <array>
 
 TEST(Hysteresis, increasing) {
     using namespace std;

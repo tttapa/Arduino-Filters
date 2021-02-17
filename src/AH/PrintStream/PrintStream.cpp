@@ -219,7 +219,6 @@ void printOct(Print &printer, T val)
     ; // TODO
 } */
 
-
 template <class T>
 Print &printIntegral(Print &printer, T i) {
     switch (formatPrintStream) {
@@ -233,6 +232,45 @@ Print &printIntegral(Print &printer, T i) {
     }
     return printer;
 }
+
+Print &operator<<(Print &p, HexDump h) {
+    if (h.length == 0)
+        return p;
+
+    auto temp_case = casePrintStream;
+    casePrintStream = UPPERCASE;
+    while (h.length-- > 1) {
+        printHex(p, *h.data++);
+        p.print(' ');
+    }
+    printHex(p, *h.data++);
+    casePrintStream = temp_case;
+    return p;
+}
+
+#ifndef ARDUINO
+
+std::ostream &operator<<(std::ostream &p, HexDump h) {
+    if (h.length == 0)
+        return p;
+
+    auto hex_nibble_to_char = [](uint8_t nibble) -> char {
+        nibble &= 0xF;
+        return nibble > 9 ? nibble - 10 + 'A' : nibble + '0';
+    };
+    auto printHex = [&](std::ostream &p, uint8_t b) {
+        p << hex_nibble_to_char(b >> 4) << hex_nibble_to_char(b);
+    };
+
+    while (h.length-- > 1) {
+        printHex(p, *h.data++);
+        p << ' ';
+    }
+    printHex(p, *h.data++);
+    return p;
+}
+
+#endif
 
 END_AH_NAMESPACE
 

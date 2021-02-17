@@ -3,7 +3,7 @@
  * It prints the filtered values of all 16 inputs of a multiplexers to the 
  * serial monitor.
  * 
- * @boards  AVR, AVR USB, Nano Every, Nano 33, Due, Teensy 3.x, ESP8266, ESP32
+ * @boards  AVR, AVR USB, Nano Every, Nano 33 IoT, Nano 33 BLE, Due, Teensy 3.x, ESP8266, ESP32
  * 
  * Connections
  * -----------
@@ -39,8 +39,7 @@
 
 #include <AH/Hardware/ExtendedInputOutput/AnalogMultiplex.hpp>
 #include <AH/Hardware/FilteredAnalog.hpp>
-#include <AH/STL/iterator> // std::back_inserter
-#include <AH/STL/vector>   // std::vector
+#include <AH/Containers/ArrayHelpers.hpp> // copyAs<>
 
 // Instantiate a multiplexer
 CD74HC4067 mux = {
@@ -56,15 +55,9 @@ CD74HC4067 mux = {
 //   // 7, // Optional
 // };
 
-// Convert the list of pins of the multiplexer to an array/vector
+// Convert the list of pins of the multiplexer to an array
 // of FilteredAnalog objects.
-auto filteredAnalogs = [] {
-  auto pins = mux.pins();
-  std::vector<FilteredAnalog<>> v;
-  v.reserve(pins.length);
-  std::copy(std::begin(pins), std::end(pins), std::back_inserter(v));
-  return v;
-}(); // This is an immediately invoked lambda expression
+auto filteredAnalogs = copyAs<FilteredAnalog<>>(mux.pins());
 
 void setup() {
   Serial.begin(115200);
@@ -72,7 +65,7 @@ void setup() {
 }
 
 void loop() {
-  // Loop over all FilteredAnalog objects in the vector
+  // Loop over all FilteredAnalog objects in the array
   for (auto &analog : filteredAnalogs) {
     analog.update(); // actually read the analog value and filter it
     Serial.print(analog.getValue());
