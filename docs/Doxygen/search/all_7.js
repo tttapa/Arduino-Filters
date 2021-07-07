@@ -10,11 +10,10 @@ var searchData=
   ['hasinputs_325',['hasInputs',['../d8/d84/classMCP23017.html#ac49c256d4430d5e03bbd36b960d78fde',1,'MCP23017']]],
   ['hertz_326',['hertz',['../d7/d90/classFrequency.html#a7fe9942aae73998b9b5b65367d16f472',1,'Frequency']]],
   ['hex_327',['hex',['../d8/d4b/group__AH__PrintStream.html#gaa47b34b5f85fef7f8b050c0d0a715d2f',1,'hex(Print &amp;printer):&#160;PrintStream.cpp'],['../d8/d4b/group__AH__PrintStream.html#gaa47b34b5f85fef7f8b050c0d0a715d2f',1,'hex(Print &amp;printer):&#160;PrintStream.cpp']]],
-  ['hexdump_328',['HexDump',['../db/d74/structHexDump.html#a7306c515dc10bed9f728c717be0467a7',1,'HexDump::HexDump()'],['../db/d74/structHexDump.html',1,'HexDump']]],
+  ['hexdump_328',['HexDump',['../db/d74/structHexDump.html',1,'HexDump'],['../db/d74/structHexDump.html#a7306c515dc10bed9f728c717be0467a7',1,'HexDump::HexDump()']]],
   ['high_329',['HIGH',['../d2/d3c/Arduino-Hardware-Types_8hpp.html#a4b2f87da16a1a26dce6e6ba3fbe5f572',1,'Arduino-Hardware-Types.hpp']]],
-  ['hysteresis_330',['Hysteresis',['../d2/dcb/classHysteresis.html',1,'']]],
-  ['hysteresis_331',['hysteresis',['../dc/d91/classGenericFilteredAnalog.html#ac59ad53f58c22dda10715b40fcf441dc',1,'GenericFilteredAnalog']]],
+  ['hysteresis_330',['hysteresis',['../dc/d91/classGenericFilteredAnalog.html#ac59ad53f58c22dda10715b40fcf441dc',1,'GenericFilteredAnalog']]],
+  ['hysteresis_331',['Hysteresis',['../d2/dcb/classHysteresis.html',1,'']]],
   ['hysteresis_2ecpp_332',['Hysteresis.cpp',['../dd/d40/Hysteresis_8cpp.html',1,'']]],
-  ['hysteresis_2ehpp_333',['Hysteresis.hpp',['../d3/d09/Hysteresis_8hpp.html',1,'']]],
-  ['hysteresis_3c_20adc_5fbits_2bmaximumfilteredanalogincres_3c_20analog_5ffilter_5fshift_5ffactor_2c_20analog_5ffilter_5ftype_2c_20analog_5ft_20_3e_3a_3avalue_20_2d_2010_2c_20analog_5ft_2c_20analog_5ft_20_3e_334',['Hysteresis&lt; ADC_BITS+MaximumFilteredAnalogIncRes&lt; ANALOG_FILTER_SHIFT_FACTOR, ANALOG_FILTER_TYPE, analog_t &gt;::value - 10, analog_t, analog_t &gt;',['../d2/dcb/classHysteresis.html',1,'']]]
+  ['hysteresis_2ehpp_333',['Hysteresis.hpp',['../d3/d09/Hysteresis_8hpp.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 50afda00304bf7e346060cdb31e177d534d06d4b - src/AH/Filters/Hysteresis.hpp</title>
+  <title>LCOV - c4b2a893ec3bd8f73fe466ed8e41b37f896d3a67 - src/AH/Filters/Hysteresis.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,20 +28,20 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">50afda00304bf7e346060cdb31e177d534d06d4b</td>
+            <td class="headerValue">c4b2a893ec3bd8f73fe466ed8e41b37f896d3a67</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-02-18 00:48:46</td>
+            <td class="headerValue">2021-07-08 00:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntry">15</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -103,7 +103,7 @@
 <a name="33"><span class="lineNum">      33 </span>            :  *          Increasing this number will result in a decrease in fluctuations.</a>
 <a name="34"><span class="lineNum">      34 </span>            :  */</a>
 <a name="35"><span class="lineNum">      35 </span>            : template &lt;uint8_t BITS, class T_in = uint16_t, class T_out = uint8_t&gt;</a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">         12 : class Hysteresis {</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">         14 : class Hysteresis {</span></a>
 <a name="37"><span class="lineNum">      37 </span>            :   public:</a>
 <a name="38"><span class="lineNum">      38 </span>            :     /**</a>
 <a name="39"><span class="lineNum">      39 </span>            :      * @brief   Update the hysteresis output with a new input value.</a>
@@ -120,7 +120,7 @@
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">        100 :         T_in lowerbound = prevLevel &gt; 0 ? prevLevelFull - margin : 0;</span></a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">        100 :         T_in upperbound = prevLevel &lt; max_out ? prevLevelFull + margin : max_in;</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">        100 :         if (inputLevel &lt; lowerbound || inputLevel &gt; upperbound) {</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">         34 :             prevLevel = inputLevel &gt;&gt; BITS;</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">         34 :             setValue(inputLevel);</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">         34 :             return true;</span></a>
 <a name="55"><span class="lineNum">      55 </span>            :         }</a>
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">         66 :         return false;</span></a>
@@ -131,20 +131,25 @@
 <a name="61"><span class="lineNum">      61 </span>            :      *</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * @return  The output level.</a>
 <a name="63"><span class="lineNum">      63 </span>            :      */</a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">        121 :     T_out getValue() const { return prevLevel; }</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">        123 :     T_out getValue() const { return prevLevel; }</span></a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
-<a name="66"><span class="lineNum">      66 </span>            :   private:</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         12 :     T_out prevLevel = 0;</span></a>
-<a name="68"><span class="lineNum">      68 </span>            :     constexpr static T_in margin = (1UL &lt;&lt; BITS) - 1;</a>
-<a name="69"><span class="lineNum">      69 </span>            :     constexpr static T_in offset = 1UL &lt;&lt; (BITS - 1);</a>
-<a name="70"><span class="lineNum">      70 </span>            :     constexpr static T_in max_in = -1;</a>
-<a name="71"><span class="lineNum">      71 </span>            :     constexpr static T_out max_out = static_cast&lt;T_out&gt;(max_in &gt;&gt; BITS);</a>
-<a name="72"><span class="lineNum">      72 </span>            :     static_assert(max_in &gt; 0, &quot;Error: only unsigned types are supported&quot;);</a>
-<a name="73"><span class="lineNum">      73 </span>            : };</a>
-<a name="74"><span class="lineNum">      74 </span>            : </a>
-<a name="75"><span class="lineNum">      75 </span>            : /// @}</a>
-<a name="76"><span class="lineNum">      76 </span>            : </a>
-<a name="77"><span class="lineNum">      77 </span>            : AH_DIAGNOSTIC_POP()</a>
+<a name="66"><span class="lineNum">      66 </span>            :     /** </a>
+<a name="67"><span class="lineNum">      67 </span>            :      * @brief   Forcefully update the internal state to the given level.</a>
+<a name="68"><span class="lineNum">      68 </span>            :      */</a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         36 :     void setValue(T_in inputLevel) { prevLevel = inputLevel &gt;&gt; BITS; }</span></a>
+<a name="70"><span class="lineNum">      70 </span>            : </a>
+<a name="71"><span class="lineNum">      71 </span>            :   private:</a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">         14 :     T_out prevLevel = 0;</span></a>
+<a name="73"><span class="lineNum">      73 </span>            :     constexpr static T_in margin = (1UL &lt;&lt; BITS) - 1;</a>
+<a name="74"><span class="lineNum">      74 </span>            :     constexpr static T_in offset = 1UL &lt;&lt; (BITS - 1);</a>
+<a name="75"><span class="lineNum">      75 </span>            :     constexpr static T_in max_in = -1;</a>
+<a name="76"><span class="lineNum">      76 </span>            :     constexpr static T_out max_out = static_cast&lt;T_out&gt;(max_in &gt;&gt; BITS);</a>
+<a name="77"><span class="lineNum">      77 </span>            :     static_assert(max_in &gt; 0, &quot;Error: only unsigned types are supported&quot;);</a>
+<a name="78"><span class="lineNum">      78 </span>            : };</a>
+<a name="79"><span class="lineNum">      79 </span>            : </a>
+<a name="80"><span class="lineNum">      80 </span>            : /// @}</a>
+<a name="81"><span class="lineNum">      81 </span>            : </a>
+<a name="82"><span class="lineNum">      82 </span>            : AH_DIAGNOSTIC_POP()</a>
 </pre>
       </td>
     </tr>

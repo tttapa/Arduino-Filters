@@ -18,10 +18,19 @@
 </a>
 </g>
 </g>
-<!-- Node1 -->
+<!-- Node3 -->
 <g id="node2" class="node">
+<title>Node3</title>
+<g id="a_node2"><a xlink:href="../../d9/d28/group__FilterImplementations.html" target="_top" xlink:title="Different implementations.">
+<polygon fill="white" stroke="black" points="251,-19 123,-19 123,0 251,0 251,-19"/>
+<text text-anchor="middle" x="187" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Filter Implementations</text>
+</a>
+</g>
+</g>
+<!-- Node1 -->
+<g id="node3" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:title="Main module containing all filters and filter utilities.">
+<g id="a_node3"><a xlink:title="Main module containing all filters and filter utilities.">
 <polygon fill="#bfbfbf" stroke="black" points="87,-37 0,-37 0,-18 87,-18 87,-37"/>
 <text text-anchor="middle" x="43.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">Arduino Filters</text>
 </a>
@@ -32,15 +41,6 @@
 <title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="black" d="M97.49,-34.62C114.14,-36.85 132.2,-39.28 147.64,-41.35"/>
 <polygon fill="black" stroke="black" points="97.72,-31.11 87.34,-33.25 96.78,-38.05 97.72,-31.11"/>
-</g>
-<!-- Node3 -->
-<g id="node3" class="node">
-<title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d9/d28/group__FilterImplementations.html" target="_top" xlink:title="Different implementations.">
-<polygon fill="white" stroke="black" points="251,-19 123,-19 123,0 251,0 251,-19"/>
-<text text-anchor="middle" x="187" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Filter Implementations</text>
-</a>
-</g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">

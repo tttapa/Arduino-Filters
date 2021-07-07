@@ -1,15 +1,11 @@
 var searchData=
 [
-  ['setbase_803',['Setbase',['../d3/d55/structSetbase.html',1,'']]],
-  ['setbytesep_804',['Setbytesep',['../d5/d93/structSetbytesep.html',1,'']]],
-  ['setprecision_805',['Setprecision',['../d7/d70/structSetprecision.html',1,'']]],
-  ['shiftregisterout_806',['ShiftRegisterOut',['../d1/d5c/classShiftRegisterOut.html',1,'']]],
-  ['shiftregisteroutbase_807',['ShiftRegisterOutBase',['../d8/db4/classShiftRegisterOutBase.html',1,'']]],
-  ['shiftregisteroutrgb_808',['ShiftRegisterOutRGB',['../d5/d45/structShiftRegisterOutRGB.html',1,'']]],
-  ['sma_809',['SMA',['../df/dc5/classSMA.html',1,'']]],
-  ['sosfilter_810',['SOSFilter',['../db/d49/classSOSFilter.html',1,'']]],
-  ['spishiftregisterout_811',['SPIShiftRegisterOut',['../dd/d81/classSPIShiftRegisterOut.html',1,'']]],
-  ['staticsizeextendedioelement_812',['StaticSizeExtendedIOElement',['../d1/d13/classStaticSizeExtendedIOElement.html',1,'']]],
-  ['staticsizeextendedioelement_3c_2016_20_3e_813',['StaticSizeExtendedIOElement&lt; 16 &gt;',['../d1/d13/classStaticSizeExtendedIOElement.html',1,'']]],
-  ['staticsizeextendedioelement_3c_208_20_2a8_20_2a1_20_3e_814',['StaticSizeExtendedIOElement&lt; 8 *8 *1 &gt;',['../d1/d13/classStaticSizeExtendedIOElement.html',1,'']]]
+  ['registerencoders_795',['RegisterEncoders',['../d7/d3d/classRegisterEncoders.html',1,'']]],
+  ['registerencoders_3c_20uint16_5ft_2c_208_2c_20int32_5ft_2c_20false_20_3e_796',['RegisterEncoders&lt; uint16_t, 8, int32_t, false &gt;',['../d7/d3d/classRegisterEncoders.html',1,'']]],
+  ['reverse_5fnode_5fiterator_797',['reverse_node_iterator',['../d1/d4c/classDoublyLinkedList_1_1reverse__node__iterator.html',1,'DoublyLinkedList']]],
+  ['round_5fdiv_5fdefault_798',['round_div_default',['../d0/d80/structround__div__default.html',1,'']]],
+  ['round_5fdiv_5fhelper_799',['round_div_helper',['../d0/d89/structround__div__helper.html',1,'']]],
+  ['round_5fdiv_5fint_800',['round_div_int',['../d1/de0/structround__div__int.html',1,'']]],
+  ['round_5fdiv_5fsigned_5fint_801',['round_div_signed_int',['../db/d6e/structround__div__signed__int.html',1,'']]],
+  ['round_5fdiv_5funsigned_5fint_802',['round_div_unsigned_int',['../d9/d78/structround__div__unsigned__int.html',1,'']]]
 ];

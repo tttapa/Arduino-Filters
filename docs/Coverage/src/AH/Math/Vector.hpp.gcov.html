@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 50afda00304bf7e346060cdb31e177d534d06d4b - src/AH/Math/Vector.hpp</title>
+  <title>LCOV - c4b2a893ec3bd8f73fe466ed8e41b37f896d3a67 - src/AH/Math/Vector.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">50afda00304bf7e346060cdb31e177d534d06d4b</td>
+            <td class="headerValue">c4b2a893ec3bd8f73fe466ed8e41b37f896d3a67</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">96</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-02-18 00:48:46</td>
+            <td class="headerValue">2021-07-08 00:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">38</td>
@@ -218,7 +218,7 @@
 <a name="148"><span class="lineNum">     148 </span>            :     /// Create a vector that is initialized to the zero vector (0,0,0).</a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">          1 :     Vec3f() = default;</span></a>
 <a name="150"><span class="lineNum">     150 </span>            :     /// Create a vector with the given x, y and z coordinates.</a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">    4000065 :     Vec3f(float x, float y, float z) : x(x), y(y), z(z) {}</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">    4000066 :     Vec3f(float x, float y, float z) : x(x), y(y), z(z) {}</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :     Vec3f(const Vec3f &amp;) = default;</a>
 <a name="153"><span class="lineNum">     153 </span>            :     Vec3f(const volatile Vec3f &amp;other) : x(other.x), y(other.y), z(other.z) {}</a>
 <a name="154"><span class="lineNum">     154 </span>            :     void operator=(const Vec3f &amp;other) volatile {</a>
@@ -281,16 +281,16 @@
 <a name="211"><span class="lineNum">     211 </span>            :     }</a>
 <a name="212"><span class="lineNum">     212 </span>            : </a>
 <a name="213"><span class="lineNum">     213 </span>            :     /// Inner product.</a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineCov">    3000016 :     float operator*(Vec3f rhs) const {</span></a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineCov">    3000016 :         return this-&gt;x * rhs.x + this-&gt;y * rhs.y + this-&gt;z * rhs.z;</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">    3000017 :     float operator*(Vec3f rhs) const {</span></a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">    3000017 :         return this-&gt;x * rhs.x + this-&gt;y * rhs.y + this-&gt;z * rhs.z;</span></a>
 <a name="216"><span class="lineNum">     216 </span>            :     }</a>
 <a name="217"><span class="lineNum">     217 </span>            : </a>
 <a name="218"><span class="lineNum">     218 </span>            :     /// Norm squared.</a>
-<a name="219"><span class="lineNum">     219 </span><span class="lineCov">    3000015 :     float normSquared() const { return (*this) * (*this); }</span></a>
+<a name="219"><span class="lineNum">     219 </span><span class="lineCov">    3000016 :     float normSquared() const { return (*this) * (*this); }</span></a>
 <a name="220"><span class="lineNum">     220 </span>            : </a>
 <a name="221"><span class="lineNum">     221 </span>            :     /// Norm.</a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineCov">    3000014 :     float norm() const {</span></a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineCov">    3000014 :         return std::sqrt(normSquared());</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">    3000015 :     float norm() const {</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">    3000015 :         return std::sqrt(normSquared());</span></a>
 <a name="224"><span class="lineNum">     224 </span>            :         // return std::hypot(x, y, z);  // C++17</a>
 <a name="225"><span class="lineNum">     225 </span>            :     }</a>
 <a name="226"><span class="lineNum">     226 </span>            : </a>

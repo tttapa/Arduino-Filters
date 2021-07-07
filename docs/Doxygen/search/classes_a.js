@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['node_5fiterator_787',['node_iterator',['../dd/d02/classDoublyLinkedList_1_1node__iterator.html',1,'DoublyLinkedList']]],
-  ['node_5fiterator_5fbase_788',['node_iterator_base',['../db/d52/classDoublyLinkedList_1_1node__iterator__base.html',1,'DoublyLinkedList']]],
-  ['nonnormalizingbiquadfilterdf1_789',['NonNormalizingBiQuadFilterDF1',['../d3/d11/classNonNormalizingBiQuadFilterDF1.html',1,'']]],
-  ['nonnormalizingbiquadfilterdf2_790',['NonNormalizingBiQuadFilterDF2',['../da/df4/classNonNormalizingBiQuadFilterDF2.html',1,'']]],
-  ['nonnormalizingiirfilter_791',['NonNormalizingIIRFilter',['../dc/d27/classNonNormalizingIIRFilter.html',1,'']]],
-  ['normalizingbiquadfilterdf1_792',['NormalizingBiQuadFilterDF1',['../dc/dd3/classNormalizingBiQuadFilterDF1.html',1,'']]],
-  ['normalizingbiquadfilterdf2_793',['NormalizingBiQuadFilterDF2',['../da/d41/classNormalizingBiQuadFilterDF2.html',1,'']]],
-  ['normalizingiirfilter_794',['NormalizingIIRFilter',['../db/d07/classNormalizingIIRFilter.html',1,'']]],
-  ['normalupdatable_795',['NormalUpdatable',['../d5/db9/structNormalUpdatable.html',1,'']]]
+  ['max7219_777',['MAX7219',['../dc/d19/classMAX7219.html',1,'']]],
+  ['max7219_5fbase_778',['MAX7219_Base',['../da/dd0/classMAX7219__Base.html',1,'']]],
+  ['max7219_5fbase_3c_20decltype_28spi_29_20_26_20_3e_779',['MAX7219_Base&lt; decltype(SPI) &amp; &gt;',['../da/dd0/classMAX7219__Base.html',1,'']]],
+  ['max7219sevensegmentdisplay_780',['MAX7219SevenSegmentDisplay',['../d4/d26/classMAX7219SevenSegmentDisplay.html',1,'']]],
+  ['maximumfilteredanalogincres_781',['MaximumFilteredAnalogIncRes',['../de/d25/structMaximumFilteredAnalogIncRes.html',1,'']]],
+  ['mcp23017_782',['MCP23017',['../d8/d84/classMCP23017.html',1,'']]],
+  ['mcp23017encoders_783',['MCP23017Encoders',['../d5/dd0/classMCP23017Encoders.html',1,'']]],
+  ['medianfilter_784',['MedianFilter',['../d6/d25/classMedianFilter.html',1,'']]]
 ];

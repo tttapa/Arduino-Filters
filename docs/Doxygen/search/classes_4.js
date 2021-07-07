@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['filteredanalog_760',['FilteredAnalog',['../da/da7/classFilteredAnalog.html',1,'']]],
-  ['firfilter_761',['FIRFilter',['../d3/d32/classFIRFilter.html',1,'']]],
-  ['fixedpoint_762',['FixedPoint',['../d5/d27/classFixedPoint.html',1,'']]],
-  ['frequency_763',['Frequency',['../d7/d90/classFrequency.html',1,'']]],
-  ['function_5ftraits_764',['function_traits',['../d1/d58/structfunction__traits.html',1,'']]],
-  ['function_5ftraits_3c_20return_28args_2e_2e_2e_29_3e_765',['function_traits&lt; Return(Args...)&gt;',['../d2/ddc/structfunction__traits_3_01Return_07Args_8_8_8_08_4.html',1,'']]]
+  ['ema_754',['EMA',['../d7/d40/classEMA.html',1,'']]],
+  ['ema_3c_20analog_5ffilter_5fshift_5ffactor_2c_20analog_5ft_2c_20analog_5ffilter_5ftype_20_3e_755',['EMA&lt; ANALOG_FILTER_SHIFT_FACTOR, analog_t, ANALOG_FILTER_TYPE &gt;',['../d7/d40/classEMA.html',1,'']]],
+  ['ema_5ff_756',['EMA_f',['../db/d6f/classEMA__f.html',1,'']]],
+  ['encoder_757',['Encoder',['../da/d2b/classRegisterEncoders_1_1Encoder.html',1,'RegisterEncoders']]],
+  ['eulerangles_758',['EulerAngles',['../d6/de9/structEulerAngles.html',1,'']]],
+  ['extendedioelement_759',['ExtendedIOElement',['../de/d4e/classExtendedIOElement.html',1,'']]]
 ];

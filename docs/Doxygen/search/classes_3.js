@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['ema_755',['EMA',['../d7/d40/classEMA.html',1,'']]],
-  ['ema_3c_20analog_5ffilter_5fshift_5ffactor_2c_20analog_5ft_2c_20analog_5ffilter_5ftype_20_3e_756',['EMA&lt; ANALOG_FILTER_SHIFT_FACTOR, analog_t, ANALOG_FILTER_TYPE &gt;',['../d7/d40/classEMA.html',1,'']]],
-  ['ema_5ff_757',['EMA_f',['../db/d6f/classEMA__f.html',1,'']]],
-  ['eulerangles_758',['EulerAngles',['../d6/de9/structEulerAngles.html',1,'']]],
-  ['extendedioelement_759',['ExtendedIOElement',['../de/d4e/classExtendedIOElement.html',1,'']]]
+  ['dotbardisplayleds_743',['DotBarDisplayLEDs',['../d1/d3e/classDotBarDisplayLEDs.html',1,'']]],
+  ['doublewidthint_744',['DoubleWidthInt',['../db/d28/structDoubleWidthInt.html',1,'']]],
+  ['doublewidthint_3c_20int16_5ft_20_3e_745',['DoubleWidthInt&lt; int16_t &gt;',['../d7/db3/structDoubleWidthInt_3_01int16__t_01_4.html',1,'']]],
+  ['doublewidthint_3c_20int32_5ft_20_3e_746',['DoubleWidthInt&lt; int32_t &gt;',['../de/d7a/structDoubleWidthInt_3_01int32__t_01_4.html',1,'']]],
+  ['doublewidthint_3c_20int8_5ft_20_3e_747',['DoubleWidthInt&lt; int8_t &gt;',['../d7/d6a/structDoubleWidthInt_3_01int8__t_01_4.html',1,'']]],
+  ['doublewidthint_3c_20uint16_5ft_20_3e_748',['DoubleWidthInt&lt; uint16_t &gt;',['../db/d8d/structDoubleWidthInt_3_01uint16__t_01_4.html',1,'']]],
+  ['doublewidthint_3c_20uint32_5ft_20_3e_749',['DoubleWidthInt&lt; uint32_t &gt;',['../d5/da3/structDoubleWidthInt_3_01uint32__t_01_4.html',1,'']]],
+  ['doublewidthint_3c_20uint8_5ft_20_3e_750',['DoubleWidthInt&lt; uint8_t &gt;',['../d9/de6/structDoubleWidthInt_3_01uint8__t_01_4.html',1,'']]],
+  ['doublylinkable_751',['DoublyLinkable',['../d4/d23/classDoublyLinkable.html',1,'']]],
+  ['doublylinkable_3c_20derived_20_3e_752',['DoublyLinkable&lt; Derived &gt;',['../d4/d23/classDoublyLinkable.html',1,'']]],
+  ['doublylinkedlist_753',['DoublyLinkedList',['../dd/d16/classDoublyLinkedList.html',1,'']]]
 ];

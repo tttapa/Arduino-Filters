@@ -1,4 +1,4 @@
-/* The standard CSS for doxygen 1.9.1 */
+/* The standard CSS for doxygen 1.9.2 */
 
 body, table, div, p, dl {
 	font: 400 14px/22px Roboto,sans-serif;
@@ -437,6 +437,12 @@ address.footer {
 img.footer {
 	border: 0px;
 	vertical-align: middle;
+}
+
+.compoundTemplParams {
+	color: #506899;
+	font-size: 80%;
+	line-height: 120%;
 }
 
 /* @group Code Colorization */
@@ -1341,14 +1347,14 @@ dl.section dd {
 
 #projectname
 {
-	font: 300% Tahoma, Arial,sans-serif;
+	font: 200% Tahoma, Arial,sans-serif;
 	margin: 0px;
 	padding: 2px 0px;
 }
     
 #projectbrief
 {
-	font: 120% Tahoma, Arial,sans-serif;
+	font: 90% Tahoma, Arial,sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
