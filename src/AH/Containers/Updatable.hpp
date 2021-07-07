@@ -84,9 +84,9 @@ class UpdatableCRTP : public DoublyLinkable<Derived> {
 
     template <class... Args>
     static void __attribute__((always_inline))
-    applyToAll(void (Derived::*method)(Args &&...), Args &&...args) {
+    applyToAll(void (Derived::*method)(Args...), Args... args) {
         for (auto &el : updatables)
-            (el.*method)(std::forward<Args>(args)...);
+            (el.*method)(args...);
     }
 
     /// @}
@@ -100,7 +100,7 @@ class UpdatableCRTP : public DoublyLinkable<Derived> {
     void enable() {
         if (isEnabled()) {
             ERROR(F("Error: This element is already enabled."), 0x1212);
-            return;
+            return; // LCOV_EXCL_LINE
         }
         updatables.append(CRTP(Derived));
     }
@@ -110,7 +110,7 @@ class UpdatableCRTP : public DoublyLinkable<Derived> {
     void disable() {
         if (!isEnabled()) {
             ERROR(F("Error: This element is already disabled."), 0x1213);
-            return;
+            return; // LCOV_EXCL_LINE
         }
         updatables.remove(CRTP(Derived));
     }
