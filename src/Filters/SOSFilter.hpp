@@ -6,18 +6,18 @@
 /// @addtogroup Filters
 /// @{
 
+template <class T, size_t N>
+using SOSCoefficients = AH::Array<BiQuadCoefficients<T>, N>;
+
 /**
- * @brief   Second Order Sections filter. Higher cost, but better numerical
- *          stability.
+ * @brief   Second Order Sections filter. Higher cost than direct 
+ *          implementation, but better numerical stability.
  * 
  * @tparam  T 
  *          The type of the signals and filter coefficients.
  * @tparam  N 
  *          The number of sections.
  */
-template <class T, size_t N>
-using SOSCoefficients = AH::Array<BiQuadCoefficients<T>, N>;
-
 template <class T, size_t N, class Implementation = BiQuadFilterDF1<T>>
 class SOSFilter {
   public:
