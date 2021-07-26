@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")"
 
-read -p "This script will reset and clean `docs`. Press enter to confirm. "
+read -p "This script will reset and clean 'docs'. Press enter to confirm. "
 
 git pull arduino-helpers master
 git reset ../docs

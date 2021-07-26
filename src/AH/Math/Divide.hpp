@@ -1,6 +1,7 @@
 #pragma once
 
 #include <AH/STL/cstdint>
+#include <AH/STL/type_traits>
 #include <AH/Settings/NamespaceSettings.hpp>
 #include <AH/Settings/Warnings.hpp>
 #include <stddef.h>
@@ -36,7 +37,7 @@ struct round_div_signed_int {
     }
 };
 
-/// Select the right rounding division operator, depending on whether T is a 
+/// Select the right rounding division operator, depending on whether T is a
 /// signed or unsigned integer.
 template <uint8_t N, class T>
 struct round_div_int
