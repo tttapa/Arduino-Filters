@@ -2,6 +2,7 @@
 
 #include <Filters/IIRFilter.hpp>
 
+// TODO: Add unit tests for reset
 TEST(IIRFilter, IIRFilterRandomInt) {
     using namespace std;
     IIRFilter<5, 3, int> filter = {{1, 10, 2, -3, -1}, {-1, 2, -3}};
@@ -29,4 +30,8 @@ TEST(IIRFilter, IIRFilterRandomDouble) {
     };
     for_each(signal.begin(), signal.end(), [&](double &s) { s = filter(s); });
     EXPECT_EQ(signal, expected);
+
+    auto steadyStateOutput = 5;
+    auto steadyStateInput = filter.reset(steadyStateOutput);
+    EXPECT_EQ(filter(steadyStateInput), steadyStateOutput);
 }

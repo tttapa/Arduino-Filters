@@ -95,7 +95,7 @@ class NonNormalizingIIRFilter {
         return acc;
     }
 
-  private:
+  protected:
     constexpr static uint8_t MA = NA - 1;
     uint8_t index_b = 0, index_a = 0;
     AH::Array<T, NB> x = {};                 ///< Previous inputs
@@ -196,7 +196,7 @@ class NormalizingIIRFilter {
         return acc;
     }
 
-  private:
+  protected:
     constexpr static uint8_t MA = NA - 1;
     uint8_t index_b = 0, index_a = 0;
     AH::Array<T, NB> x = {};
@@ -268,6 +268,29 @@ class IIRFilter : public IIRImplementation<NB, NA, T> {
      */
     T operator()(T input) {
         return IIRImplementation<NB, NA, T>::operator()(input);
+    }
+
+    T reset(T steady_state_output) {
+        T b_coefficients_sum = 0;
+        for (const auto& b_coefficient : this->b_coefficients) {
+            b_coefficients_sum += b_coefficient;
+        }
+        T a_coefficients_sum = 0;
+        for (const auto& a_coefficient : this->a_coefficients) {
+            a_coefficients_sum += a_coefficient;
+        }
+        const T k_tol = 1e-6;
+        T steady_state_input = 0;
+        if (b_coefficients_sum > k_tol || b_coefficients_sum < -k_tol) {
+            steady_state_input = steady_state_output * a_coefficients_sum / b_coefficients_sum;
+        }
+        for (auto& x_val : this->x) {
+            x_val = steady_state_input;
+        }
+        for (auto& y_val : this->y) {
+            y_val = steady_state_output;
+        }
+        return steady_state_input;
     }
 };
 
