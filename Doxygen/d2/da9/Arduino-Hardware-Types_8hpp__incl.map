@@ -1,0 +1,27 @@
+<map id="Arduino&#45;Hardware&#45;Types.hpp" name="Arduino&#45;Hardware&#45;Types.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="721,5,930,32"/>
+<area shape="rect" id="node2" href="$d1/d65/Warnings_8hpp.html" title=" " alt="" coords="261,841,451,868"/>
+<area shape="rect" id="node3" href="$d4/d35/Hardware-Types_8hpp.html" title=" " alt="" coords="273,80,447,121"/>
+<area shape="rect" id="node9" href="$d6/ddf/Arduino-Wrapper_8h.html" title=" " alt="" coords="1093,617,1259,644"/>
+<area shape="rect" id="node23" href="$d0/db1/FunctionTraits_8hpp.html" title=" " alt="" coords="1418,692,1622,719"/>
+<area shape="rect" id="node4" href="$de/d76/Array_8hpp.html" title=" " alt="" coords="479,169,659,196"/>
+<area shape="rect" id="node8" href="$dc/dc7/NamespaceSettings_8hpp.html" title=" " alt="" coords="602,767,862,793"/>
+<area shape="rect" id="node20" title=" " alt="" coords="398,543,469,569"/>
+<area shape="rect" id="node5" href="$d1/d93/Error_8hpp.html" title=" " alt="" coords="423,244,561,271"/>
+<area shape="rect" id="node13" title=" " alt="" coords="1251,692,1394,719"/>
+<area shape="rect" id="node19" title=" " alt="" coords="873,543,948,569"/>
+<area shape="rect" id="node22" title=" " alt="" coords="585,244,705,271"/>
+<area shape="rect" id="node6" href="$df/dee/Debug_8hpp.html" title=" " alt="" coords="435,319,597,345"/>
+<area shape="rect" id="node7" href="$dd/d80/PrintStream_8hpp.html" title=" " alt="" coords="1023,543,1254,569"/>
+<area shape="rect" id="node14" href="$d2/dd5/SettingsWrapper_8hpp.html" title=" " alt="" coords="397,393,635,420"/>
+<area shape="rect" id="node10" href="$d7/d79/MinMaxFix_8hpp.html" title=" " alt="" coords="973,692,1155,719"/>
+<area shape="rect" id="node12" title=" " alt="" coords="1133,841,1217,868"/>
+<area shape="rect" id="node11" href="$d6/d3b/FixArduinoMacros_8hpp.html" title=" " alt="" coords="987,767,1213,793"/>
+<area shape="rect" id="node15" href="$db/d02/Settings_8hpp.html" title="All user settings and debugging options can be changed here." alt="" coords="653,468,755,495"/>
+<area shape="rect" id="node21" href="$d9/d98/TeensyUSBTypes_8hpp.html" title=" " alt="" coords="398,468,629,495"/>
+<area shape="rect" id="node16" href="$dc/d50/Frequency_8hpp.html" title=" " alt="" coords="349,692,528,719"/>
+<area shape="rect" id="node17" href="$d7/d7c/ADCConfig_8hpp.html" title="This file contains the platform&#45;specific ADC resolutions." alt="" coords="639,543,849,569"/>
+<area shape="rect" id="node18" title=" " alt="" coords="545,543,615,569"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1391,767,1511,793"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1535,767,1641,793"/>
+</map>
