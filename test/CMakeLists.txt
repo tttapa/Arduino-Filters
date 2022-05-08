@@ -22,6 +22,14 @@ add_executable(tests
     "AH/Math/test-Vector.cpp"
     "AH/Filters/test-Hysteresis.cpp"
     "AH/Filters/test-EMA.cpp"
+    "Filters/test-SOSFilter.cpp"
+    "Filters/test-MedianFilter.cpp"
+    "Filters/test-IIRFilter.cpp"
+    "Filters/test-BiQuad.cpp"
+    "Filters/test-Butterworth.cpp"
+    "Filters/test-FIRFilter.cpp"
+    "Filters/test-SMA.cpp"
+    "Filters/test-FixedPoint.cpp"
 )
 target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(tests
